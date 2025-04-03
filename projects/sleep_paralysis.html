@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Paralysis | Jake Leuck</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../slider.css" />
+</head>
+<body class="project-page">
+ <!-- 🔹 Compact Header -->
+  <header>
+    <h1>Jake Leuck</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+  <div class="content">
+    <h1>Sleep Paralysis</h1>
+
+    <iframe 
+      src="https://www.youtube.com/embed/pQqcoTlFJB0" 
+      title="Sleep Paralysis Project"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+
+    <p>Team Members: Jake Leuck, Elise Harrison, Richard Chen, Amanda May</p>
+
+    <p>The goal for this project was to create a horror short film, working with a team. Roles were loosely defined, and everyone got a chance to rotoscope and contribute to shots.
+    I am responsible for developing the overall look of the demon, as well as on-set responsibilities, editing the short, and devising a solution for the extraction of EXR image sequences from the container .mts format, and setup of a repeatable workflow by using the cloud-native filesystem Suite, allowing anyone to work on the project from anywhere.</p>
+
+    <p>This was a large experimental undertaking for what is my first Nuke project, allowing me to get more comfortable with what can be done with nothing but an alpha matte and a clean plate. 
+    One challenge faced was creating a solution that was not only viable for a single-frame look, as the original gizmos used were not animatable, leaving the creature effects stagnant throughout the scene. 
+    To aid with this, I experimented with layered noise-driven distortion, organic edge gizmos, motion blur, and time-echo effects until a balance was achieved between the demon's core, edges, and glow that were satisfying.</p>
+
+    <!-- Optimized Before/After Slider -->
+    <div class="slider-container" id="slider">
+      <img src="../images/demon_before.jpg" alt="Before">
+      <img src="../images/demon_after.jpg" class="after" id="afterImage" alt="After">
+      <div class="slider-handle" id="handle"></div>
+    </div>
+
+    <a class="back-link" href="../index.html#projects">&larr; Back to Projects</a>
+  </div>
+
+  <script src="../slider.js"></script>
+</body>
+</html>

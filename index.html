@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Leuck | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Bahnschrift', sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+    header {
+      background: #292929;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #00e5ff;
+      font-size: 48px;
+      margin: 0;
+    }
+    nav a {
+      color: #00e5ff;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section h2 {
+      color: #00e5ff;
+      margin-bottom: 40px;
+    }
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px 60px;
+    }
+    .project-thumb {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      width: 45%;
+      aspect-ratio: 16 / 9;
+      max-width: 600px;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .project-thumb:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 229, 255, 0.8);
+      color: #1e1e1e;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .project-thumb:hover .overlay {
+      opacity: 1;
+    }
+    /* Center the video reel */
+    .reel-section {
+      text-align: center;
+      padding: 40px 0;
+    }
+    .reel-section video {
+      width: 80%;
+      max-width: 1200px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jake Leuck</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Centered reel section -->
+  <!-- Reel Section -->
+<section id="reel" style="text-align: center; padding: 40px 20px;">
+  <h2 style="color: #00e5ff; font-size: 32px; margin-bottom: 20px;">Compositing Reel</h2>
+  <iframe 
+    width="100%" 
+    height="480" 
+    src="https://www.youtube.com/embed/UYVkt-mouwE" 
+    title="Compositing Reel"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="max-width: 800px; border-radius: 12px;">
+  </iframe>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-gallery">
+      <a href="projects/sunset.html" class="project-thumb">
+        <img src="images/sunset.jpg" alt="60s Sunset">
+        <div class="overlay">60s Sunset</div>
+      </a>
+      <a href="projects/stadium.html" class="project-thumb">
+        <img src="images/stadium.jpg" alt="Stadium">
+        <div class="overlay">Stadium</div>
+      </a>
+      <a href="projects/khans.html" class="project-thumb">
+        <img src="images/khans.jpg" alt="The Khans are Back">
+        <div class="overlay">The Khans are Back</div>
+      </a>
+      <a href="projects/boyonroof.html" class="project-thumb">
+        <img src="images/boyonroof.jpg" alt="Boy on Rooftop">
+        <div class="overlay">Boy on Rooftop</div>
+      </a>
+
+<a href="projects/sleep_paralysis.html" class="project-thumb">
+  <img src="images/sleep_paralysis.jpg" alt="Sleep Paralysis">
+  <div class="overlay">Sleep Paralysis</div>
+</a>
+
+<a href="projects/kidsrunning.html" class="project-thumb">
+  <img src="images/kidsrunning.jpg" alt="Kids Running">
+  <div class="overlay">Kids Running</div>
+</a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jake Leuck</p>
+  </footer>
+</body>
+</html>
