@@ -27,7 +27,16 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
     </iframe>
-
+<p>This project was centered on set extension. The goal was create a modern world that has been invaded by the Mongol Empire. Worked with a team for filming and a final edit, but shots were handled fully individually.</p>
+    <p>Taking this clean plate my first priority was cleanup on the main back building in order to give the banner that I knew I would add more room to breathe and to properly hang in the scene.
+The greatest challenge was the banners/flags themselves, crafting them from nothing but a single flag graphic for each. For the Khan banner, I crafted the final look by splicing together the logo and a repeated and transformed section of an image of rug frills, and the US Flag was a simple graphic with organic edge generation/roto to give it a burned shape, and a grade for the look.
+Both flags were made more realistic through carefully placed and graded dirt and grime textures, as well as textures for the materials themselves.
+<p/>
+<p>The challenging part came in integrating them into the scene in a way that did not feel motionless and stagnant.
+To help with this, I textured a card in the 3d space with each, and ran them both through plenty tests of noise-driven displacement, landing on layers of displacement for each. One for the pinning of the tops to the buildings, one for the subtle bunching of the banner, somewhat like curtains. And a final displacement pass that generated the waving itself for each, with the noise graded so that the displacement would increase quadratically as you go down the flag, with no displacement at the top and the heaviest at the bottom.
+This worked well, but did not cast any shadows. Rather than a simpler 2d corner pinned solution, I took this as an opportunity to dive much deeper into Nuke's 3d space, opting to craft a solution that involved attaching a secondary camera to my intended light source, and reprojecting the shape onto proxy geometry of the buildings they hung on.
+</p>
+    <p>This, along with the paint work, graffiti, and other additional elements were camera tracked and matchmoved into the scene.</p>
     <a class="back-link" href="../index.html#compositing">&larr; Back to Projects</a>
 
     <div class="node-tease">
