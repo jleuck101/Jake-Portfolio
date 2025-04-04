@@ -28,7 +28,21 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
     </iframe>
+<p>
+  This project and its associated midterm started as a midterm with the intentions of transforming a single frame of an image. I did what I could in the 3 hours, but knew there could be much, much more done.
+</p>
 
+<p>
+  In my free time, I took my one frame of paint and first improved on it for every area I could, in which I greatly improved upon my ability to discern patterns of objects and how their light level differentiates between depth, verticality, and otherwise. This was primarily to eliminate wires, but with that I needed to eliminate the connected poles, as well as some large cell towers in the original plate's treeline. I then tracked every piece of it into the scene. Separating trackers by depth and relative motion, I made 18 distinctions of different pieces of rotopaint that I would separate. The majority of these ended up being run through 2 points per tracker. 
+</p>
+<p>
+To set the scene more of a fall setting, I used a combination of hueshifts, huecorrections, color grades/corrections, and the HSV tool. This brought it more towards yellow, but in order to achieve a subtle variety in the colors of the trees, I handpainted specific areas of the background treeline that I then used to power a slightly different grade. The furthest mountain and trees required an additional separation and grade.
+</p>
+<p>
+Using a grass and dirt texture, I layered them accordingly and used distortion and erosion to reveal the dirt at the edges, as well as layering atop a baseball field's dirt texture, and drawing rotoshapes of a driven path to reveal the dirt below, which was also piped back in and offset a little to create a subtle graded shadow.
+</p>
+<p>I performed a sky replacement using a very drastic image, and to allow this to blend in better I did the necessary color corrections, as well as utilizing Foundry's available machine learning tools. I generated a depth map of the entire scene using MiDaS from the open source library Cattery, and used that to power a depth-appropriate level of haze throughout the scene. To allow my character to enter over the replaced sky, I used CopyCat to train a model on 10 examples of individual roto shapes I created of the man. Finally, I experimented with volume rays to add an additional sense of drama to the scene.
+</p>
     <a class="back-link" href="../index.html#compositing">&larr; Back to Projects</a>
 
     <div class="node-tease">
