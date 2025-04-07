@@ -4,46 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jake Leuck | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Bahnschrift', sans-serif;
       background-color: #1e1e1e;
       color: #f0f0f0;
     }
+
     header {
       background: #292929;
       padding: 40px 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between; /* Aligns the content on both sides */
+      align-items: center;
     }
+
     header h1 {
       color: #00e5ff;
       font-size: 48px;
       margin: 0;
     }
+
     nav a {
       color: #00e5ff;
       text-decoration: none;
       padding: 10px 20px;
       display: inline-block;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     section {
       padding: 60px 20px;
       text-align: center;
     }
+
+    /* Adjust header size for Projects section */
+    #projects h2 {
+      color: #00e5ff;
+      font-size: 48px; /* Make this bigger */
+      margin-bottom: 20px;
+    }
+
+    /* Adjust header size for Compositing and 3D/Animation sections */
     section h2 {
       color: #00e5ff;
+      font-size: 36px; /* Make these smaller */
       margin-bottom: 40px;
     }
+
     .project-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px 60px;
     }
+
     .project-thumb {
       position: relative;
       overflow: hidden;
@@ -54,6 +72,7 @@
       aspect-ratio: 16 / 9;
       max-width: 600px;
     }
+
     .project-thumb img {
       width: 100%;
       height: 100%;
@@ -61,9 +80,11 @@
       transition: transform 0.3s ease;
       display: block;
     }
+
     .project-thumb:hover img {
       transform: scale(1.05);
     }
+
     .overlay {
       position: absolute;
       bottom: 0;
@@ -76,52 +97,98 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
+
     .project-thumb:hover .overlay {
       opacity: 1;
     }
+
     /* Center the video reel */
     .reel-section {
       text-align: center;
-      padding: 40px 0;
+      padding: 20px 20px; /* Reduced padding to close space */
     }
-    .reel-section video {
+
+    .reel-section iframe {
       width: 80%;
-      max-width: 1200px;
-      border-radius: 8px;
+      max-width: 1000px; /* Limit the width to 1000px */
+      height: 600px; /* Larger size for the video */
+      border: none;
+      border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Projects Section */
+    #projects {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Down Arrow Section */
+    .down-arrow-container {
+      text-align: center;
+      margin-top: 20px; /* Reduced margin to bring it closer */
+    }
+
+    .down-arrow-text {
+      color: #00e5ff;
+      font-size: 28px;
+      margin-bottom: 5px; /* Reduce space between text and arrow */
+    }
+
+    .down-arrow {
+      font-size: 36px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .down-arrow:hover {
+      transform: translateY(5px);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header Section -->
   <header>
     <h1>Jake Leuck</h1>
     <nav>
       <a href="index.html">Home</a>
-      <!--- About --->
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- Centered reel section -->
-  <!-- Reel Section -->
-<section id="reel" style="text-align: center; padding: 40px 20px;">
-  <h2 style="color: #00e5ff; font-size: 32px; margin-bottom: 20px;">Compositing Reel</h2>
-  <iframe 
-    width="100%" 
-    height="480" 
-    src="https://www.youtube.com/embed/UYVkt-mouwE" 
-    title="Compositing Reel"
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    style="max-width: 800px; border-radius: 12px;">
-  </iframe>
-</section>
+  <!-- Compositing Reel Section -->
+  <section id="reel" class="reel-section">
+    <h2 style="color: #00e5ff; font-size: 36px; margin-bottom: 20px;">Compositing Reel - Spring 2025</h2>
+    <iframe 
+      width="100%" 
+      height="480" 
+      src="https://www.youtube.com/embed/UYVkt-mouwE" 
+      title="Compositing Reel"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </section>
 
+  <!-- Scroll Arrow to Compositing Section -->
+  <div class="down-arrow-container">
+    <div class="down-arrow-text">Projects</div>
+    <a href="#compositing"> <!-- Update this to target the compositing section -->
+      <div class="down-arrow">↓</div>
+    </a>
+  </div>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
+  <!-- Compositing Section -->
+  <section id="compositing">
+    <h2>Compositing</h2>
     <div class="project-gallery">
       <a href="projects/sunset.html" class="project-thumb">
         <img src="images/sunset.jpg" alt="60s Sunset">
@@ -139,22 +206,31 @@
         <img src="images/boyonroof.jpg" alt="Boy on Rooftop">
         <div class="overlay">Boy on Rooftop</div>
       </a>
+      <a href="projects/sleep_paralysis.html" class="project-thumb">
+        <img src="images/sleep_paralysis.jpg" alt="Sleep Paralysis">
+        <div class="overlay">Sleep Paralysis</div>
+      </a>
+      <a href="projects/kidsrunning.html" class="project-thumb">
+        <img src="images/kidsrunning.jpg" alt="Kids Running">
+        <div class="overlay">Kids Running</div>
+      </a>
+    </div>
+  </section>
 
-<a href="projects/sleep_paralysis.html" class="project-thumb">
-  <img src="images/sleep_paralysis.jpg" alt="Sleep Paralysis">
-  <div class="overlay">Sleep Paralysis</div>
-</a>
-
-<a href="projects/kidsrunning.html" class="project-thumb">
-  <img src="images/kidsrunning.jpg" alt="Kids Running">
-  <div class="overlay">Kids Running</div>
-</a>
-
+  <!-- 3D / Animation Section -->
+  <section id="animation">
+    <h2>3D / Animation</h2>
+    <div class="project-gallery">
+      <a href="projects/sunshine_test.html" class="project-thumb">
+        <img src="images/sunshine_thumb.jpg" alt="Sunshine">
+        <div class="overlay">Sunshine</div>
+      </a>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Jake Leuck</p>
   </footer>
+
 </body>
 </html>

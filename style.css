@@ -210,3 +210,7 @@ body.contact-page h1 {
   display: block;      /* Ensure the image behaves as a block element */
   margin: 0 auto;      /* Center the image horizontally */
 }
+
+html {
+  scroll-behavior: smooth;
+}
