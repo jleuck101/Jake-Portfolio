@@ -4,3 +4,6 @@
 *.avi
 *.mkv
 *.flv
+
+# Ignore any files with "test" in the name
+*test*

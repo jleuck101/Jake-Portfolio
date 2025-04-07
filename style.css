@@ -202,3 +202,11 @@ body.contact-page h1 {
 .contact-links a:hover {
   text-decoration: underline;
 }
+
+.profile-image {
+  border-radius: 8px;  /* Rounded corners like your project thumbnails */
+  width: 200px;        /* Set a standard size (adjust as needed) */
+  height: auto;        /* Maintain aspect ratio */
+  display: block;      /* Ensure the image behaves as a block element */
+  margin: 0 auto;      /* Center the image horizontally */
+}
