@@ -1,3 +1,6 @@
+/* Import Barlow for paragraph readability */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap');
+
 /* General Reset */
 * {
   margin: 0;
@@ -32,6 +35,16 @@ header h1 {
   margin: 0;
 }
 
+/* 🔹 Index Page Specific Header Style */
+.index-header {
+  padding: 40px 10px; /* You can make this more spacious if you want */
+}
+
+.index-header h1 {
+  font-size: 48px; /* Larger than the default 32px */
+  letter-spacing: 0.5px;
+}
+
 nav a {
   color: #00e5ff;
   text-decoration: none;
@@ -59,10 +72,14 @@ h1 {
 }
 
 p {
-  margin-bottom: 20px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.25rem;
   line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+  max-width: 65ch;
+  margin: 0 auto 24px;
   text-align: left;
-  font-size: 1.5rem;
 }
 
 a.back-link {
@@ -176,6 +193,7 @@ footer {
 
 /* 🔹 Contact Page Specific Styles */
 body.contact-page .content p {
+  font-family: 'Barlow', sans-serif;
   text-align: center;
   font-size: 1.3rem;
 }
@@ -204,13 +222,21 @@ body.contact-page h1 {
 }
 
 .profile-image {
-  border-radius: 8px;  /* Rounded corners like your project thumbnails */
-  width: 200px;        /* Set a standard size (adjust as needed) */
-  height: auto;        /* Maintain aspect ratio */
-  display: block;      /* Ensure the image behaves as a block element */
-  margin: 0 auto;      /* Center the image horizontally */
+  border-radius: 8px;
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    padding: 0 10px;
+  }
 }
