@@ -1,30 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.getElementById('slider');
-  const handle = document.getElementById('handle');
-  const afterImage = document.getElementById('afterImage');
+  const sliders = document.querySelectorAll('.slider-container');
 
-  if (!slider || !handle || !afterImage) return;
+  sliders.forEach((slider) => {
+    const handle = slider.querySelector('.slider-handle');
+    const afterImage = slider.querySelector('.after');
 
-  let active = false;
+    if (!handle || !afterImage) return;
 
-  const updateSlider = (x) => {
-    const rect = slider.getBoundingClientRect();
-    const offset = Math.min(Math.max(x - rect.left, 0), rect.width);
-    const percent = (offset / rect.width) * 100;
-    handle.style.left = percent + '%';
-    afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-  };
+    let active = false;
 
-  slider.addEventListener('pointerdown', (e) => {
-    active = true;
-    updateSlider(e.clientX);
-  });
+    const updateSlider = (x) => {
+      const rect = slider.getBoundingClientRect();
+      const offset = Math.min(Math.max(x - rect.left, 0), rect.width);
+      const percent = (offset / rect.width) * 100;
+      handle.style.left = percent + '%';
+      afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+    };
 
-  window.addEventListener('pointermove', (e) => {
-    if (active) updateSlider(e.clientX);
-  });
+    slider.addEventListener('pointerdown', (e) => {
+      active = true;
+      updateSlider(e.clientX);
+    });
 
-  window.addEventListener('pointerup', () => {
-    active = false;
+    window.addEventListener('pointermove', (e) => {
+      if (active) updateSlider(e.clientX);
+    });
+
+    window.addEventListener('pointerup', () => {
+      active = false;
+    });
   });
 });
