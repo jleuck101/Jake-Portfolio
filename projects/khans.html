@@ -29,9 +29,28 @@
       allowfullscreen>
     </iframe>
 <p>This project centered on set extension, aiming to depict a modern world invaded by the Mongol Empire. While filming and editing were team efforts, each shot was handled individually.</p>
-    <p>Starting from the original plate, my first priority was cleaning the main back building to make space for the banner and allow it to hang naturally in the scene. The biggest challenge was crafting the flags themselves from scratch, using only a single graphic for each. For the Khan banner, I combined the logo with a repeated, transformed section of rug frills. The U.S. flag began as a flat graphic, shaped using organic roto and edge generation for a burnt, tattered look. Both were layered with dirt and grime textures and treated with material-based grades for realism.<p/>
-<p>Getting the banners to feel alive was the biggest point for me. I textured cards in 3D space and ran them through layered noise-driven displacements: one to pin the tops to the building, one for subtle bunching like draped fabric, and a final pass for waving motion. The waving displacement increased quadratically from top to bottom, mimicking natural flag movement. To integrate shadows realistically, I avoided a simpler 2D corner-pin approach and instead learned a new technique of projecting the flag shapes using a secondary light-source camera onto proxy building geometry in Nuke’s 3D space.</p>
+<p>Starting from the original plate, my first priority was cleaning the main back building to make space for the banner and allow it to hang naturally in the scene. The biggest challenge was crafting the flags themselves from scratch, using only a single graphic for each. For the Khan banner, I combined the logo with a repeated, transformed section of rug frills. The U.S. flag began as a flat graphic, shaped using organic roto and edge generation for a burnt, tattered look. Both were layered with dirt and grime textures and treated with material-based grades for realism.</p>
+
+<div class="flag-compare">
+  <!-- Left: Before/After Slider -->
+  <div class="flag-block">
+    <div class="slider-container">
+      <img src="../images/Khan_Flag_Flat.jpg" alt="Flat Flag">
+      <img src="../images/Khan_Flag_Displaced.jpg" class="after" alt="Displaced Flag">
+      <div class="slider-handle"></div>
+    </div>
+  </div>
+</div> <!-- ✅ This was missing -->
+
+      
+        
+      
+      
+      
+      <p>Getting the banners to feel alive was the biggest point for me. I textured cards in 3D space and ran them through layered noise-driven displacements: one to pin the tops to the building, one for subtle bunching like draped fabric, and a final pass for waving motion. The waving displacement increased quadratically from top to bottom, mimicking natural flag movement. To integrate shadows realistically, I avoided a simpler 2D corner-pin approach and instead learned a new technique of projecting the flag shapes using a secondary light-source camera onto proxy building geometry in Nuke’s 3D space.</p>
     <p>Graffiti elements were enhanced using keyers to extract outlines, extended with rotopainted paint drops, or hand-roto’d and composited. Everything was matchmoved into the scene with a full 3D camera track.</p>
+    
+    
     <a class="back-link" href="../index.html#compositing">&larr; Back to Projects</a>
 
     <div class="node-tease">
@@ -43,6 +62,6 @@
   <div class="node-tree-section">
     <img src="../images/khans_nodetree.png" alt="Nuke Node Tree" />
   </div>
-
+  <script src="../slider.js"></script>
 </body>
 </html>
