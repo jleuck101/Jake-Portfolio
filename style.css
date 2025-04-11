@@ -29,20 +29,28 @@ header {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+header {
+  background: #292929;
+  padding: 40px 10px; /* Same across all pages */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
 header h1 {
-  font-size: 32px;
+  font-size: 48px;
   color: #00e5ff;
   margin: 0;
-}
-
-/* 🔹 Index Page Specific Header Style */
-.index-header {
-  padding: 40px 10px; /* You can make this more spacious if you want */
-}
-
-.index-header h1 {
-  font-size: 48px; /* Larger than the default 32px */
   letter-spacing: 0.5px;
+}
+
+.down-arrow-container a {
+  text-decoration: none;
 }
 
 nav a {
