@@ -223,11 +223,12 @@ body.contact-page h1 {
 
 .profile-image {
   border-radius: 8px;
-  width: 200px;
+  width: 300px; /* increase from 200px */
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto; /* center + some breathing room */
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -240,3 +241,75 @@ html {
     padding: 0 10px;
   }
 }
+
+.aligned-heading {
+  max-width: 65ch;
+  margin: 0 auto 24px;
+  text-align: left;
+  font-size: 2rem;
+  color: #00e5ff;
+  font-weight: 600;
+}
+
+
+
+@media (max-width: 768px) {
+  .profile-image {
+    width: 80%; /* scale down on phones */
+    max-width: 300px;
+  }
+}
+
+.intro {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.4rem;
+  color: #00e5ff;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  max-width: 65ch;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+
+
+.about-flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-image {
+  width: 380px;         /* ⬆️ Increased from 300px */
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+  .profile-image {
+    width: 80%;
+    max-width: 320px;   /* Slightly reduced for smaller screens */
+  }
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px; /* ✨ Helps it match image height */
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
