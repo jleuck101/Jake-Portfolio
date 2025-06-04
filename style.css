@@ -525,3 +525,13 @@ a:active {
 h1 a:hover {
   text-decoration: none; /* or underline if you want */
 }
+
+/* Consistent link color, regardless of state */
+a,
+a:visited,
+a:hover,
+a:active {
+  color: #00e5ff;
+  text-decoration: none; /* Optional: removes underlines globally */
+}
+
