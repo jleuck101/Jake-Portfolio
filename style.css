@@ -513,6 +513,14 @@ h1 a:visited {
   color: inherit;
 }
 
+a:visited {
+  color: #00e5ff;
+}
+
+a:hover,
+a:active {
+  color: #00e5ff;
+}
 /* Optional: keep hover clean or add an effect */
 h1 a:hover {
   text-decoration: none; /* or underline if you want */
