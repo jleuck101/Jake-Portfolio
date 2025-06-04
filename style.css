@@ -21,8 +21,8 @@ body {
 
 
 header {
-  background: #292929;
-  padding: 20px 40px; /* Less vertical space, tighter horizontally */
+  background: #1a1a1a;  /* Darker than before */
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
