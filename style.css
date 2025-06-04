@@ -9,11 +9,12 @@
 }
 
 body {
-  background-color: rgb(8.14%, 8.14%, 8.14%);
-  color: #f0f0f0;
+  background-color: #2b2b2b;  /* Lighter than the original */
+  color: #e0e0e0;            /* A slightly lighter gray for text */
   font-family: 'Bahnschrift', sans-serif;
   line-height: 1.6;
 }
+
 
 /* Header Styles */
 
