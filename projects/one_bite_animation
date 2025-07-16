@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Bite Pizza Review | Jake Leuck</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../images/JL_favicon.png" type="image/png"> 
+</head>
+<body class="project-page">
+
+  <!-- Compact Sticky Header -->
+  <header>
+    <h1><a href="../index.html">Jake Leuck</a></h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>One Bite Pizza Review</h1>
+
+    <iframe 
+      src="https://www.youtube.com/embed/mXtkMIQnOkk?rel=0&modestbranding=1" 
+      title="One Bite Pizza Review Animation"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+
+    <p>
+      Animation done in Maya
+    </p>
+
+
+    <a class="back-link" href="../index.html">&larr; Back to Projects</a>
+
+   
+
+</body>
+</html>
