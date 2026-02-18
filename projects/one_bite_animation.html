@@ -4,39 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One Bite Pizza Review | Jake Leuck</title>
+
   <link rel="stylesheet" href="../style.css" />
-  <link rel="icon" href="../images/JL_favicon.png" type="image/png"> 
+  <link rel="icon" href="../images/JL_favicon.png" type="image/png">
+  <style>#site-header { min-height: 80px; }</style>
 </head>
+
 <body class="project-page">
 
-  <!-- Compact Sticky Header -->
-  <header>
-    <h1><a href="../index.html">Jake Leuck</a></h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script src="../partials/include.js"></script>
 
-  <div class="content">
-    <h1>One Bite Pizza Review</h1>
+  <main class="page">
 
-    <iframe 
-      src="https://www.youtube.com/embed/mXtkMIQnOkk?rel=0&modestbranding=1" 
-      title="One Bite Pizza Review Animation"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+    <section class="section section-intro">
+      <h2>One Bite Pizza Review</h2>
+      <p class="muted" style="text-align:center; max-width: 70ch; margin: 0 auto;">
+        Animation done in Maya.
+      </p>
+    </section>
 
-    <p>
-      Animation done in Maya
-    </p>
+    <section class="section">
+      <div class="video-embed" style="max-width: 960px; margin: 0 auto;">
+        <iframe
+          src="https://www.youtube.com/embed/mXtkMIQnOkk?rel=0&modestbranding=1"
+          title="One Bite Pizza Review Animation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
+      <a class="back-link" href="../motion.html">&larr; Back to Motion + 3D</a>
+    </section>
 
-    <a class="back-link" href="../index.html">&larr; Back to Projects</a>
+  </main>
 
-   
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
 
+  <script src="../site.js"></script>
 </body>
 </html>

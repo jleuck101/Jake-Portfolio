@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Leuck | Motion + 3D</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/JL_favicon.png" type="image/png">
+
+  <!-- Prevent layout jump while header partial loads -->
+  <style>
+    #site-header { min-height: 80px; }
+  </style>
+</head>
+
+<body class="motion-page">
+
+  <!-- Header injected ASAP (right after placeholder) -->
+  <div id="site-header"></div>
+  <script src="partials/include.js"></script>
+
+  <main class="page">
+
+    <section class="section section-intro">
+      <h2>Motion + 3D</h2>
+      <p class="muted">
+        Unreal Engine cinematics, motion graphics, and select 3D work.
+      </p>
+    </section>
+
+    <!-- Unreal Cinematics -->
+    <section class="section" id="motion-unreal">
+      <h3>Unreal Engine Cinematics</h3>
+      <div class="project-gallery">
+        <a href="projects/sunshine.html" class="project-thumb">
+          <img src="images/sunshine_thumb.jpg" alt="Sunshine (Unreal Engine)">
+          <div class="overlay">Sunshine (Unreal Engine)</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Motion Graphics -->
+    <section class="section" id="motion-mograph">
+      <h3>Motion Graphics</h3>
+      <div class="project-gallery">
+        <a href="projects/skipping.html" class="project-thumb">
+          <img src="images/skipping.jpg" alt="Skipping (Motion Graphics)">
+          <div class="overlay">Skipping (Motion Graphics)</div>
+        </a>
+
+        <a href="projects/howtosmash.html" class="project-thumb">
+          <img src="images/howtosmash.jpg" alt="How To: Make Smashburgers (Motion Graphics)">
+          <div class="overlay">How To: Make Smashburgers (Motion Graphics)</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Animation -->
+    <section class="section" id="motion-animation">
+      <h3>Animation</h3>
+      <div class="project-gallery">
+        <a href="projects/one_bite_animation.html" class="project-thumb">
+          <img src="images/one bite thumb_1.1.1.jpg" alt="One Bite Pizza Review (Character Animation)">
+          <div class="overlay">One Bite Pizza Review (Character Animation)</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3D / Lookdev -->
+    <section class="section" id="motion-3d">
+      <h3>3D / Lookdev</h3>
+      <div class="project-gallery">
+        <a href="projects/alarm_clock.html" class="project-thumb">
+          <img src="images/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png" alt="Alarm Clock 3D Model">
+          <div class="overlay">Alarm Clock (3D Model)</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

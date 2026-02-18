@@ -4,48 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stadium | Jake Leuck</title>
+
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" href="../images/JL_favicon.png" type="image/png"> 
+  <link rel="icon" href="../images/JL_favicon.png" type="image/png">
+  <style>#site-header { min-height: 80px; }</style>
 </head>
+
 <body class="project-page">
 
-  <!-- 🔹 Compact Header -->
-  <header>
-    <h1><a href="../index.html">Jake Leuck</a></h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script src="../partials/include.js"></script>
 
   <div class="content">
     <h1>Stadium</h1>
 
-    <iframe 
-      src="https://www.youtube.com/embed/sDpfgRsHxlk?rel=0&modestbranding=1"" 
+    <iframe
+      src="https://www.youtube.com/embed/sDpfgRsHxlk?rel=0&modestbranding=1"
       title="Stadium Project"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
 
+    <p>*Comp materials and template script provided by Jon Rogala</p>
+
     <p>
-      *Comp materials and template script provided by Jon Rogala
+      This project simply required the combination of multiple plates (Greenscreen, BG, Far BG) into one final, cohesive image. I keyed out the player, as well as a luma keyer to cut out the original sky. Roto shapes were used to fill in necessary gaps. The largest part of this project was the rotopaint for the sign replacement. I had a desire to make a completely clean plate with both stadium signs removed, so I studied the simple patterns, which helped train my eye for small details such as chromatic aberration, how pixels blend together, and very subtle lighting discrepancies. I then replaced the upper stadium sign with a small nod to those that lost their jobs in the recent closure of Technicolor.
     </p>
-
-    <p>This project simply required the combination of multiple plates (Greenscreen, BG, Far BG) into one final, cohesive image. I keyed out the player, as well as a luma keyer to cut out the original sky. Roto shapes were used to fill in necessary gaps. The largest part of this project was the rotopaint for the sign replacement. I had a desire to make a completely clean plate with both stadium signs removed, so I studied the simple patterns, which helped train my eye for small details such as chromatic aberration, how pixels blend together, and very subtle lighting discrepancies. I then replaced the upper stadium sign with a small nod to those that lost their jobs in the recent closure of Technicolor.</p>
-
-    <a class="back-link" href="../index.html#compositing">&larr; Back to Projects</a>
 
     <div class="node-tease">
       <div>Node Tree</div>
       <div class="arrow">&#x25BC;</div>
     </div>
+
+    <div class="node-tree-section">
+      <img src="../images/stadium_nodetree.png" alt="Stadium Node Tree">
+    </div>
+
+    <a class="back-link" href="../compositing.html">&larr; Back to Compositing</a>
   </div>
 
-  <div class="node-tree-section">
-    <img src="../images/stadium_nodetree.png" alt="Stadium Node Tree">
-  </div>
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
 
+  <script src="../site.js"></script>
 </body>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Leuck | Tools</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/JL_favicon.png" type="image/png">
+
+  <!-- Prevent layout jump while header partial loads -->
+  <style>
+    #site-header { min-height: 80px; }
+  </style>
+</head>
+
+<body class="tools-page">
+
+  <!-- Header injected ASAP (right after placeholder) -->
+  <div id="site-header"></div>
+  <script src="partials/include.js"></script>
+
+  <main class="page">
+
+    <section class="section section-intro">
+      <h2>Tools / Pipeline</h2>
+      <p class="muted">
+        Small tools and workflow helpers I’ve built to speed up iteration, reduce mistakes, and keep comps readable.
+        Demos will be added as short hover-to-preview clips.
+      </p>
+    </section>
+
+    <section class="section" id="tools-list">
+      <h3>Selected Tools</h3>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <h4>Backdrop Helper Toolkit (Nuke)</h4>
+          <p class="muted">Quality-of-life tools for organizing scripts faster and keeping node graphs readable.</p>
+
+          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
+            <div class="tool-play" aria-hidden="true">▶</div>
+            <div class="tool-media-text">Demo coming soon</div>
+          </div>
+
+          <ul class="tool-bullets">
+            <li>Faster node graph organization</li>
+            <li>Improves readability for reviews + handoff</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h4>Edge Mid Finder (Nuke)</h4>
+          <p class="muted">Utility to help find/validate edge positions for roto/patch alignment.</p>
+
+          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
+            <div class="tool-play" aria-hidden="true">▶</div>
+            <div class="tool-media-text">Demo coming soon</div>
+          </div>
+
+          <ul class="tool-bullets">
+            <li>Quick edge placement validation</li>
+            <li>Reduces “eyeballing” for tight roto/patch work</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h4>Autocrop Range + Padding (Nuke)</h4>
+          <p class="muted">Batch autocrop with a custom frame range and padding for cleaner precomps/renders.</p>
+
+          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
+            <div class="tool-play" aria-hidden="true">▶</div>
+            <div class="tool-media-text">Demo coming soon</div>
+          </div>
+
+          <ul class="tool-bullets">
+            <li>Crop only over a chosen frame range</li>
+            <li>Add padding to protect edges for transforms/blur</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h4>Precomp Switch / Render Discipline Helpers</h4>
+          <p class="muted">Helpers that toggle live vs precomp states and encourage efficient, readable comps.</p>
+
+          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
+            <div class="tool-play" aria-hidden="true">▶</div>
+            <div class="tool-media-text">Demo coming soon</div>
+          </div>
+
+          <ul class="tool-bullets">
+            <li>One-click switch: live comp ↔ precomp</li>
+            <li>Promotes faster iteration + predictable render times</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h4>Perforce Sync Helper (Pipeline)</h4>
+          <p class="muted">UI-driven sync helper for pulling the right files quickly and consistently.</p>
+
+          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
+            <div class="tool-play" aria-hidden="true">▶</div>
+            <div class="tool-media-text">Demo coming soon</div>
+          </div>
+
+          <ul class="tool-bullets">
+            <li>Reduces manual sync mistakes</li>
+            <li>Makes “get latest” workflows more repeatable</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="muted" style="text-align:center; margin-top: 18px; max-width: 70ch; margin-left:auto; margin-right:auto;">
+        If you’d like to see tools packaged for download, I’m happy to share details on request.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

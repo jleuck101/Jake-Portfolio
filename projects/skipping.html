@@ -3,39 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunshine | Jake Leuck</title>
+  <title>Skipping | Jake Leuck</title>
+
   <link rel="stylesheet" href="../style.css" />
-  <link rel="icon" href="../images/JL_favicon.png" type="image/png"> 
+  <link rel="icon" href="../images/JL_favicon.png" type="image/png">
+  <style>#site-header { min-height: 80px; }</style>
 </head>
+
 <body class="project-page">
 
-  <!-- Compact Sticky Header -->
-  <header>
-    <h1><a href="../index.html">Jake Leuck</a></h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script src="../partials/include.js"></script>
 
-  <div class="content">
-    <h1>Skipping</h1>
+  <main class="page">
+    <section class="section section-intro">
+      <h2>Skipping</h2>
+      <p class="muted" style="text-align:center; max-width: 70ch; margin: 0 auto;">
+        Kinetic Typography Exercise (After Effects) — Comedian: Sheng Wang
+      </p>
+    </section>
 
-    <iframe 
-      src="https://www.youtube.com/embed/amG7xXA4ygU?rel=0&modestbranding=1"" 
-      title="Skipping"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+    <section class="section">
+      <iframe
+        src="https://www.youtube.com/embed/amG7xXA4ygU?rel=0&modestbranding=1"
+        title="Skipping"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
 
-    <h3>Motion Graphics (After Effects)</h3>
-<p><br>Kinetic Typography Exercise. <br>
-Comedian: Sheng Wang</p>
+      <a class="back-link" href="../motion.html">&larr; Back to Motion + 3D</a>
+    </section>
+  </main>
 
-    <a class="back-link" href="../index.html#3D / Animation">&larr; Back to Projects</a>
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
 
-    
-
+  <script src="../site.js"></script>
 </body>
 </html>

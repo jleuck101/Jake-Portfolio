@@ -3,134 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jake Leuck | Portfolio</title>
+  <title>Jake Leuck | Reel</title>
+
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/JL_favicon.png" type="image/png">
 
-  <link rel="icon" href="images/JL_favicon.png" type="image/png"> 
-
+  <!-- Prevent layout jump while header partial loads -->
+  <style>
+    #site-header { min-height: 80px; }
+  </style>
 </head>
-<body>
 
-  <!-- Header Section -->
-  <header>
-    <h1>Jake Leuck</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<body class="home-page">
 
-  <!-- Compositing Reel Section -->
+  <!-- Header injected ASAP (right after placeholder) -->
+  <div id="site-header"></div>
+  <script src="partials/include.js"></script>
+
+  <!-- Reel Section -->
   <section id="reel" class="reel-section">
-    <h2></h2>
-    <iframe 
-      width="100%" 
-      height="480" 
-      src="https://www.youtube.com/embed/UYVkt-mouwE?rel=0&modestbranding=1" 
+    <iframe
+      width="100%"
+      height="480"
+      src="https://www.youtube.com/embed/UYVkt-mouwE?rel=0&modestbranding=1"
       title="Compositing Reel"
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </section>
 
-  <!-- Scroll Arrow to Compositing Section -->
-  <div class="down-arrow-container">
-    <div class="down-arrow-text">Projects</div>
-    <a href="#compositing"> <!-- Update this to target the compositing section -->
-      <div class="down-arrow">⤵</div>
-    </a>
-  </div>
+  <!-- Featured Compositing Projects -->
+  <section class="section" id="featured-projects">
+    <h2>Featured Compositing</h2>
 
-  <!-- Compositing Section -->
-  <section id="compositing">
-    <h2>Compositing</h2>
     <div class="project-gallery">
+      <a href="projects/lagoon_wip.html" class="project-thumb wip-thumb">
+        <div class="wip-badge">WIP</div>
+        <img src="images/Lagoon_thumb_1.5.1.png" alt="The Lagoon (WIP)">
+        <div class="overlay">The Lagoon (Work in Progress)</div>
+      </a>
+
+      <a href="projects/motopia_wip.html" class="project-thumb wip-thumb">
+        <div class="wip-badge">WIP</div>
+        <img src="images/Motopia_WIP_Frame02_1.6.2.png" alt="Motopia (WIP)">
+        <div class="overlay">Motopia (Work in Progress)</div>
+      </a>
+
       <a href="projects/sunset.html" class="project-thumb">
         <img src="images/sunset.jpg" alt="60s Sunset">
         <div class="overlay">60s Sunset</div>
       </a>
+
       <a href="projects/khans.html" class="project-thumb">
         <img src="images/Khans_v24_thumb.jpg" alt="The Khans are Back">
         <div class="overlay">The Khans are Back</div>
       </a>
-
-
-      <a href="projects/motopia_wip.html" class="project-thumb wip-thumb">
-  <div class="wip-badge">WIP</div>
-  <img src="images/Motopia_WIP_Frame02_1.6.2.png" alt="Motopia (WIP)">
-  <div class="overlay">Motopia (Work in Progress)</div>
-</a>
-
-<a href="projects/lagoon_wip.html" class="project-thumb wip-thumb">
-  <div class="wip-badge">WIP</div>
-  <img src="images/Lagoon_thumb_1.5.1.png" alt="The Lagoon (WIP)">
-  <div class="overlay">The Lagoon (Work in Progress)</div>
-</a>
-      
-      <a href="projects/sleep_paralysis.html" class="project-thumb">
-        <img src="images/sleep_paralysis.jpg" alt="Sleep Paralysis">
-        <div class="overlay">Sleep Paralysis</div>
-      </a>
-
-      <a href="projects/boyonroof.html" class="project-thumb">
-        <img src="images/boyonroof.jpg" alt="Boy on Rooftop">
-        <div class="overlay">Boy on Rooftop</div>
-      </a>
-      
-      <a href="projects/kidsrunning.html" class="project-thumb">
-        <img src="images/kidsrunning.jpg" alt="Kids Running">
-        <div class="overlay">Kids Running</div>
-      </a>
-      <a href="projects/stadium.html" class="project-thumb">
-        <img src="images/stadium.jpg" alt="Stadium">
-        <div class="overlay">Stadium</div>
-      </a>
-
-      
     </div>
+
+    <p class="muted" style="text-align:center; margin-top: 16px;">
+      Browse all compositing projects on the <a href="compositing.html">Compositing</a> page.
+    </p>
   </section>
 
-  <!-- 3D / Animation Section -->
-  <section id="animation">
-    <h2>Other Projects</h2>
-    <div class="project-gallery">
-      <a href="projects/sunshine.html" class="project-thumb">
-        <img src="images/sunshine_thumb.jpg" alt="Sunshine">
-        <div class="overlay">Sunshine (Unreal Engine)</div>
-      </a>
-
-<a href="projects/skipping.html" class="project-thumb">
-        <img src="images/skipping.jpg" alt="">
-        <div class="overlay">Skipping (Motion Graphics)</div>
-      </a>
-
-<a href="projects/howtosmash.html" class="project-thumb">
-        <img src="images/howtosmash.jpg" alt="How To: Make Smashburgers (Motion Graphics)">
-        <div class="overlay">How To: Make Smashburgers (Motion Graphics)</div>
-      </a>
-
-<a href="projects/one_bite_animation.html" class="project-thumb">
-        <img src="images/one bite thumb_1.1.1.jpg" alt="One Bite Pizza Review (Character Animation)">
-        <div class="overlay">One Bite Pizza Review (Character Animation)</div>
-      </a>
-
-<a href="projects/alarm_clock.html" class="project-thumb">
-        <img src="images/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png" alt="Alarm Clock 3D Model">
-        <div class="overlay">Alarm Clock 3D Model</div>
-      </a>
-
-<a href="projects/rollo.html" class="project-thumb">
-        <img src="images/rollo.jpg" alt="Rollo in the Kitchen (Stop Motion)">
-        <div class="overlay">Rollo in the Kitchen (Stop Motion)</div>
-      </a>
-    </div>
+  <!-- Small “more” strip (no full sections) -->
+  <section class="section" id="more-work">
+    <p class="muted" style="text-align:center; max-width: 75ch; margin: 0 auto;">
+      Looking for <a href="tools.html">Tools / Pipeline</a> work or <a href="motion.html">Motion + 3D</a>?
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Jake Leuck</p>
+    <p>&copy; 2026 Jake Leuck</p>
   </footer>
 
+  <!-- Optional on root pages; safe to include for consistency -->
+  <script src="site.js"></script>
 </body>
 </html>

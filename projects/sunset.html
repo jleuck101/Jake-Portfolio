@@ -4,63 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>60s Sunset | Jake Leuck</title>
+
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" href="../images/JL_favicon.png" type="image/png"> 
-  
+  <link rel="icon" href="../images/JL_favicon.png" type="image/png">
+  <style>#site-header { min-height: 80px; }</style>
 </head>
+
 <body class="project-page">
 
-  <!-- 🔹 Compact Header -->
-  <header>
-    <h1><a href="../index.html">Jake Leuck</a></h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script src="../partials/include.js"></script>
 
   <div class="content">
     <h1>60s Sunset</h1>
 
-    <iframe 
-      src="https://www.youtube.com/embed/Ys1aGFsbdO0?rel=0&modestbranding=1"" 
+    <iframe
+      src="https://www.youtube.com/embed/Ys1aGFsbdO0?rel=0&modestbranding=1"
       title="60s Sunset Project"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
-<p>
-  This was a personal project of mine that included adapting a previous single-frame test comp into a full working shot.
-</p>
 
-<p>
-I took my one frame of paint and improved it, which greatly improved my ability to discern patterns of objects and how their light level differentiates between depth, verticality, and otherwise. This was primarily to eliminate wires, but with that I needed to eliminate the connected poles, as well as a large cell tower in the original plate's treeline. I then tracked every piece of it into the scene. Separating trackers by depth and relative motion, I made 18 distinctions of different pieces of rotopaint that I would separate and track using primarily 2 point trackers.
-</p>
-    <!-- Optimized Before/After Slider -->
+    <p>This was a personal project of mine that included adapting a previous single-frame test comp into a full working shot.</p>
+
+    <p>
+      I took my one frame of paint and improved it, which greatly improved my ability to discern patterns of objects and how their light level differentiates between depth, verticality, and otherwise. This was primarily to eliminate wires, but with that I needed to eliminate the connected poles, as well as a large cell tower in the original plate's treeline. I then tracked every piece of it into the scene. Separating trackers by depth and relative motion, I made 18 distinctions of different pieces of rotopaint that I would separate and track using primarily 2 point trackers.
+    </p>
+
     <div class="slider-container">
       <img src="../images/Sunset_Before_Paint.jpg" alt="Before">
       <img src="../images/Sunset_After_Paint.jpg" class="after" alt="After">
       <div class="slider-handle"></div>
     </div>
-<p>
-To set the scene more of a fall setting, I used a combination of hueshifts, huecorrections, color grades/corrections, and the HSV tool. This brought the vegetation more towards yellow, but in order to achieve a subtle variety in the colors of the trees, I handpainted specific areas of the background treeline that I then used to power a slightly different grade. The furthest mountain and trees required an additional separation and grade.
-</p>
-<p>
-I layered grass and dirt layers and used distortion and erosion to reveal the dirt at the edges, and drew rotoshapes of paths eroded by car wheels to reveal the dirt below, which was piped back in and offset to create a subtle graded shadow.
-</p>
-<p>I performed a sky replacement using a very drastic image, and to allow this to blend in better I did the necessary color corrections, as well as utilizing Foundry's available machine learning tools. I generated a depth map of the entire scene using MiDaS from the open source library Cattery, and used that to power a depth-appropriate level of haze throughout the scene. To allow my character to enter over the replaced sky, I trained a local model on 10 examples of individual roto shapes I created of the man using CopyCat. Finally, I experimented with volume rays to add an additional sense of drama to the scene.
-</p>
-    <a class="back-link" href="../index.html#compositing">&larr; Back to Projects</a>
+
+    <p>
+      To set the scene more of a fall setting, I used a combination of hueshifts, huecorrections, color grades/corrections, and the HSV tool. This brought the vegetation more towards yellow, but in order to achieve a subtle variety in the colors of the trees, I handpainted specific areas of the background treeline that I then used to power a slightly different grade. The furthest mountain and trees required an additional separation and grade.
+    </p>
+
+    <p>
+      I layered grass and dirt layers and used distortion and erosion to reveal the dirt at the edges, and drew rotoshapes of paths eroded by car wheels to reveal the dirt below, which was piped back in and offset to create a subtle graded shadow.
+    </p>
+
+    <p>
+      I performed a sky replacement using a very drastic image, and to allow this to blend in better I did the necessary color corrections, as well as utilizing Foundry's available machine learning tools. I generated a depth map of the entire scene using MiDaS from the open source library Cattery, and used that to power a depth-appropriate level of haze throughout the scene. To allow my character to enter over the replaced sky, I trained a local model on 10 examples of individual roto shapes I created of the man using CopyCat. Finally, I experimented with volume rays to add an additional sense of drama to the scene.
+    </p>
 
     <div class="node-tease">
       <div>Node Tree</div>
       <div class="arrow">&#x25BC;</div>
     </div>
+
+    <div class="node-tree-section">
+      <img src="../images/sunset_nodetree.png" alt="Nuke Node Tree">
+    </div>
+
+    <a class="back-link" href="../compositing.html">&larr; Back to Compositing</a>
   </div>
 
-  <div class="node-tree-section">
-    <img src="../images/sunset_nodetree.png" alt="Nuke Node Tree">
-  </div>
-  <script src="../slider.js"></script>
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="../site.js"></script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Leuck | Compositing</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/JL_favicon.png" type="image/png">
+
+  <!-- Prevent layout jump while header partial loads -->
+  <style>
+    #site-header { min-height: 80px; }
+  </style>
+</head>
+
+<body class="compositing-page">
+
+  <!-- Header injected ASAP (right after placeholder) -->
+  <div id="site-header"></div>
+  <script src="partials/include.js"></script>
+
+  <main class="page">
+
+    <!-- Page Intro -->
+    <section class="section section-intro">
+      <h2>Compositing</h2>
+      <p class="muted">
+        All compositing projects.
+      </p>
+    </section>
+
+    <!-- Compositing Projects -->
+    <section class="section" id="compositing-projects">
+      <h3>Projects</h3>
+      <div class="project-gallery">
+
+        <!-- WIP / Production -->
+        <a href="projects/motopia_wip.html" class="project-thumb wip-thumb">
+          <div class="wip-badge">WIP</div>
+          <img src="images/Motopia_WIP_Frame02_1.6.2.png" alt="Motopia (WIP)">
+          <div class="overlay">Motopia (Work in Progress)</div>
+        </a>
+
+        <a href="projects/lagoon_wip.html" class="project-thumb wip-thumb">
+          <div class="wip-badge">WIP</div>
+          <img src="images/Lagoon_thumb_1.5.1.png" alt="The Lagoon (WIP)">
+          <div class="overlay">The Lagoon (Work in Progress)</div>
+        </a>
+
+        <!-- Compositing Projects -->
+        <a href="projects/sunset.html" class="project-thumb">
+          <img src="images/sunset.jpg" alt="60s Sunset">
+          <div class="overlay">60s Sunset</div>
+        </a>
+
+        <a href="projects/khans.html" class="project-thumb">
+          <img src="images/Khans_v24_thumb.jpg" alt="The Khans are Back">
+          <div class="overlay">The Khans are Back</div>
+        </a>
+
+        <a href="projects/sleep_paralysis.html" class="project-thumb">
+          <img src="images/sleep_paralysis.jpg" alt="Sleep Paralysis">
+          <div class="overlay">Sleep Paralysis</div>
+        </a>
+
+        <a href="projects/boyonroof.html" class="project-thumb">
+          <img src="images/boyonroof.jpg" alt="Boy on Rooftop">
+          <div class="overlay">Boy on Rooftop</div>
+        </a>
+
+        <a href="projects/kidsrunning.html" class="project-thumb">
+          <img src="images/kidsrunning.jpg" alt="Kids Running">
+          <div class="overlay">Kids Running</div>
+        </a>
+
+        <a href="projects/stadium.html" class="project-thumb">
+          <img src="images/stadium.jpg" alt="Stadium">
+          <div class="overlay">Stadium</div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="muted">
+        Looking for motion graphics or Unreal work? See <a href="motion.html">Motion</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

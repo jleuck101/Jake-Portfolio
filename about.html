@@ -3,44 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Jake Leuck</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="icon" href="images/JL_favicon.png" type="image/png"> 
+  <title>Jake Leuck | About + Contact</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/JL_favicon.png" type="image/png">
+
+  <style>
+    #site-header { min-height: 80px; }
+  </style>
 </head>
+
 <body class="about-page">
 
-  <!-- 🔹 Sticky Compact Header -->
-  <header>
-    <h1><a href="../index.html">Jake Leuck</a></h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
+  <script src="partials/include.js"></script>
 
-  <!-- 🔹 Main About Content -->
-  <div class="content">
-    <h1 class="aligned-heading">About Me</h1>
-  
-    <div class="about-flex">
-      <img src="../images/jakeface.jpg" alt="Jake Leuck" class="profile-image" />
-  
-      <div class="about-text">
-        <p><strong style="color: #00e5ff; font-size: 1.4rem;">Hey all!</strong></p>
-  
-        <p>
-          I'm Jake — a Nuke Compositor and Visual Effects student at DePaul University with minors in animation and computer science.</p>
-  
-        <p>
-          Congratulations! You found one of the only pictures where I'm not smiling. I am an avid problem solver. Any challenge that comes my way that isn't working perfectly, I can't help myself but to learn every little thing about it. Lucky for me, I stumbled upon the world of Visual Effects, where the problems are endless (I say with love).</p>
-  
-          <p>Starting with YouTube content in 2021, I quickly grew from "shorts editor" to "high effort meme creator" to "Resolve Fusion Compositor". Since I finally got my hands on Nuke at DePaul in the fall of last year, I have fallen in love with the ability to control and manipulate digital imagery with complete clarity and precision. It has allowed me to develop a better eye for the world, understanding how we perceive all that's around us. I love being able to lend my hand to tell exciting stories, and bring a smile to as many people as I can, whether they enjoyed my work, or enjoyed working with me.     <a href="../contact.html">Contact Page.</a></p>
+  <main class="page">
+
+    <section class="section section-intro">
+      <h2>About</h2>
+      <p class="muted">
+        Nuke compositing + pipeline-minded problem solving.
+      </p>
+    </section>
+
+    <section class="section" id="about-content">
+      <div class="about-flex">
+
+        <div class="profile-wrap">
+          <img src="images/jakeface.jpg" alt="Jake Leuck" class="profile-image" />
+        </div>
+
+        <div class="about-text">
+          <p><strong style="color:#00e5ff; font-size:1.25rem;">Hey!</strong></p>
+
+          <p>
+            I’m Jake, a Nuke compositor and visual effects student at DePaul University, with minors in animation and computer science.
+          </p>
+
+          <p>
+            I’m an avid problem solver. When something isn’t working perfectly, I can’t help myself from wanting to understand every part of it.
+            I have found Visual Effects to be the perfect field to scratch that itch.
+          </p>
+
+          <p>
+            I started making YouTube content in 2021 and grew from shorts editing to higher-effort compositing work in Resolve/Fusion.
+            Since getting hands-on with Nuke at DePaul, I’ve loved the clarity and precision it gives for manipulating imagery and building shots logically.
+            I care about both quality and efficiency. Making things as cool as I can, but making it repeatable. Readable scripts, workflow standards, and building small tools that keep things moving.
+          </p>
+        </div>
+
       </div>
-    </div>
-  </div>
-  
-  
+    </section>
 
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-wrap">
+        <p class="muted contact-subtitle">Best way to reach me:</p>
+
+        <!-- Buttons (Email → LinkedIn → GitHub) -->
+        <div class="contact-actions">
+
+          <a class="contact-btn" href="mailto:jakeleuck101@gmail.com">
+            Email <small>jakeleuck101@gmail.com</small>
+          </a>
+
+          <a class="contact-btn"
+             href="https://www.linkedin.com/in/jake-leuck-451814303/"
+             target="_blank"
+             rel="noopener">
+            LinkedIn <small>jake-leuck</small>
+          </a>
+
+          <a class="contact-btn"
+             href="https://github.com/jleuck101"
+             target="_blank"
+             rel="noopener">
+            GitHub <small>jleuck101</small>
+          </a>
+
+        </div>
+
+        <!-- Copy/paste-friendly text -->
+        <div class="contact-links" aria-label="Copy-paste links">
+          <div class="row">
+            <div class="label">Email</div>
+            <div class="value"><code>jakeleuck101@gmail.com</code></div>
+          </div>
+
+          <div class="row">
+            <div class="label">LinkedIn</div>
+            <div class="value"><code>https://www.linkedin.com/in/jake-leuck-451814303/</code></div>
+          </div>
+
+          <div class="row">
+            <div class="label">GitHub</div>
+            <div class="value"><code>https://github.com/jleuck101</code></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
