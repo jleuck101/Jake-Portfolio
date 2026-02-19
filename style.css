@@ -1,5 +1,5 @@
 /* =========================================================
-   Jake Leuck Portfolio — Unified Site Styles
+   Jake Leuck Portfolio — Unified Site Styles (FULL REGEN)
    ========================================================= */
 
 /* Font for paragraphs / readability */
@@ -45,7 +45,7 @@ img, video{
   display: block;
 }
 
-/* Links */
+/* Links (global) */
 a{ color: var(--accent); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
@@ -70,10 +70,33 @@ header h1{
   margin: 0;
 }
 
-header h1 a,
-header h1 a:visited{
+/* Unified “blue outline pill” hover for title + nav */
+header a{
+  display: inline-block;
   color: var(--accent);
+  text-decoration: none;           /* no underline in header */
+  padding: 6px 10px;               /* consistent hit target */
+  border-radius: 10px;
+  border: 1px solid transparent;   /* outline appears on hover */
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+header a:hover{
   text-decoration: none;
+  background: rgba(0,229,255,0.08);
+  border-color: rgba(0,229,255,0.55);
+}
+
+/* Slightly tighter for the site title so it scales nicely */
+header .site-title{
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Keyboard accessibility */
+header a:focus-visible{
+  outline: 2px solid rgba(0,229,255,0.75);
+  outline-offset: 2px;
 }
 
 nav{
@@ -84,26 +107,17 @@ nav{
   justify-content: flex-end;
 }
 
+/* Nav link text sizing (hover handled by header a above) */
 nav a{
   font-size: 14px;
   font-weight: 400;
-  padding: 6px 8px;
-  border-radius: 10px;
-  color: var(--accent);
-  text-decoration: none;
-  transition: background 0.15s ease, text-decoration 0.15s ease;
-}
-
-nav a:hover{
-  text-decoration: underline;
-  background: rgba(0,229,255,0.08);
 }
 
 @media (max-width: 700px){
   header{ padding: 14px 16px; }
   header h1{ font-size: 22px; }
   nav{ gap: 10px; }
-  nav a{ font-size: 13px; padding: 6px 6px; }
+  nav a{ font-size: 13px; }
 }
 
 /* ---------- Page layout helpers ---------- */
