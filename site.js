@@ -1,5 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   // =========================================================
+  // Scroll Reveal (site-wide, no HTML edits)
+  // Automatically tags common elements for reveal if they
+  // don't already have data-reveal set in the HTML.
+  // =========================================================
+
+  const autoReveal = (selector, { stagger = true, baseDelay = 0 } = {}) => {
+    const nodes = Array.from(document.querySelectorAll(selector));
+    const targets = nodes.filter((el) => !el.hasAttribute('data-reveal'));
+
+    targets.forEach((el, i) => {
+      el.setAttribute('data-reveal', '');
+
+      // Optional lightweight stagger for lists/grids
+      if (stagger) {
+        // 1..4 cycle (matches your CSS delay helpers)
+        const step = ((i + baseDelay) % 4) + 1;
+        el.setAttribute('data-reveal-delay', String(step));
+      }
+    });
+  };
+
+  // Apply reveal across the site
+  // (If this ever feels like "too much", we can narrow these selectors.)
+  autoReveal('.section', { stagger: false });
+  autoReveal('.project-thumb', { stagger: true });
+  autoReveal('.tool-card', { stagger: true });
+  autoReveal('footer', { stagger: false });
+
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    revealEls.forEach((el) => io.observe(el));
+  }
+
+  // =========================================================
   // Before/After Sliders
   // Expects:
   //   .slider-container

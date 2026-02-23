@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jake Leuck | Tools</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/JL_favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/JL_favicon.png" type="image/png" />
 
-  <!-- Prevent layout jump while header partial loads -->
   <style>
     #site-header { min-height: 80px; }
   </style>
@@ -16,7 +15,6 @@
 
 <body class="tools-page">
 
-  <!-- Header injected ASAP (right after placeholder) -->
   <div id="site-header"></div>
   <script src="partials/include.js"></script>
 
@@ -25,98 +23,247 @@
     <section class="section section-intro">
       <h2>Tools / Pipeline</h2>
       <p class="muted">
-        Small tools and workflow helpers I’ve built to speed up iteration, reduce mistakes, and keep comps readable.
-        Demos will be added as short hover-to-preview clips.
+        Workflow tools and Nuke customizations focused on speed, consistency, and clean handoff.
+        Preview clips are presented in a 16:9 format.
       </p>
     </section>
 
-    <section class="section" id="tools-list">
+    <section class="section" id="tools-projects">
       <h3>Selected Tools</h3>
 
-      <div class="tools-grid">
-
-        <div class="tool-card">
-          <h4>Backdrop Helper Toolkit (Nuke)</h4>
-          <p class="muted">Quality-of-life tools for organizing scripts faster and keeping node graphs readable.</p>
-
-          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
-            <div class="tool-play" aria-hidden="true">▶</div>
-            <div class="tool-media-text">Demo coming soon</div>
-          </div>
-
-          <ul class="tool-bullets">
-            <li>Faster node graph organization</li>
-            <li>Improves readability for reviews + handoff</li>
-          </ul>
+      <!-- 1) Portable .nuke Bootstrap -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Portable .nuke bootstrap preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
         </div>
 
-        <div class="tool-card">
-          <h4>Edge Mid Finder (Nuke)</h4>
-          <p class="muted">Utility to help find/validate edge positions for roto/patch alignment.</p>
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Portable .nuke Bootstrap (Init/Menu System)</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Pipeline</span>
+              <span class="tool-tag">Automation</span>
+              <span class="tool-tag">Portability</span>
+            </div>
+          </header>
 
-          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
-            <div class="tool-play" aria-hidden="true">▶</div>
-            <div class="tool-media-text">Demo coming soon</div>
-          </div>
+          <p class="muted tool-project__lead">
+            Portable startup + menu system that auto-loads tool folders, builds menus dynamically, and supports per-machine toggles.
+          </p>
 
-          <ul class="tool-bullets">
-            <li>Quick edge placement validation</li>
-            <li>Reduces “eyeballing” for tight roto/patch work</li>
+          <ul class="tool-project__bullets">
+            <li>Auto-loads Python tools, gizmos, ToolSets, icons, sounds, presets, and workspaces</li>
+            <li>Dynamic menu generation (ex: auto “Assorted Gizmos” menu)</li>
+            <li>Per-machine feature toggles to keep setups reliable across workstations</li>
           </ul>
         </div>
+      </article>
 
-        <div class="tool-card">
-          <h4>Autocrop Range + Padding (Nuke)</h4>
-          <p class="muted">Batch autocrop with a custom frame range and padding for cleaner precomps/renders.</p>
-
-          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
-            <div class="tool-play" aria-hidden="true">▶</div>
-            <div class="tool-media-text">Demo coming soon</div>
-          </div>
-
-          <ul class="tool-bullets">
-            <li>Crop only over a chosen frame range</li>
-            <li>Add padding to protect edges for transforms/blur</li>
-          </ul>
+      <!-- 2) Perforce Sync Helper -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Perforce Sync Helper preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
         </div>
 
-        <div class="tool-card">
-          <h4>Precomp Switch / Render Discipline Helpers</h4>
-          <p class="muted">Helpers that toggle live vs precomp states and encourage efficient, readable comps.</p>
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Perforce Sync Helper (Nuke-Integrated)</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Perforce</span>
+              <span class="tool-tag">Reliability</span>
+              <span class="tool-tag">Handoff</span>
+            </div>
+          </header>
 
-          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
-            <div class="tool-play" aria-hidden="true">▶</div>
-            <div class="tool-media-text">Demo coming soon</div>
-          </div>
+          <p class="muted tool-project__lead">
+            Nuke-integrated utilities to reduce missing Read issues and make syncing repeatable.
+          </p>
 
-          <ul class="tool-bullets">
-            <li>One-click switch: live comp ↔ precomp</li>
-            <li>Promotes faster iteration + predictable render times</li>
+          <ul class="tool-project__bullets">
+            <li>Finds missing Read media from inside Nuke</li>
+            <li>Guided sync workflow to reduce manual mistakes</li>
+            <li>Supports consistent “get latest” habits across machines</li>
           </ul>
         </div>
+      </article>
 
-        <div class="tool-card">
-          <h4>Perforce Sync Helper (Pipeline)</h4>
-          <p class="muted">UI-driven sync helper for pulling the right files quickly and consistently.</p>
-
-          <div class="tool-media tool-media--placeholder" aria-label="Demo coming soon">
-            <div class="tool-play" aria-hidden="true">▶</div>
-            <div class="tool-media-text">Demo coming soon</div>
-          </div>
-
-          <ul class="tool-bullets">
-            <li>Reduces manual sync mistakes</li>
-            <li>Makes “get latest” workflows more repeatable</li>
-          </ul>
+      <!-- 3) Label Manager -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Label Manager preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
         </div>
 
-      </div>
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Label Manager</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Script Hygiene</span>
+              <span class="tool-tag">Readability</span>
+            </div>
+          </header>
 
-     <!--  <p class="muted" style="text-align:center; margin-top: 18px; max-width: 70ch; margin-left:auto; margin-right:auto;">
-        If you’d like to see tools packaged for download, I’m happy to share details on request.
-      </p> -->
+          <p class="muted tool-project__lead">
+            Labeling and organization system designed to keep node graphs readable at scale.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Standardized label patterns to reduce “mystery nodes”</li>
+            <li>Auto-update behavior to keep labels consistent as scripts evolve</li>
+            <li>Optimized for fast navigation in dense comps</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Live Sampler -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Live Sampler preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Live Sampler</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Lookdev</span>
+              <span class="tool-tag">Integration</span>
+              <span class="tool-tag">Fast Checks</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Viewer-side sampling helper for fast checks during lookdev and integration.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Quick value checks for match/patch/grade work</li>
+            <li>Designed to stay lightweight during iteration</li>
+            <li>Useful for spotting inconsistencies early</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Edge Mid Finder -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Edge Mid Finder preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Edge Mid Finder</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Roto/Paint</span>
+              <span class="tool-tag">Precision</span>
+              <span class="tool-tag">Cleanup</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Precision helper for finding/validating edge positions for roto and patch alignment.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Supports consistent edge placement (less eyeballing)</li>
+            <li>Helpful for seam work and tight integrations</li>
+            <li>Designed for repeatability across frames</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Version / render discipline -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Version and Render Discipline Helpers preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Version & Render Discipline Helpers</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Pipeline</span>
+              <span class="tool-tag">Consistency</span>
+              <span class="tool-tag">Guardrails</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Helpers focused on predictable output naming/structure and reducing mis-versioning risk.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Encourages consistent write outputs and review structure</li>
+            <li>Reduces “wrong version” mistakes during fast iteration</li>
+            <li>Keeps output folders organized under pressure</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Auto Rack Focus -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Auto Rack Focus Helper preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Auto Rack Focus Helper</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Controls</span>
+              <span class="tool-tag">Repeatable Setup</span>
+              <span class="tool-tag">Reusable</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Controller-based setup for rack focus workflows with a clean control surface and repeatable behavior.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Creates a single control node for focus adjustments</li>
+            <li>Makes late changes easier with less rework</li>
+            <li>Optimized for readability and reuse across shots</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Backdrop Helper (lower + cautious credit) -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Backdrop Helper customizations preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Backdrop Helper Customizations</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Graph Organization</span>
+              <span class="tool-tag">Customization</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Customizations on top of the <span style="white-space: nowrap;">Backdrop Helper Toolkit by shuvovfx</span>.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Consistent backdrop defaults (borders + readability)</li>
+            <li>Label behavior tweaks to keep notes legible as scripts evolve</li>
+            <li>Changes focused on clearer review and handoff</li>
+          </ul>
+        </div>
+      </article>
+
     </section>
-
   </main>
 
   <footer>
