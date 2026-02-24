@@ -89,6 +89,36 @@
           </ul>
         </div>
       </article>
+      <!-- NEW) Transform — Concatenate / Split Operations -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Transform concatenate and split operations preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Transform — Concatenate / Split Operations</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Transforms</span>
+              <span class="tool-tag">Cleanup</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Hotbox utilities for flattening multi-node Transform chains into one node, or breaking a single Transform into readable, operation-specific nodes.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li><strong>Concatenate Transforms</strong>: selects a straight chain of Transform nodes and bakes the combined result into the last node (then rewires and deletes upstream nodes)</li>
+            <li><strong>Split Transform Operations</strong>: splits translate/rotate/scale/skew (and optional center) into separate Transform nodes, preserving animation/expressions and skew order</li>
+            <li>Temporarily disables Auto-Key to avoid creating unwanted keys on the current frame</li>
+          </ul>
+        </div>
+      </article>
+
+
 
       <!-- 1) Portable .nuke Bootstrap -->
       <article class="tool-project">
