@@ -9,7 +9,19 @@
   <link rel="icon" href="images/JL_favicon.png" type="image/png" />
 
   <style>
-    #site-header { min-height: 80px; }
+    
+    /* Hover-play previews: let the card receive hover, not the video element */
+    .tool-project video { pointer-events: none; }
+#site-header { min-height: 80px; }
+
+    /* Tool preview videos should behave like preview images */
+    .tool-project__video{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: inherit;
+    }
   </style>
 </head>
 
@@ -89,6 +101,39 @@
           </ul>
         </div>
       </article>
+
+      <!-- NEW) Autocrop — Range + Padding -->
+      <article class="tool-project">
+        <div class="tool-project__media" aria-label="Autocrop Range and Padding preview">
+          <div class="tool-project__badge">Preview</div>
+          <video class="tool-project__video" loop muted playsinline preload="metadata">
+            <source src="videos/previews/autocrop_gui.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Autocrop — Range + Padding</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Crop</span>
+              <span class="tool-tag">Workflow</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Autocrop over a custom frame range, then keep the animated crop curve while adding a padding slider for safe comps.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Custom panel: First / Last / Increment, Layer, and total Padding</li>
+            <li>Batch-friendly: runs per selected node and creates a Crop node each time</li>
+            <li>Adds a <strong>Padding (px)</strong> knob and expands the crop box via expressions so the original autocrop animation is preserved</li>
+          </ul>
+        </div>
+      </article>
+
+
       <!-- NEW) Transform — Concatenate / Split Operations -->
       <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Transform concatenate and split operations preview">
@@ -118,6 +163,34 @@
         </div>
       </article>
 
+      <!-- NEW) Roto — Split Shapes into Nodes -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Split roto shapes preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Roto — Split Shapes into Nodes</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Roto</span>
+              <span class="tool-tag">Organization</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for handoff, reuse, troubleshooting, or performance-heavy comps. Inspired by a similar tool from Alex Villalbón.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Creates <strong>one new node per shape</strong> (All), <strong>per selected shape</strong>, or <strong>per top-level folder</strong> (Layers mode)</li>
+            <li>Copies the original node’s settings and preserves animation/expressions where possible</li>
+            <li>Auto-labels new nodes using the shape or folder name (and keeps any root-level shapes grouped as <strong>RootShapes</strong>)</li>
+          </ul>
+        </div>
+      </article>
 
 
       <!-- 1) Portable .nuke Bootstrap -->
@@ -360,5 +433,36 @@
   </footer>
 
   <script src="site.js"></script>
+
+  <script>
+    // Play tool preview videos only while hovering anywhere on the card
+    document.querySelectorAll('.tool-project').forEach(card => {
+      const vid = card.querySelector('video');
+      if (!vid) return;
+
+      // Start paused at first frame
+      try { vid.pause(); vid.currentTime = 0; } catch (e) {}
+
+      const playVid = () => {
+        // play() can reject if browser blocks it; videos are muted so usually OK
+        const p = vid.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+      };
+
+      const stopVid = () => {
+        try { vid.pause(); vid.currentTime = 0; } catch (e) {}
+      };
+
+      card.addEventListener('mouseenter', playVid);
+      card.addEventListener('mouseleave', stopVid);
+
+      // Touch fallback: tap once to play/pause
+      card.addEventListener('touchstart', () => {
+        if (vid.paused) playVid();
+        else stopVid();
+      }, { passive: true });
+    });
+  </script>
+
 </body>
 </html>
