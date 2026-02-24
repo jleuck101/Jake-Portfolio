@@ -35,13 +35,16 @@
     <section class="section section-intro">
       <h2>Tools / Pipeline</h2>
       <p class="muted">
-        Workflow tools and Nuke customizations focused on speed, consistency, and clean handoff.
-        Preview clips are presented in a 16:9 format.
+        Workflow tools and Nuke customizations. I like spending a little extra time now to save a lot of time later.
       </p>
     </section>
 
     <section class="section" id="tools-projects">
       <h3>Selected Tools</h3>
+
+      <div id="preview-toast" class="preview-toast" aria-live="polite">
+        Tip: Hover anywhere on a card to play the preview.
+      </div>
 
             <!-- NEW) Autocrop — Range + Padding -->
       <article class="tool-project">
@@ -74,35 +77,190 @@
         </div>
       </article>
       
-      <!-- NEW) Read Node — Repath Toolkit -->
+<!-- NEW) Transform — Concatenate / Split Operations -->
+<article class="tool-project">
+  <div class="tool-project__media" aria-label="Transform concatenate and split operations preview">
+    <div class="tool-project__badge">Preview</div>
+    <video class="tool-project__video" loop muted playsinline preload="metadata">
+      <source src="videos/previews/transform_split_concatenate.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="tool-project__body">
+    <header class="tool-project__header">
+      <h4>Transform — Concatenate / Split Operations</h4>
+      <div class="tool-project__meta">
+        <span class="tool-tag">Nuke</span>
+        <span class="tool-tag">Transforms</span>
+        <span class="tool-tag">Cleanup</span>
+      </div>
+    </header>
+
+    <p class="muted tool-project__lead">
+      Pair of hotbox utilities for breaking a Transform into readable per-operation nodes, then recombining them back into a single Transform.
+    </p>
+
+    <ul class="tool-project__bullets">
+      <li><strong>Split Transform Operations</strong>: splits translate/rotate/scale/skew (and optional center) into separate Transform nodes while preserving animation/expressions and skew order</li>
+      <li><strong>Concatenate Transforms</strong>: recombines a straight chain back into one Transform (non-destructive for split-generated chains)</li>
+      <li>Temporarily disables Auto-Key to avoid creating unwanted keys</li>
+    </ul>
+  </div>
+</article>
+
+      <!-- Split Roto Shapes -->
       <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Read Node Repath Toolkit preview">
+        <div class="tool-project__media" aria-label="Split roto shapes preview">
           <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
+          <video class="tool-project__video" loop muted playsinline preload="metadata">
+            <source src="videos/previews/split_roto_shapes.mp4" type="video/mp4">
+          </video>
         </div>
 
         <div class="tool-project__body">
           <header class="tool-project__header">
-            <h4>Read Node — Repath Toolkit</h4>
+            <h4>Roto — Split Shapes into Nodes</h4>
             <div class="tool-project__meta">
               <span class="tool-tag">Nuke</span>
-              <span class="tool-tag">Media</span>
-              <span class="tool-tag">Pipeline</span>
+              <span class="tool-tag">Roto</span>
+              <span class="tool-tag">Organization</span>
             </div>
           </header>
 
           <p class="muted tool-project__lead">
-            Read-node hotbox utilities for fast repathing and sequence refresh during transfers and shot updates.
+            Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for handoff, reuse, troubleshooting, or performance-heavy comps. Inspired by a similar tool from Alex Villabon.
           </p>
 
           <ul class="tool-project__bullets">
-            <li><strong>Replace All File Paths</strong>: selects all Reads/Writes and opens Nuke’s filename search/replace for global repaths</li>
-            <li><strong>Frame Range to Files</strong>: rebuilds the Read path using the detected sequence + frame range from disk</li>
-            <li>Designed to reduce “missing Read” cleanup time when moving between machines/drives</li>
+            <li>Creates <strong>one new node per shape</strong> (All), <strong>per selected shape</strong>, or <strong>per top-level folder</strong> (Layers mode)</li>
+            <li>Copies the original node’s settings and preserves animation/expressions where possible</li>
+            <li>Auto-labels new nodes using the shape or folder name (and keeps any root-level shapes grouped as <strong>RootShapes</strong>)</li>
           </ul>
         </div>
       </article>
 
+     <!-- nuke bootstrap -->
+     <article class="tool-project">
+      <div class="tool-project__media tool-project__media--placeholder" aria-label="Portable .nuke bootstrap preview">
+        <div class="tool-project__badge">Preview</div>
+        <div class="tool-project__placeholder">Preview coming soon</div>
+      </div>
+
+      <div class="tool-project__body">
+        <header class="tool-project__header">
+          <h4>Portable .nuke Bootstrap (Init/Menu System)</h4>
+          <div class="tool-project__meta">
+            <span class="tool-tag">Pipeline</span>
+            <span class="tool-tag">Automation</span>
+            <span class="tool-tag">Portability</span>
+          </div>
+        </header>
+
+        <p class="muted tool-project__lead">
+          Portable startup + menu system that auto-loads tool folders, builds menus dynamically, and supports per-machine toggles.
+        </p>
+
+        <ul class="tool-project__bullets">
+          <li>Auto-loads Python tools, gizmos, ToolSets, icons, sounds, presets, and workspaces</li>
+          <li>Dynamic menu generation (ex: auto “Assorted Gizmos” menu)</li>
+          <li>Per-machine feature toggles to keep setups reliable across workstations</li>
+        </ul>
+      </div>
+    </article>
+
+     <!-- 2) Perforce Sync Helper -->
+     <article class="tool-project">
+      <div class="tool-project__media tool-project__media--placeholder" aria-label="Perforce Sync Helper preview">
+        <div class="tool-project__badge">Preview</div>
+        <div class="tool-project__placeholder">Preview coming soon</div>
+      </div>
+
+      <div class="tool-project__body">
+        <header class="tool-project__header">
+          <h4>Perforce Sync Helper (Nuke-Integrated)</h4>
+          <div class="tool-project__meta">
+            <span class="tool-tag">Perforce</span>
+            <span class="tool-tag">Reliability</span>
+            <span class="tool-tag">Handoff</span>
+          </div>
+        </header>
+
+        <p class="muted tool-project__lead">
+          Nuke-integrated utilities to reduce missing Read issues and make syncing repeatable.
+        </p>
+
+        <ul class="tool-project__bullets">
+          <li>Finds missing Read media from inside Nuke</li>
+          <li>Guided sync workflow to reduce manual mistakes</li>
+          <li>Supports consistent “get latest” habits across machines</li>
+        </ul>
+      </div>
+    </article>
+
+              <!-- 3) Label Manager -->
+              <article class="tool-project">
+                <div class="tool-project__media tool-project__media--placeholder" aria-label="Label Manager preview">
+                  <div class="tool-project__badge">Preview</div>
+                  <div class="tool-project__placeholder">Preview coming soon</div>
+                </div>
+        
+                <div class="tool-project__body">
+                  <header class="tool-project__header">
+                    <h4>Label Manager</h4>
+                    <div class="tool-project__meta">
+                      <span class="tool-tag">Nuke</span>
+                      <span class="tool-tag">Script Hygiene</span>
+                      <span class="tool-tag">Readability</span>
+                    </div>
+                  </header>
+        
+                  <p class="muted tool-project__lead">
+                    Labeling and organization system designed to keep node graphs readable at scale.
+                  </p>
+        
+                  <ul class="tool-project__bullets">
+                    <li>Standardized label patterns to reduce “mystery nodes”</li>
+                    <li>Auto-update behavior to keep labels consistent as scripts evolve</li>
+                    <li>Optimized for fast navigation in dense comps</li>
+                  </ul>
+                </div>
+              </article>
+
+     <!-- repath -->
+     <article class="tool-project">
+      <div class="tool-project__media tool-project__media--placeholder" aria-label="Read Node Repath Toolkit preview">
+        <div class="tool-project__badge">Preview</div>
+        <div class="tool-project__placeholder">Preview coming soon</div>
+      </div>
+
+      <div class="tool-project__body">
+        <header class="tool-project__header">
+          <h4>Read Node — Repath Toolkit</h4>
+          <div class="tool-project__meta">
+            <span class="tool-tag">Nuke</span>
+            <span class="tool-tag">Media</span>
+            <span class="tool-tag">Pipeline</span>
+          </div>
+        </header>
+
+        <p class="muted tool-project__lead">
+          Read-node hotbox utilities for fast repathing and sequence refresh during transfers and shot updates.
+        </p>
+
+        <ul class="tool-project__bullets">
+          <li><strong>Replace All File Paths</strong>: selects all Reads/Writes and opens Nuke’s filename search/replace for global repaths</li>
+          <li><strong>Frame Range to Files</strong>: rebuilds the Read path using the detected sequence + frame range from disk</li>
+          <li>Designed to reduce “missing Read” cleanup time when moving between machines/drives</li>
+        </ul>
+      </div>
+    </article>
+
+
+
+
+
+
+ 
       <!-- NEW) Read Node — Timing / Alignment -->
       <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Read Node Timing and Alignment preview">
@@ -135,180 +293,12 @@
 
 
 
-      <!-- NEW) Transform — Concatenate / Split Operations -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Transform concatenate and split operations preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
-
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Transform — Concatenate / Split Operations</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Nuke</span>
-              <span class="tool-tag">Transforms</span>
-              <span class="tool-tag">Cleanup</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Hotbox utilities for flattening multi-node Transform chains into one node, or breaking a single Transform into readable, operation-specific nodes.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li><strong>Concatenate Transforms</strong>: selects a straight chain of Transform nodes and bakes the combined result into the last node (then rewires and deletes upstream nodes)</li>
-            <li><strong>Split Transform Operations</strong>: splits translate/rotate/scale/skew (and optional center) into separate Transform nodes, preserving animation/expressions and skew order</li>
-            <li>Temporarily disables Auto-Key to avoid creating unwanted keys on the current frame</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- NEW) Roto — Split Shapes into Nodes -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Split roto shapes preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
-
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Roto — Split Shapes into Nodes</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Nuke</span>
-              <span class="tool-tag">Roto</span>
-              <span class="tool-tag">Organization</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for handoff, reuse, troubleshooting, or performance-heavy comps. Inspired by a similar tool from Alex Villalbón.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Creates <strong>one new node per shape</strong> (All), <strong>per selected shape</strong>, or <strong>per top-level folder</strong> (Layers mode)</li>
-            <li>Copies the original node’s settings and preserves animation/expressions where possible</li>
-            <li>Auto-labels new nodes using the shape or folder name (and keeps any root-level shapes grouped as <strong>RootShapes</strong>)</li>
-          </ul>
-        </div>
-      </article>
 
 
-      <!-- 1) Portable .nuke Bootstrap -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Portable .nuke bootstrap preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
+ 
 
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Portable .nuke Bootstrap (Init/Menu System)</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Pipeline</span>
-              <span class="tool-tag">Automation</span>
-              <span class="tool-tag">Portability</span>
-            </div>
-          </header>
+ 
 
-          <p class="muted tool-project__lead">
-            Portable startup + menu system that auto-loads tool folders, builds menus dynamically, and supports per-machine toggles.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Auto-loads Python tools, gizmos, ToolSets, icons, sounds, presets, and workspaces</li>
-            <li>Dynamic menu generation (ex: auto “Assorted Gizmos” menu)</li>
-            <li>Per-machine feature toggles to keep setups reliable across workstations</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 2) Perforce Sync Helper -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Perforce Sync Helper preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
-
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Perforce Sync Helper (Nuke-Integrated)</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Perforce</span>
-              <span class="tool-tag">Reliability</span>
-              <span class="tool-tag">Handoff</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Nuke-integrated utilities to reduce missing Read issues and make syncing repeatable.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Finds missing Read media from inside Nuke</li>
-            <li>Guided sync workflow to reduce manual mistakes</li>
-            <li>Supports consistent “get latest” habits across machines</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 3) Label Manager -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Label Manager preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
-
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Label Manager</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Nuke</span>
-              <span class="tool-tag">Script Hygiene</span>
-              <span class="tool-tag">Readability</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Labeling and organization system designed to keep node graphs readable at scale.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Standardized label patterns to reduce “mystery nodes”</li>
-            <li>Auto-update behavior to keep labels consistent as scripts evolve</li>
-            <li>Optimized for fast navigation in dense comps</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Live Sampler -->
-      <article class="tool-project">
-        <div class="tool-project__media tool-project__media--placeholder" aria-label="Live Sampler preview">
-          <div class="tool-project__badge">Preview</div>
-          <div class="tool-project__placeholder">Preview coming soon</div>
-        </div>
-
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Live Sampler</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Lookdev</span>
-              <span class="tool-tag">Integration</span>
-              <span class="tool-tag">Fast Checks</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Viewer-side sampling helper for fast checks during lookdev and integration.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Quick value checks for match/patch/grade work</li>
-            <li>Designed to stay lightweight during iteration</li>
-            <li>Useful for spotting inconsistencies early</li>
-          </ul>
-        </div>
-      </article>
 
       <!-- Edge Mid Finder -->
       <article class="tool-project">
@@ -426,6 +416,37 @@
         </div>
       </article>
 
+
+      <!-- Live Sampler -->
+      <article class="tool-project">
+        <div class="tool-project__media tool-project__media--placeholder" aria-label="Live Sampler preview">
+          <div class="tool-project__badge">Preview</div>
+          <div class="tool-project__placeholder">Preview coming soon</div>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Live Sampler</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Lookdev</span>
+              <span class="tool-tag">Integration</span>
+              <span class="tool-tag">Fast Checks</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Viewer-side sampling helper for fast checks during lookdev and integration.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Quick value checks for match/patch/grade work</li>
+            <li>Designed to stay lightweight during iteration</li>
+            <li>Useful for spotting inconsistencies early</li>
+          </ul>
+        </div>
+      </article>
+
+
       <!-- Backdrop Helper (lower + cautious credit) -->
       <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Backdrop Helper customizations preview">
@@ -465,34 +486,108 @@
   <script src="site.js"></script>
 
   <script>
-    // Play tool preview videos only while hovering anywhere on the card
-    document.querySelectorAll('.tool-project').forEach(card => {
-      const vid = card.querySelector('video');
-      if (!vid) return;
-
-      // Start paused at first frame
-      try { vid.pause(); vid.currentTime = 0; } catch (e) {}
-
-      const playVid = () => {
-        // play() can reject if browser blocks it; videos are muted so usually OK
-        const p = vid.play();
-        if (p && typeof p.catch === 'function') p.catch(() => {});
-      };
-
-      const stopVid = () => {
-        try { vid.pause(); vid.currentTime = 0; } catch (e) {}
-      };
-
-      card.addEventListener('mouseenter', playVid);
-      card.addEventListener('mouseleave', stopVid);
-
-      // Touch fallback: tap once to play/pause
-      card.addEventListener('touchstart', () => {
-        if (vid.paused) playVid();
-        else stopVid();
-      }, { passive: true });
-    });
-  </script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll('.tool-project'));
+      const hasTouch = window.matchMedia('(hover: none)').matches || ('ontouchstart' in window);
+    
+      // Helper: pause + reset to frame 0 (keeps thumbnails consistent)
+      function stopVideo(v) {
+        try { v.pause(); } catch (e) {}
+        try { v.currentTime = 0; } catch (e) {}
+      }
+    
+      // -----------------------------
+      // Desktop: play on hover (anywhere on card)
+      // -----------------------------
+      if (!hasTouch) {
+        cards.forEach(card => {
+          const v = card.querySelector('video');
+          if (!v) return;
+    
+          // Let hover trigger from the card, not the video element
+          v.style.pointerEvents = 'none';
+    
+          card.addEventListener('mouseenter', () => {
+            v.play().catch(() => {});
+          });
+    
+          card.addEventListener('mouseleave', () => {
+            stopVideo(v);
+          });
+        });
+        return; // desktop done
+      }
+    
+      // -----------------------------
+      // Mobile: auto-play the most-centered card
+      // -----------------------------
+      const videos = cards
+        .map(card => ({ card, v: card.querySelector('video') }))
+        .filter(x => x.v);
+    
+      // iOS: must be muted/playsinline to autoplay
+      videos.forEach(({ v }) => {
+        v.muted = true;
+        v.setAttribute('playsinline', '');
+        v.preload = 'metadata';
+        v.controls = false;
+      });
+    
+      function playMostCentered() {
+        const midY = window.innerHeight / 2;
+        let best = null;
+        let bestDist = Infinity;
+    
+        videos.forEach(({ card, v }) => {
+          const r = card.getBoundingClientRect();
+          // Only consider cards that overlap viewport
+          if (r.bottom < 0 || r.top > window.innerHeight) {
+            stopVideo(v);
+            return;
+          }
+          const cardMid = (r.top + r.bottom) / 2;
+          const dist = Math.abs(cardMid - midY);
+          if (dist < bestDist) {
+            bestDist = dist;
+            best = { card, v };
+          }
+        });
+    
+        videos.forEach(({ v }) => {
+          // Pause everything else
+          if (!best || v !== best.v) stopVideo(v);
+        });
+    
+        if (best) best.v.play().catch(() => {});
+      }
+    
+      // Run on load + while scrolling (throttled)
+      let t = null;
+      function schedule() {
+        if (t) return;
+        t = setTimeout(() => {
+          t = null;
+          playMostCentered();
+        }, 120);
+      }
+    
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      playMostCentered();
+    
+      // Optional: tap the media area to toggle (avoids hijacking scroll on whole card)
+      videos.forEach(({ card, v }) => {
+        const media = card.querySelector('.tool-project__media') || card;
+        media.addEventListener('click', (e) => {
+          // allow normal link clicks elsewhere
+          e.preventDefault();
+          e.stopPropagation();
+          if (v.paused) v.play().catch(() => {});
+          else stopVideo(v);
+        });
+      });
+    })();
+    </script>
 
 </body>
 </html>

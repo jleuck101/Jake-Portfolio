@@ -142,4 +142,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // =========================================================
+  // Tools page: one-time "hover to play" toast (pops up, then goes away)
+  // Requires tools.html to include:
+  //   <div id="preview-toast" class="preview-toast">...</div>
+  // =========================================================
+  const toast = document.getElementById('preview-toast');
+  if (toast) {
+    const key = 'tools_preview_toast_seen_v1';
+    const already = localStorage.getItem(key);
+
+    if (!already) {
+      localStorage.setItem(key, '1');
+
+      // Delay slightly so it feels intentional
+      setTimeout(() => {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2600);
+      }, 600);
+    }
+  }
 });
