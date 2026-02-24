@@ -1,12 +1,12 @@
 .DS_Store
 
 
-# Ignore video files
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.flv
+# (Video files tracked for GitHub Pages previews)
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
+# *.flv
 
 # Ignore any files with "test" in the name
 *test*
