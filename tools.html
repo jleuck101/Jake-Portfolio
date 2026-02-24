@@ -43,6 +43,36 @@
     <section class="section" id="tools-projects">
       <h3>Selected Tools</h3>
 
+            <!-- NEW) Autocrop — Range + Padding -->
+      <article class="tool-project">
+        <div class="tool-project__media" aria-label="Autocrop Range and Padding preview">
+          <div class="tool-project__badge">Preview</div>
+          <video class="tool-project__video" loop muted playsinline preload="metadata">
+            <source src="videos/previews/autocrop_gui.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="tool-project__body">
+          <header class="tool-project__header">
+            <h4>Autocrop — Range + Padding</h4>
+            <div class="tool-project__meta">
+              <span class="tool-tag">Nuke</span>
+              <span class="tool-tag">Crop</span>
+              <span class="tool-tag">Workflow</span>
+            </div>
+          </header>
+
+          <p class="muted tool-project__lead">
+            Autocrop over a custom frame range, then keep the animated crop curve while adding a padding slider for safe comps.
+          </p>
+
+          <ul class="tool-project__bullets">
+            <li>Custom panel: First / Last / Increment, Layer, and total Padding</li>
+            <li>Batch-friendly: runs per selected node and creates a Crop node each time</li>
+            <li>Adds a <strong>Padding (px)</strong> knob and expands the crop box via expressions so the original autocrop animation is preserved</li>
+          </ul>
+        </div>
+      </article>
       
       <!-- NEW) Read Node — Repath Toolkit -->
       <article class="tool-project">
@@ -102,36 +132,7 @@
         </div>
       </article>
 
-      <!-- NEW) Autocrop — Range + Padding -->
-      <article class="tool-project">
-        <div class="tool-project__media" aria-label="Autocrop Range and Padding preview">
-          <div class="tool-project__badge">Preview</div>
-          <video class="tool-project__video" loop muted playsinline preload="metadata">
-            <source src="videos/previews/autocrop_gui.mp4" type="video/mp4">
-          </video>
-        </div>
 
-        <div class="tool-project__body">
-          <header class="tool-project__header">
-            <h4>Autocrop — Range + Padding</h4>
-            <div class="tool-project__meta">
-              <span class="tool-tag">Nuke</span>
-              <span class="tool-tag">Crop</span>
-              <span class="tool-tag">Workflow</span>
-            </div>
-          </header>
-
-          <p class="muted tool-project__lead">
-            Autocrop over a custom frame range, then keep the animated crop curve while adding a padding slider for safe comps.
-          </p>
-
-          <ul class="tool-project__bullets">
-            <li>Custom panel: First / Last / Increment, Layer, and total Padding</li>
-            <li>Batch-friendly: runs per selected node and creates a Crop node each time</li>
-            <li>Adds a <strong>Padding (px)</strong> knob and expands the crop box via expressions so the original autocrop animation is preserved</li>
-          </ul>
-        </div>
-      </article>
 
 
       <!-- NEW) Transform — Concatenate / Split Operations -->
@@ -366,6 +367,35 @@
           </ul>
         </div>
       </article>
+
+<!-- Backup Node — Safety Snapshot -->
+<article class="tool-project">
+  <div class="tool-project__media tool-project__media--placeholder" aria-label="Backup Node preview">
+    <div class="tool-project__badge">Preview</div>
+    <div class="tool-project__placeholder">Preview coming soon</div>
+  </div>
+
+  <div class="tool-project__body">
+    <header class="tool-project__header">
+      <h4>Backup Node — Safety Snapshot</h4>
+      <div class="tool-project__meta">
+        <span class="tool-tag">Nuke</span>
+        <span class="tool-tag">Safety</span>
+        <span class="tool-tag">Workflow</span>
+      </div>
+    </header>
+
+    <p class="muted tool-project__lead">
+      One-click checkpoint before risky edits (tracking tweaks, keyframe cleanup, or heavy node refactors).
+    </p>
+
+    <ul class="tool-project__bullets">
+      <li>Duplicates the selected node(s) into a <strong>_Backup</strong> copy for quick rollback</li>
+      <li>Disconnects all inputs so the backup can’t affect the comp</li>
+      <li>Disables the backup when possible, offsets it in the DAG, and restores the Viewer input if it was temporarily hijacked</li>
+    </ul>
+  </div>
+</article>
 
       <!-- Auto Rack Focus -->
       <article class="tool-project">
