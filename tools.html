@@ -35,7 +35,7 @@
     <section class="section section-intro">
       <h2>Tools / Pipeline</h2>
       <p class="muted">
-        Workflow tools and Nuke customizations. Spending a little extra of my time to save you some of yours.
+        Workflow tools and Nuke customizations. Combining my CS minor and the acceleration of AI tools, I've been able to smooth many of the bumps in the road I come across. Spending a little extra of my time to save you some of yours.
       </p>
     </section>
 
@@ -61,18 +61,18 @@
           <div class="tool-project__meta">
             <span class="tool-tag">Perforce</span>
             <span class="tool-tag">Reliability</span>
-            <span class="tool-tag">Handoff</span>
+            <span class="tool-tag">Quickstart</span>
           </div>
         </header>
 
         <p class="muted tool-project__lead">
-          Nuke-integrated utilities to reduce missing Read issues and make syncing repeatable.
+          Perforce integration in Nuke, allowing users to stay up to date with a single click.
         </p>
 
         <ul class="tool-project__bullets">
-          <li>Finds missing Read media from inside Nuke</li>
-          <li>Guided sync workflow to reduce manual mistakes</li>
-          <li>Supports consistent “get latest” habits across machines</li>
+          <li>Finds missing Read media from inside Nuke script</li>
+          <li>One-click sync workflow ensures all Read nodes are up-to-date</li>
+          <li>Quick and tuneable pruning of files not in active Nuke script</li>
         </ul>
       </div>
     </article>
@@ -88,7 +88,7 @@
 
         <div class="tool-project__body">
           <header class="tool-project__header">
-            <h4>Autocrop — Range + Padding</h4>
+            <h4>Autocrop GUI — Range + Padding</h4>
             <div class="tool-project__meta">
               <span class="tool-tag">Nuke</span>
               <span class="tool-tag">Crop</span>
@@ -97,12 +97,12 @@
           </header>
 
           <p class="muted tool-project__lead">
-            Autocrop over a custom frame range, then keep the animated crop curve while adding a padding slider for safe comps.
+            Custom Autocrop interface, allowing the user better control of bounding boxes with functionality not in the regular autocrop function.
           </p>
 
           <ul class="tool-project__bullets">
             <li>Custom panel: First / Last / Increment, Layer, and total Padding</li>
-            <li>Batch-friendly: runs per selected node and creates a Crop node each time</li>
+            <li>Custom options allow for quicker processing</li>
             <li>Adds a <strong>Padding (px)</strong> knob and expands the crop box via expressions so the original autocrop animation is preserved</li>
           </ul>
         </div>
@@ -133,8 +133,8 @@
 
     <ul class="tool-project__bullets">
       <li><strong>Split Transform Operations</strong>: splits translate/rotate/scale/skew (and optional center) into separate Transform nodes while preserving animation/expressions and skew order</li>
-      <li><strong>Concatenate Transforms</strong>: recombines a straight chain back into one Transform (non-destructive for split-generated chains)</li>
-      <li>Temporarily disables Auto-Key to avoid creating unwanted keys</li>
+      <li><strong>Concatenate Transforms</strong>: recombines a straight chain back into one Transform (non-destructive)</li>
+      <li>Smartly splits based off of knobs with non-default values</li>
     </ul>
   </div>
 </article>
@@ -159,13 +159,13 @@
           </header>
 
           <p class="muted tool-project__lead">
-            Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for handoff, reuse, troubleshooting, or performance-heavy comps. Inspired by a similar tool from Alex Villabon.
+            Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for troubleshooting, performance optimization, or per-shape effects. Inspired by a similar tool from Alex Villabon.
           </p>
 
           <ul class="tool-project__bullets">
             <li>Creates <strong>one new node per shape</strong> (All), <strong>per selected shape</strong>, or <strong>per top-level folder</strong> (Layers mode)</li>
             <li>Copies the original node’s settings and preserves animation/expressions where possible</li>
-            <li>Auto-labels new nodes using the shape or folder name (and keeps any root-level shapes grouped as <strong>RootShapes</strong>)</li>
+            <li>Auto-labels new nodes using the shape or folder name</li>
           </ul>
         </div>
       </article>
@@ -190,13 +190,13 @@
     </header>
 
     <p class="muted tool-project__lead">
-      Labeling and organization system designed to keep node graphs readable at scale.
+      Simple and highly repeatable Labeling system to keep artists organized.
     </p>
 
     <ul class="tool-project__bullets">
-      <li>Standardized label patterns to reduce “mystery nodes”</li>
+      <li>Standardized label patterns to reduce unidentified nodes</li>
       <li>Auto-update behavior to keep labels consistent as scripts evolve</li>
-      <li>Optimized for fast navigation in dense comps</li>
+      <li>Per-framenob values directly in label for quick value checks</li>
     </ul>
   </div>
 </article>
@@ -220,13 +220,13 @@
         </header>
 
         <p class="muted tool-project__lead">
-          Portable startup + menu system that auto-loads tool folders, builds menus dynamically, and supports per-machine toggles.
+          Portable startup + menu system that auto-loads tool folders, builds menus dynamically, making new gizmos work right away.
         </p>
 
         <ul class="tool-project__bullets">
           <li>Auto-loads Python tools, gizmos, ToolSets, icons, sounds, presets, and workspaces</li>
-          <li>Dynamic menu generation (ex: auto “Assorted Gizmos” menu)</li>
-          <li>Per-machine feature toggles to keep setups reliable across workstations</li>
+          <li>Dynamic menu generation to keep gizmos organized</li>
+          <li>Automatically works with tool libraries like PxF, Nuke Survival Toolkit</li>
         </ul>
       </div>
     </article>
@@ -332,8 +332,8 @@
 
           <ul class="tool-project__bullets">
             <li>Supports consistent edge placement (less eyeballing)</li>
-            <li>Helpful for seam work and tight integrations</li>
-            <li>Designed for repeatability across frames</li>
+            <li>Gives roto artists a mathematically true midpoint to base their edges off of</li>
+            <li>Calculates blur radius of given edge</li>
           </ul>
         </div>
       </article>
@@ -356,13 +356,12 @@
           </header>
 
           <p class="muted tool-project__lead">
-            Helpers focused on predictable output naming/structure and reducing mis-versioning risk.
+            "JL_Precomp", intelligently designed Precomp Switch focused on predictable output naming/structure and reducing version mismatches.
           </p>
 
           <ul class="tool-project__bullets">
-            <li>Encourages consistent write outputs and review structure</li>
-            <li>Reduces “wrong version” mistakes during fast iteration</li>
-            <li>Keeps output folders organized under pressure</li>
+            <li>Easily readable toggle, color-coded with explicit read and write nodes</li>
+            <li>Read and write nodes are synchronized, eliminating incorrect versioning</li>
           </ul>
         </div>
       </article>
@@ -376,7 +375,7 @@
 
   <div class="tool-project__body">
     <header class="tool-project__header">
-      <h4>Backup Node — Safety Snapshot</h4>
+      <h4>Backup Node — Safety Function</h4>
       <div class="tool-project__meta">
         <span class="tool-tag">Nuke</span>
         <span class="tool-tag">Safety</span>
@@ -385,25 +384,25 @@
     </header>
 
     <p class="muted tool-project__lead">
-      One-click checkpoint before risky edits (tracking tweaks, keyframe cleanup, or heavy node refactors).
+      One-click backup of a node before risky edits (tracking tweaks, keyframe cleanup, etc).
     </p>
 
     <ul class="tool-project__bullets">
       <li>Duplicates the selected node(s) into a <strong>_Backup</strong> copy for quick rollback</li>
-      <li>Disconnects all inputs so the backup can’t affect the comp</li>
-      <li>Disables the backup when possible, offsets it in the DAG, and restores the Viewer input if it was temporarily hijacked</li>
+      <li>Quickly disconnects inputs and rewires to current node</li>
+      <li>Disables the backup copy and consistently offsets it in the node graph for obvious correlation</li>
     </ul>
   </div>
 </article>
 
       <!-- Auto Rack Focus -->
-      <article class="tool-project">
+ <!--        <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Auto Rack Focus Helper preview">
           <div class="tool-project__badge">Preview</div>
           <div class="tool-project__placeholder">Preview coming soon</div>
         </div>
 
-        <div class="tool-project__body">
+     <div class="tool-project__body">
           <header class="tool-project__header">
             <h4>Auto Rack Focus Helper</h4>
             <div class="tool-project__meta">
@@ -424,10 +423,68 @@
           </ul>
         </div>
       </article>
+-->
 
+<!-- Render Output Utilities -->
+<article class="tool-project">
+  <div class="tool-project__media tool-project__media--placeholder" aria-label="Render Output Utilities preview">
+    <div class="tool-project__badge">Preview</div>
+    <div class="tool-project__placeholder">Preview coming soon</div>
+  </div>
+
+  <div class="tool-project__body">
+    <header class="tool-project__header">
+      <h4>Render Output Utilities</h4>
+      <div class="tool-project__meta">
+        <span class="tool-tag">Nuke</span>
+        <span class="tool-tag">Write Nodes</span>
+        <span class="tool-tag">Workflow</span>
+      </div>
+    </header>
+
+    <p class="muted tool-project__lead">
+      Write-node utilities for faster iteration and cleaner output management once render paths and settings are already in place.
+    </p>
+
+    <ul class="tool-project__bullets">
+      <li><strong>Version Up + Render</strong> bumps a selected Write node to the next version and renders in one step</li>
+      <li>Preserves existing render setup behavior, including using the Write node’s frame limits when enabled (otherwise the project range)</li>
+      <li><strong>Rename Image Sequence</strong> updates both the sequence folder and filename stem together while preserving padding and extension (e.g. <strong>%04d</strong>, <strong>####</strong>, <strong>.exr</strong>)</li>
+    </ul>
+  </div>
+</article>
+
+<!-- Frame Utilities -->
+<article class="tool-project">
+  <div class="tool-project__media tool-project__media--placeholder" aria-label="Frame Utilities preview">
+    <div class="tool-project__badge">Preview</div>
+    <div class="tool-project__placeholder">Preview coming soon</div>
+  </div>
+
+  <div class="tool-project__body">
+    <header class="tool-project__header">
+      <h4>Frame Utilities</h4>
+      <div class="tool-project__meta">
+        <span class="tool-tag">Nuke</span>
+        <span class="tool-tag">Timeline</span>
+        <span class="tool-tag">Workflow Speed</span>
+      </div>
+    </header>
+
+    <p class="muted tool-project__lead">
+      Timeline and clipboard helpers for quickly copying frame references and navigating frame ranges during comp work.
+    </p>
+
+    <ul class="tool-project__bullets">
+      <li>One-click copy for <strong>first</strong>, <strong>last</strong>, and <strong>current</strong> frame values</li>
+      <li>Copies both the <strong>project frame range</strong> and active <strong>Viewer playback in/out range</strong></li>
+      <li><strong>Jump N Frames</strong> tool moves from the current frame to an inclusive end frame, with optional clipboard copy of the destination frame</li>
+    </ul>
+  </div>
+</article>
 
       <!-- Live Sampler -->
-      <article class="tool-project">
+ <!--     <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Live Sampler preview">
           <div class="tool-project__badge">Preview</div>
           <div class="tool-project__placeholder">Preview coming soon</div>
@@ -453,11 +510,39 @@
             <li>Useful for spotting inconsistencies early</li>
           </ul>
         </div>
-      </article>
+      </article>-->
 
+<!-- Performance Timer Toggle -->
+<article class="tool-project">
+  <div class="tool-project__media tool-project__media--placeholder" aria-label="Performance Timer Toggle preview">
+    <div class="tool-project__badge">Preview</div>
+    <div class="tool-project__placeholder">Preview coming soon</div>
+  </div>
+
+  <div class="tool-project__body">
+    <header class="tool-project__header">
+      <h4>Performance Timers Toggle</h4>
+      <div class="tool-project__meta">
+        <span class="tool-tag">Nuke</span>
+        <span class="tool-tag">Debugging</span>
+        <span class="tool-tag">Performance</span>
+      </div>
+    </header>
+
+    <p class="muted tool-project__lead">
+      One-click toggle for Nuke performance timers with version-safe checks and clear start/stop feedback.
+    </p>
+
+    <ul class="tool-project__bullets">
+      <li>Toggles performance timers on/off directly from a Hotbox button during script profiling</li>
+      <li>Uses API fallbacks to stay robust across Nuke versions and different builds</li>
+      <li>Optionally resets timer values before starting and prints clear STARTED/STOPPED status in the Script Editor</li>
+    </ul>
+  </div>
+</article>
 
       <!-- Backdrop Helper (lower + cautious credit) -->
-      <article class="tool-project">
+<!--     <article class="tool-project">
         <div class="tool-project__media tool-project__media--placeholder" aria-label="Backdrop Helper customizations preview">
           <div class="tool-project__badge">Preview</div>
           <div class="tool-project__placeholder">Preview coming soon</div>
@@ -484,7 +569,7 @@
           </ul>
         </div>
       </article>
-
+-->
     </section>
   </main>
 

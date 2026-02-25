@@ -931,3 +931,63 @@ body.project-page .meta{
 /* Tools page: tighten the top so "Selected Tools" peeks above the fold */
 .tools-page .section-intro { padding-bottom: 28px; }
 .tools-page #tools-projects.section { padding-top: 28px; }
+
+.project-media {
+  width: 100%;
+  max-width: 920px;
+  margin: 1rem auto 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-media {
+  width: 100%;
+  max-width: 920px;
+  margin: 1rem auto 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.project-media {
+  width: 100%;
+  max-width: 920px;
+  margin: 1rem auto 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Small gallery variant for project pages */
+.project-media--gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  border-radius: 0;     /* let each tile handle its own corners */
+  overflow: visible;
+}
+
+.project-media--gallery .project-media__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #111;
+}
