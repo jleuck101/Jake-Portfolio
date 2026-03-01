@@ -6,8 +6,12 @@ async function loadProjectsData() {
   return res.json();
 }
 
-function renderCard(project) {
-  const badge = project.badge === 'WIP' || project.badge === 'Updating' ? project.badge : null;
+function normalizeBadge(value) {
+  return value === 'WIP' || value === 'Updating' ? value : null;
+}
+
+function renderCard(project, badgeOverride, hasBadgeOverride) {
+  const badge = hasBadgeOverride ? normalizeBadge(badgeOverride) : normalizeBadge(project.badge);
   const classes = badge ? 'project-thumb wip-thumb' : 'project-thumb';
 
   return `
@@ -19,11 +23,31 @@ function renderCard(project) {
   `;
 }
 
-function renderGallery(container, galleryIds, byId) {
-  container.innerHTML = galleryIds
-    .map((id) => byId[id])
+function normalizeGalleryEntry(entry) {
+  if (typeof entry === 'string') {
+    return { id: entry, hasBadgeOverride: false, badge: undefined };
+  }
+
+  if (entry && typeof entry === 'object' && typeof entry.id === 'string') {
+    return {
+      id: entry.id,
+      hasBadgeOverride: Object.prototype.hasOwnProperty.call(entry, 'badge'),
+      badge: entry.badge
+    };
+  }
+
+  return null;
+}
+
+function renderGallery(container, galleryEntries, byId) {
+  container.innerHTML = galleryEntries
+    .map((entry) => normalizeGalleryEntry(entry))
     .filter(Boolean)
-    .map((project) => renderCard(project))
+    .map((entry) => {
+      const project = byId[entry.id];
+      if (!project) return '';
+      return renderCard(project, entry.badge, entry.hasBadgeOverride);
+    })
     .join('');
 }
 
@@ -34,10 +58,10 @@ async function initProjectGalleries() {
     const galleries = data.galleries && typeof data.galleries === 'object' ? data.galleries : {};
     const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
 
-    Object.entries(galleries).forEach(([galleryId, galleryIds]) => {
+    Object.entries(galleries).forEach(([galleryId, galleryEntries]) => {
       const container = document.getElementById(galleryId);
-      if (!container || !Array.isArray(galleryIds)) return;
-      renderGallery(container, galleryIds, byId);
+      if (!container || !Array.isArray(galleryEntries)) return;
+      renderGallery(container, galleryEntries, byId);
     });
   } catch (err) {
     console.warn(err);

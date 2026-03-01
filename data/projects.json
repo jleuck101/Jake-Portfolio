@@ -24,6 +24,7 @@
       "thumbnail": "images/sunset.jpg",
       "alt": "60s Sunset",
       "overlay": "60s Sunset",
+      "badge": null,
       "category": "compositing"
     },
     {
@@ -32,6 +33,70 @@
       "thumbnail": "images/Khans_v24_thumb.jpg",
       "alt": "The Khans are Back",
       "overlay": "The Khans are Back",
+      "badge": null,
+      "category": "compositing"
+    },
+    {
+      "id": "losers",
+      "href": "projects/losers.html",
+      "thumbnail": "images/Losers_Thumb_9A.png",
+      "alt": "LOSERS",
+      "overlay": "LOSERS (Work in Progress)",
+      "badge": "WIP",
+      "category": "compositing"
+    },
+    {
+      "id": "bellyofthebeast",
+      "href": "projects/bellyofthebeast.html",
+      "thumbnail": "images/Belly_of_the_Beast_thumb_v01.jpg",
+      "alt": "Belly of the Beast",
+      "overlay": "Belly of the Beast (Work in Progress)",
+      "badge": "WIP",
+      "category": "compositing"
+    },
+    {
+      "id": "etee",
+      "href": "projects/ETEE.html",
+      "thumbnail": "images/ETEE_thumb_v01.png",
+      "alt": "ETEE",
+      "overlay": "Everything to Everyone Else (Work in Progress)",
+      "badge": "WIP",
+      "category": "compositing"
+    },
+    {
+      "id": "sleep_paralysis",
+      "href": "projects/sleep_paralysis.html",
+      "thumbnail": "images/sleep_paralysis.jpg",
+      "alt": "Sleep Paralysis",
+      "overlay": "Sleep Paralysis",
+      "badge": null,
+      "category": "compositing"
+    },
+    {
+      "id": "boyonroof",
+      "href": "projects/boyonroof.html",
+      "thumbnail": "images/boyonroof.jpg",
+      "alt": "Boy on Rooftop -Integration Exercise",
+      "overlay": "Boy on Rooftop - Integration Exercise",
+      "badge": null,
+      "category": "compositing"
+    },
+    {
+      "id": "kidsrunning",
+      "href": "projects/kidsrunning.html",
+      "thumbnail": "images/kids_running_thumb_no_gummy.png",
+      "alt": "Kids Running - Projection Exercise",
+      "overlay": "Kids Running - Projection Exercise",
+      "badge": null,
+      "category": "compositing"
+    },
+    {
+      "id": "stadium",
+      "href": "projects/stadium.html",
+      "thumbnail": "images/stadium.jpg",
+      "alt": "Stadium - Chromakey Exercise",
+      "overlay": "Stadium - Chromakey Exercise",
+      "badge": null,
       "category": "compositing"
     }
   ],
@@ -41,6 +106,19 @@
       "motopia_wip",
       "sunset",
       "khans"
+    ],
+    "gallery-compositing-projects": [
+      "lagoon_wip",
+      "motopia_wip",
+      "losers",
+      "bellyofthebeast",
+      "etee",
+      { "id": "sunset", "badge": "Updating" },
+      { "id": "khans", "badge": "Updating" },
+      "sleep_paralysis",
+      "boyonroof",
+      "kidsrunning",
+      "stadium"
     ]
   }
 }
