@@ -30,19 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const revealEls = document.querySelectorAll('[data-reveal]');
   if (revealEls.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-in');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+    if (document.body.classList.contains('tools-page')) {
+      revealEls.forEach((el) => el.classList.add('is-in'));
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
 
-    revealEls.forEach((el) => io.observe(el));
+      revealEls.forEach((el) => io.observe(el));
+    }
   }
 
   // =========================================================

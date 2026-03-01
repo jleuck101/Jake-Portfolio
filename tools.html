@@ -15,12 +15,61 @@
 #site-header { min-height: 80px; }
 
     /* Tool preview videos should behave like preview images */
+    .tool-project__media{
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-project__thumb,
     .tool-project__video{
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
       border-radius: inherit;
+    }
+
+    .tool-project__thumb{
+      opacity: 1;
+      transition: opacity 180ms ease;
+    }
+
+    .tool-project__video{
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .tool-project.is-playing .tool-project__video{
+      opacity: 1;
+    }
+
+    .tool-project.is-playing .tool-project__thumb{
+      opacity: 0;
+    }
+
+    .tool-project .tool-project__media .tool-project__badge{
+      opacity: 0;
+      z-index: 3;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+    }
+
+    .tool-project.is-playing .tool-project__media .tool-project__badge{
+      opacity: 1;
+    }
+
+    #preview-toast.preview-toast{
+      top: 14px;
+      left: 14px;
+      bottom: auto;
+      transform: none;
+      pointer-events: none;
+    }
+
+    #preview-toast.preview-toast.show{
+      transform: translateY(-6px);
     }
   </style>
 </head>
@@ -50,9 +99,8 @@
      <article class="tool-project">
       <div class="tool-project__media tool-project__media--placeholder" aria-label="Perforce Sync Helper preview">
         <div class="tool-project__badge">Preview</div>
-    <video class="tool-project__video" loop muted playsinline preload="metadata">
-      <source src="videos/previews/perforce_sync.mp4" type="video/mp4">
-    </video>
+    <img class="tool-project__thumb" src="images/tools_thumbs/perforce_sync.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <video class="tool-project__video" loop muted playsinline preload="none" data-src="videos/previews/perforce_sync.mp4"></video>
       </div>
 
       <div class="tool-project__body">
@@ -81,9 +129,8 @@
       <article class="tool-project">
         <div class="tool-project__media" aria-label="Autocrop Range and Padding preview">
           <div class="tool-project__badge">Preview</div>
-          <video class="tool-project__video" loop muted playsinline preload="metadata">
-            <source src="videos/previews/autocrop_gui.mp4" type="video/mp4">
-          </video>
+          <img class="tool-project__thumb" src="images/tools_thumbs/autocrop_gui.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <video class="tool-project__video" loop muted playsinline preload="none" data-src="videos/previews/autocrop_gui.mp4"></video>
         </div>
 
         <div class="tool-project__body">
@@ -112,9 +159,8 @@
 <article class="tool-project">
   <div class="tool-project__media" aria-label="Transform concatenate and split operations preview">
     <div class="tool-project__badge">Preview</div>
-    <video class="tool-project__video" loop muted playsinline preload="metadata">
-      <source src="videos/previews/transform_split_concatenate.mp4" type="video/mp4">
-    </video>
+    <img class="tool-project__thumb" src="images/tools_thumbs/transform_split_concatenate.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <video class="tool-project__video" loop muted playsinline preload="none" data-src="videos/previews/transform_split_concatenate.mp4"></video>
   </div>
 
   <div class="tool-project__body">
@@ -143,9 +189,8 @@
       <article class="tool-project">
         <div class="tool-project__media" aria-label="Split roto shapes preview">
           <div class="tool-project__badge">Preview</div>
-          <video class="tool-project__video" loop muted playsinline preload="metadata">
-            <source src="videos/previews/split_roto_shapes.mp4" type="video/mp4">
-          </video>
+          <img class="tool-project__thumb" src="images/tools_thumbs/split_roto_shapes.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <video class="tool-project__video" loop muted playsinline preload="none" data-src="videos/previews/split_roto_shapes.mp4"></video>
         </div>
 
         <div class="tool-project__body">
@@ -174,9 +219,8 @@
 <article class="tool-project">
   <div class="tool-project__media" aria-label="Label Manager preview">
     <div class="tool-project__badge">Preview</div>
-    <video class="tool-project__video" loop muted playsinline preload="metadata">
-      <source src="videos/previews/label_manager.mp4" type="video/mp4">
-    </video>
+    <img class="tool-project__thumb" src="images/tools_thumbs/label_manager.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <video class="tool-project__video" loop muted playsinline preload="none" data-src="videos/previews/label_manager.mp4"></video>
   </div>
 
   <div class="tool-project__body">
@@ -583,102 +627,107 @@
     (function () {
       const cards = Array.from(document.querySelectorAll('.tool-project'));
       const hasTouch = window.matchMedia('(hover: none)').matches || ('ontouchstart' in window);
-    
-      // Helper: pause + reset to frame 0 (keeps thumbnails consistent)
-      function stopVideo(v) {
+      const previewToast = document.getElementById('preview-toast');
+      const toastKey = 'tools_preview_toast_seen_v1';
+
+      if (previewToast) {
+        let seen = false;
+        try {
+          seen = localStorage.getItem(toastKey) === '1';
+        } catch (e) {}
+
+        if (!seen) {
+          previewToast.classList.add('show');
+          setTimeout(() => {
+            previewToast.classList.remove('show');
+          }, 3000);
+          try {
+            localStorage.setItem(toastKey, '1');
+          } catch (e) {}
+        } else {
+          previewToast.classList.remove('show');
+        }
+      }
+
+      function ensureVideoAttrs(v) {
+        v.muted = true;
+        v.setAttribute('muted', '');
+        v.setAttribute('playsinline', '');
+        v.preload = 'none';
+        v.loop = true;
+        v.controls = false;
+      }
+
+      function ensureLoaded(v) {
+        if (v.dataset.loaded === '1') return true;
+        const src = v.dataset.src;
+        if (!src) return false;
+        v.src = src;
+        v.load();
+        v.dataset.loaded = '1';
+        return true;
+      }
+
+      function playPreview(card, v) {
+        if (!ensureLoaded(v)) return;
+        card.classList.add('is-playing');
+        v.play().catch(() => {});
+      }
+
+      function stopPreview(card, v, { unload = false } = {}) {
         try { v.pause(); } catch (e) {}
         try { v.currentTime = 0; } catch (e) {}
+        card.classList.remove('is-playing');
+
+        if (unload && v.dataset.loaded === '1') {
+          v.removeAttribute('src');
+          try { v.load(); } catch (e) {}
+          v.dataset.loaded = '0';
+        }
       }
-    
-      // -----------------------------
-      // Desktop: play on hover (anywhere on card)
-      // -----------------------------
-      if (!hasTouch) {
-        cards.forEach(card => {
-          const v = card.querySelector('video');
-          if (!v) return;
-    
-          // Let hover trigger from the card, not the video element
-          v.style.pointerEvents = 'none';
-    
-          card.addEventListener('mouseenter', () => {
-            v.play().catch(() => {});
-          });
-    
-          card.addEventListener('mouseleave', () => {
-            stopVideo(v);
-          });
-        });
-        return; // desktop done
-      }
-    
-      // -----------------------------
-      // Mobile: auto-play the most-centered card
-      // -----------------------------
-      const videos = cards
-        .map(card => ({ card, v: card.querySelector('video') }))
-        .filter(x => x.v);
-    
-      // iOS: must be muted/playsinline to autoplay
-      videos.forEach(({ v }) => {
-        v.muted = true;
-        v.setAttribute('playsinline', '');
-        v.preload = 'metadata';
-        v.controls = false;
+
+      const previews = cards
+        .map((card) => ({ card, v: card.querySelector('video.tool-project__video') }))
+        .filter((item) => item.v);
+
+      previews.forEach(({ v }) => {
+        ensureVideoAttrs(v);
+        v.dataset.loaded = '0';
       });
-    
-      function playMostCentered() {
-        const midY = window.innerHeight / 2;
-        let best = null;
-        let bestDist = Infinity;
-    
-        videos.forEach(({ card, v }) => {
-          const r = card.getBoundingClientRect();
-          // Only consider cards that overlap viewport
-          if (r.bottom < 0 || r.top > window.innerHeight) {
-            stopVideo(v);
-            return;
-          }
-          const cardMid = (r.top + r.bottom) / 2;
-          const dist = Math.abs(cardMid - midY);
-          if (dist < bestDist) {
-            bestDist = dist;
-            best = { card, v };
-          }
+
+      if (!hasTouch) {
+        previews.forEach(({ card, v }) => {
+          v.style.pointerEvents = 'none';
+
+          card.addEventListener('mouseenter', () => {
+            playPreview(card, v);
+          });
+
+          card.addEventListener('mouseleave', () => {
+            stopPreview(card, v, { unload: false });
+          });
         });
-    
-        videos.forEach(({ v }) => {
-          // Pause everything else
-          if (!best || v !== best.v) stopVideo(v);
-        });
-    
-        if (best) best.v.play().catch(() => {});
+        return;
       }
-    
-      // Run on load + while scrolling (throttled)
-      let t = null;
-      function schedule() {
-        if (t) return;
-        t = setTimeout(() => {
-          t = null;
-          playMostCentered();
-        }, 120);
-      }
-    
-      window.addEventListener('scroll', schedule, { passive: true });
-      window.addEventListener('resize', schedule);
-      playMostCentered();
-    
-      // Optional: tap the media area to toggle (avoids hijacking scroll on whole card)
-      videos.forEach(({ card, v }) => {
+
+      let lastTouchTs = 0;
+
+      previews.forEach(({ card, v }) => {
         const media = card.querySelector('.tool-project__media') || card;
-        media.addEventListener('click', (e) => {
-          // allow normal link clicks elsewhere
+
+        const togglePreview = (e, fromTouch) => {
           e.preventDefault();
           e.stopPropagation();
-          if (v.paused) v.play().catch(() => {});
-          else stopVideo(v);
-        });
+
+          if (fromTouch) lastTouchTs = Date.now();
+          if (!fromTouch && Date.now() - lastTouchTs < 700) return;
+
+          if (v.paused) playPreview(card, v);
+          else stopPreview(card, v, { unload: true });
+        };
+
+        media.addEventListener('touchstart', (e) => togglePreview(e, true), { passive: false });
+        media.addEventListener('click', (e) => togglePreview(e, false));
       });
     })();
     </script>
