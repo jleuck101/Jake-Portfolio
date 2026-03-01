@@ -98,6 +98,69 @@
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
       "category": "compositing"
+    },
+    {
+      "id": "abstract_shapes",
+      "href": "projects/abstract-shapes.html",
+      "thumbnail": "images/motion/thumbs/abstract-shapes-thumb.jpeg",
+      "alt": "Abstract Shapes (3D Motion Graphics)",
+      "overlay": "Abstract Shapes (3D Motion Graphics)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "honey",
+      "href": "projects/honey.html",
+      "thumbnail": "images/motion/thumbs/Honey_Thumb.jpg",
+      "alt": "Honey (3D Motion Graphics)",
+      "overlay": "Honey (3D Motion Graphics)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "sunshine",
+      "href": "projects/sunshine.html",
+      "thumbnail": "images/sunshine_thumb.jpg",
+      "alt": "Sunshine (Unreal Engine)",
+      "overlay": "Sunshine (Unreal Engine)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "skipping",
+      "href": "projects/skipping.html",
+      "thumbnail": "images/skipping.jpg",
+      "alt": "Skipping (Motion Graphics)",
+      "overlay": "Skipping (Motion Graphics)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "howtosmash",
+      "href": "projects/howtosmash.html",
+      "thumbnail": "images/howtosmash.jpg",
+      "alt": "How To: Make Smashburgers (Motion Graphics)",
+      "overlay": "How To: Make Smashburgers (Motion Graphics)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "one_bite_animation",
+      "href": "projects/one_bite_animation.html",
+      "thumbnail": "images/one bite thumb_1.1.1.jpg",
+      "alt": "One Bite Pizza Review (Character Animation)",
+      "overlay": "One Bite Pizza Review (Character Animation)",
+      "badge": null,
+      "category": "motion"
+    },
+    {
+      "id": "alarm_clock",
+      "href": "projects/alarm_clock.html",
+      "thumbnail": "images/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png",
+      "alt": "Alarm Clock 3D Model",
+      "overlay": "Alarm Clock (3D Model)",
+      "badge": null,
+      "category": "motion"
     }
   ],
   "galleries": {
@@ -119,6 +182,23 @@
       "boyonroof",
       "kidsrunning",
       "stadium"
+    ],
+    "gallery-motion-3d-mograph": [
+      "abstract_shapes",
+      "honey"
+    ],
+    "gallery-motion-unreal": [
+      "sunshine"
+    ],
+    "gallery-motion-mograph": [
+      "skipping",
+      "howtosmash"
+    ],
+    "gallery-motion-animation": [
+      "one_bite_animation"
+    ],
+    "gallery-motion-3d": [
+      "alarm_clock"
     ]
   }
 }
