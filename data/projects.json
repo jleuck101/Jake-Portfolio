@@ -176,8 +176,14 @@
       "losers",
       "bellyofthebeast",
       "etee",
-      { "id": "sunset", "badge": "Updating" },
-      { "id": "khans", "badge": "Updating" },
+      {
+        "id": "sunset",
+        "badge": "Updating"
+      },
+      {
+        "id": "khans",
+        "badge": "Updating"
+      },
       "sleep_paralysis",
       "boyonroof",
       "kidsrunning",
@@ -193,9 +199,6 @@
     "gallery-motion-mograph": [
       "skipping",
       "howtosmash"
-    ],
-    "gallery-motion-animation": [
-      "one_bite_animation"
     ],
     "gallery-motion-3d": [
       "alarm_clock"
