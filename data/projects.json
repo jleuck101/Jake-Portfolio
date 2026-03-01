@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": "lagoon_wip",
+      "href": "projects/lagoon_wip.html",
+      "thumbnail": "images/Lagoon_thumb_1.5.1.png",
+      "alt": "The Lagoon (WIP)",
+      "overlay": "The Lagoon (Work in Progress)",
+      "badge": "WIP",
+      "category": "compositing"
+    },
+    {
+      "id": "motopia_wip",
+      "href": "projects/motopia_wip.html",
+      "thumbnail": "images/Motopia_WIP_Frame02_1.6.2.png",
+      "alt": "Motopia (WIP)",
+      "overlay": "Motopia (Work in Progress)",
+      "badge": "WIP",
+      "category": "compositing"
+    },
+    {
+      "id": "sunset",
+      "href": "projects/sunset.html",
+      "thumbnail": "images/sunset.jpg",
+      "alt": "60s Sunset",
+      "overlay": "60s Sunset",
+      "category": "compositing"
+    },
+    {
+      "id": "khans",
+      "href": "projects/khans.html",
+      "thumbnail": "images/Khans_v24_thumb.jpg",
+      "alt": "The Khans are Back",
+      "overlay": "The Khans are Back",
+      "category": "compositing"
+    }
+  ],
+  "galleries": {
+    "gallery-index-featured": [
+      "lagoon_wip",
+      "motopia_wip",
+      "sunset",
+      "khans"
+    ]
+  }
+}
