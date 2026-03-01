@@ -1,0 +1,205 @@
+{
+  "tools": [
+    {
+      "id": "perforce_sync_helper",
+      "title": "Perforce Sync Helper (Nuke-Integrated)",
+      "descriptionHtml": "Perforce integration in Nuke, allowing users to stay up to date with a single click.",
+      "previewMp4": "videos/previews/perforce_sync.mp4",
+      "thumbJpg": "images/tools_thumbs/perforce_sync.jpg",
+      "tags": ["Perforce", "Reliability", "Quickstart"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Perforce Sync Helper preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Finds missing Read media from inside Nuke script",
+        "One-click sync workflow ensures all Read nodes are up-to-date",
+        "Quick and tuneable pruning of files not in active Nuke script"
+      ]
+    },
+    {
+      "id": "autocrop_gui",
+      "title": "Autocrop GUI — Range + Padding",
+      "descriptionHtml": "Custom Autocrop interface, allowing the user better control of bounding boxes with functionality not in the regular autocrop function.",
+      "previewMp4": "videos/previews/autocrop_gui.mp4",
+      "thumbJpg": "images/tools_thumbs/autocrop_gui.jpg",
+      "tags": ["Nuke", "Crop", "Workflow"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Autocrop Range and Padding preview",
+      "bulletsHtml": [
+        "Custom panel: First / Last / Increment, Layer, and total Padding",
+        "Custom options allow for quicker processing",
+        "Adds a <strong>Padding (px)</strong> knob and expands the crop box via expressions so the original autocrop animation is preserved"
+      ]
+    },
+    {
+      "id": "transform_concatenate_split",
+      "title": "Transform — Concatenate / Split Operations",
+      "descriptionHtml": "Pair of hotbox utilities for breaking a Transform into readable per-operation nodes, then recombining them back into a single Transform.",
+      "previewMp4": "videos/previews/transform_split_concatenate.mp4",
+      "thumbJpg": "images/tools_thumbs/transform_split_concatenate.jpg",
+      "tags": ["Nuke", "Transforms", "Cleanup"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Transform concatenate and split operations preview",
+      "bulletsHtml": [
+        "<strong>Split Transform Operations</strong>: splits translate/rotate/scale/skew (and optional center) into separate Transform nodes while preserving animation/expressions and skew order",
+        "<strong>Concatenate Transforms</strong>: recombines a straight chain back into one Transform (non-destructive)",
+        "Smartly splits based off of knobs with non-default values"
+      ]
+    },
+    {
+      "id": "split_roto_shapes",
+      "title": "Roto — Split Shapes into Nodes",
+      "descriptionHtml": "Converts a dense Roto/RotoPaint into multiple nodes so shapes can be isolated for troubleshooting, performance optimization, or per-shape effects. Inspired by a similar tool from Alex Villabon.",
+      "previewMp4": "videos/previews/split_roto_shapes.mp4",
+      "thumbJpg": "images/tools_thumbs/split_roto_shapes.jpg",
+      "tags": ["Nuke", "Roto", "Organization"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Split roto shapes preview",
+      "bulletsHtml": [
+        "Creates <strong>one new node per shape</strong> (All), <strong>per selected shape</strong>, or <strong>per top-level folder</strong> (Layers mode)",
+        "Copies the original node’s settings and preserves animation/expressions where possible",
+        "Auto-labels new nodes using the shape or folder name"
+      ]
+    },
+    {
+      "id": "label_manager",
+      "title": "Label Manager",
+      "descriptionHtml": "Simple and highly repeatable Labeling system to keep artists organized.",
+      "previewMp4": "videos/previews/label_manager.mp4",
+      "thumbJpg": "images/tools_thumbs/label_manager.jpg",
+      "tags": ["Nuke", "Script Hygiene", "Readability"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Label Manager preview",
+      "bulletsHtml": [
+        "Standardized label patterns to reduce unidentified nodes",
+        "Auto-update behavior to keep labels consistent as scripts evolve",
+        "Per-framenob values directly in label for quick value checks"
+      ]
+    },
+    {
+      "id": "portable_nuke_bootstrap",
+      "title": "Portable .nuke Bootstrap (Init/Menu System)",
+      "descriptionHtml": "Portable startup + menu system that auto-loads tool folders, builds menus dynamically, making new gizmos work right away.",
+      "tags": ["Pipeline", "Automation", "Portability"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Portable .nuke bootstrap preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Auto-loads Python tools, gizmos, ToolSets, icons, sounds, presets, and workspaces",
+        "Dynamic menu generation to keep gizmos organized",
+        "Automatically works with tool libraries like PxF, Nuke Survival Toolkit"
+      ]
+    },
+    {
+      "id": "read_node_repath",
+      "title": "Read Node — Repath Toolkit",
+      "descriptionHtml": "Read-node hotbox utilities for fast repathing and sequence refresh during transfers and shot updates.",
+      "tags": ["Nuke", "Media", "Pipeline"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Read Node Repath Toolkit preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "<strong>Replace All File Paths</strong>: selects all Reads/Writes and opens Nuke’s filename search/replace for global repaths",
+        "<strong>Frame Range to Files</strong>: rebuilds the Read path using the detected sequence + frame range from disk",
+        "Designed to reduce “missing Read” cleanup time when moving between machines/drives"
+      ]
+    },
+    {
+      "id": "read_node_timing_alignment",
+      "title": "Read Node — Timing / Alignment",
+      "descriptionHtml": "Quick alignment helpers for setting Read start frames consistently across a comp.",
+      "tags": ["Nuke", "Timing", "Workflow"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Read Node Timing and Alignment preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "<strong>At Comp Start</strong>: sets selected Reads to start at the script’s first frame",
+        "<strong>At Current Playhead</strong>: sets selected Reads to start at the current timeline frame",
+        "Supports batching across multiple selected Reads to keep timing consistent"
+      ]
+    },
+    {
+      "id": "edge_mid_finder",
+      "title": "Edge Mid Finder",
+      "descriptionHtml": "Precision helper for finding/validating edge positions for roto and patch alignment.",
+      "tags": ["Roto/Paint", "Precision", "Cleanup"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Edge Mid Finder preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Supports consistent edge placement (less eyeballing)",
+        "Gives roto artists a mathematically true midpoint to base their edges off of",
+        "Calculates blur radius of given edge"
+      ]
+    },
+    {
+      "id": "version_render_discipline",
+      "title": "Version & Render Discipline Helpers",
+      "descriptionHtml": "\"JL_Precomp\", intelligently designed Precomp Switch focused on predictable output naming/structure and reducing version mismatches.",
+      "tags": ["Pipeline", "Consistency", "Guardrails"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Version and Render Discipline Helpers preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Easily readable toggle, color-coded with explicit read and write nodes",
+        "Read and write nodes are synchronized, eliminating incorrect versioning"
+      ]
+    },
+    {
+      "id": "backup_node_safety",
+      "title": "Backup Node — Safety Function",
+      "descriptionHtml": "One-click backup of a node before risky edits (tracking tweaks, keyframe cleanup, etc).",
+      "tags": ["Nuke", "Safety", "Workflow"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Backup Node preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Duplicates the selected node(s) into a <strong>_Backup</strong> copy for quick rollback",
+        "Quickly disconnects inputs and rewires to current node",
+        "Disables the backup copy and consistently offsets it in the node graph for obvious correlation"
+      ]
+    },
+    {
+      "id": "render_output_utilities",
+      "title": "Render Output Utilities",
+      "descriptionHtml": "Write-node utilities for faster iteration and cleaner output management once render paths and settings are already in place.",
+      "tags": ["Nuke", "Write Nodes", "Workflow"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Render Output Utilities preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "<strong>Version Up + Render</strong> bumps a selected Write node to the next version and renders in one step",
+        "Preserves existing render setup behavior, including using the Write node’s frame limits when enabled (otherwise the project range)",
+        "<strong>Rename Image Sequence</strong> updates both the sequence folder and filename stem together while preserving padding and extension (e.g. <strong>%04d</strong>, <strong>####</strong>, <strong>.exr</strong>)"
+      ]
+    },
+    {
+      "id": "frame_utilities",
+      "title": "Frame Utilities",
+      "descriptionHtml": "Timeline and clipboard helpers for quickly copying frame references and navigating frame ranges during comp work.",
+      "tags": ["Nuke", "Timeline", "Workflow Speed"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Frame Utilities preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "One-click copy for <strong>first</strong>, <strong>last</strong>, and <strong>current</strong> frame values",
+        "Copies both the <strong>project frame range</strong> and active <strong>Viewer playback in/out range</strong>",
+        "<strong>Jump N Frames</strong> tool moves from the current frame to an inclusive end frame, with optional clipboard copy of the destination frame"
+      ]
+    },
+    {
+      "id": "performance_timers_toggle",
+      "title": "Performance Timers Toggle",
+      "descriptionHtml": "One-click toggle for Nuke performance timers with version-safe checks and clear start/stop feedback.",
+      "tags": ["Nuke", "Debugging", "Performance"],
+      "statusBadge": "Preview",
+      "ariaLabel": "Performance Timer Toggle preview",
+      "mediaPlaceholder": true,
+      "bulletsHtml": [
+        "Toggles performance timers on/off directly from a Hotbox button during script profiling",
+        "Uses API fallbacks to stay robust across Nuke versions and different builds",
+        "Optionally resets timer values before starting and prints clear STARTED/STOPPED status in the Script Editor"
+      ]
+    }
+  ]
+}
