@@ -15,6 +15,66 @@ document.addEventListener('DOMContentLoaded', () => {
     'Tooling / Automation'
   ];
 
+  function initPageEntrance() {
+    const shells = Array.from(
+      document.querySelectorAll('main.page, main.content, body > .content')
+    );
+
+    if (shells.length) {
+      shells.forEach((shell) => shell.classList.add('page-shell'));
+    } else {
+      document
+        .querySelectorAll('body > .section, body > footer')
+        .forEach((shell) => shell.classList.add('page-shell'));
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add('is-ready');
+      });
+    });
+  }
+
+  function initMediaReadyFades() {
+    const mediaNodes = Array.from(
+      document.querySelectorAll('.reel-frame iframe, .reel-frame video, body.project-page iframe, body.project-page video')
+    );
+
+    mediaNodes.forEach((node) => {
+      if (!node.closest('.reel-frame, .media-frame')) {
+        const frame = document.createElement('div');
+        frame.className = 'media-frame';
+        node.parentNode?.insertBefore(frame, node);
+        frame.appendChild(node);
+      }
+
+      let isShown = false;
+      const reveal = () => {
+        if (isShown) return;
+        isShown = true;
+        window.setTimeout(() => node.classList.add('is-ready'), 70);
+      };
+
+      if (node.tagName.toLowerCase() === 'iframe') {
+        node.addEventListener('load', reveal, { once: true });
+        window.setTimeout(reveal, 1400);
+        return;
+      }
+
+      const video = /** @type {HTMLVideoElement} */ (node);
+      if (video.readyState >= 2) {
+        reveal();
+      } else {
+        video.addEventListener('loadeddata', reveal, { once: true });
+        video.addEventListener('canplay', reveal, { once: true });
+        window.setTimeout(reveal, 900);
+      }
+    });
+  }
+
+  initPageEntrance();
+  initMediaReadyFades();
+
   async function injectProjectHeaderTags() {
     const isLocalDebug =
       window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
