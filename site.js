@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Tooling / Automation'
   ];
 
-  async function injectCompositingSkillsTags() {
+  async function injectProjectHeaderTags() {
     const isLocalDebug =
       window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const debugLog = (...args) => {
@@ -24,7 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!document.body.classList.contains('project-page')) return;
 
-    const title = document.querySelector('.project-hero h1, .content h1, h1');
+    let title = document.querySelector('.project-hero h1, .content h1, h1');
+    if (!title) {
+      const introH2 = document.querySelector('.section.section-intro h2');
+      if (introH2) {
+        const promotedTitle = document.createElement('h1');
+        promotedTitle.className = introH2.className;
+        promotedTitle.innerHTML = introH2.innerHTML;
+        introH2.replaceWith(promotedTitle);
+        title = promotedTitle;
+      }
+    }
     debugLog('title found:', Boolean(title));
     if (!title) return;
 
@@ -53,41 +63,49 @@ document.addEventListener('DOMContentLoaded', () => {
         return hrefId === normalizedId;
       });
       debugLog('project found:', Boolean(project), project?.id, project?.category);
-      if (!project || project.category !== 'compositing') return;
+      if (!project) return;
 
       if (typeof project.title === 'string' && project.title.trim()) {
         title.textContent = project.title.trim();
       }
 
-      const defaultMeta = 'Compositing • Nuke';
+      const defaultMetaByCategory = {
+        compositing: 'Compositing • Nuke',
+        motion: 'Motion'
+      };
       const metaOverrides = {
         motopia: 'Compositing + CG • Nuke • Maya',
         bellyofthebeast: 'VFX Supe + Compositing • Nuke'
       };
-      const metaText = metaOverrides[project.id] || defaultMeta;
+      const metaText = metaOverrides[project.id] || defaultMetaByCategory[project.category] || '';
       let meta = title.parentElement?.querySelector('.meta');
-      if (!meta) {
+      if (!meta && metaText) {
         meta = document.createElement('div');
         meta.className = 'meta';
         title.insertAdjacentElement('afterend', meta);
       }
-      meta.textContent = metaText;
+      if (meta && (project.category === 'compositing' || !meta.textContent?.trim())) {
+        meta.textContent = metaText;
+      }
 
       const status = typeof project.status === 'string' ? project.status.trim() : '';
-      const skills = Array.isArray(project.skills)
+      const skills = project.category === 'compositing' && Array.isArray(project.skills)
         ? project.skills.map((s) => String(s).trim()).filter(Boolean)
         : [];
       debugLog('status + skills len:', status || '(none)', skills.length);
       if (!status && !skills.length) return;
 
-      const unknown = skills.filter((s) => !COMPOSITING_ALLOWED_SKILLS.includes(s));
-      if (unknown.length) {
+      const unknown =
+        project.category === 'compositing'
+          ? skills.filter((s) => !COMPOSITING_ALLOWED_SKILLS.includes(s))
+          : [];
+      if (project.category === 'compositing' && unknown.length) {
         console.warn(`Unknown compositing skills for ${project.id}:`, unknown);
       }
 
       const row = document.createElement('div');
       row.className = 'tag-row';
-      row.setAttribute('aria-label', 'Project status and compositing skills');
+      row.setAttribute('aria-label', 'Project status and tags');
 
       if (status) {
         const statusPill = document.createElement('span');
@@ -165,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  injectCompositingSkillsTags();
+  injectProjectHeaderTags();
 
   // =========================================================
   // Scroll Reveal (site-wide, no HTML edits)

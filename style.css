@@ -264,6 +264,29 @@ body.project-page .tag-row{
   margin-right: 0;
 }
 
+body.project-page .section.section-intro{
+  text-align: left;
+  padding-bottom: 24px;
+}
+
+body.project-page .section.section-intro h1{
+  color: var(--accent);
+  font-size: 28px;
+  margin: 0 auto 14px;
+  max-width: 65ch;
+}
+
+body.project-page .section.section-intro .meta{
+  max-width: 65ch;
+  margin: 0 auto 14px;
+}
+
+body.project-page .section.section-intro .tag-row{
+  width: 100%;
+  max-width: 65ch;
+  margin: -2px auto 14px;
+}
+
 body.project-page .tag-row.is-clamped{
   max-height: var(--tagMaxH);
   overflow: hidden;
@@ -809,6 +832,10 @@ footer{
 }
 
 body.project-page .meta{
+  font-size: 0.98rem;
+  color: rgba(255,255,255,0.78);
+  letter-spacing: 0.015em;
+  margin-bottom: 14px;
   margin-left: 0;
   margin-right: 0;
   max-width: none;
