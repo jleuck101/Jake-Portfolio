@@ -199,25 +199,53 @@
           return;
         }
 
-        let lastTouchTs = 0;
+        const ratioByCard = new Map();
+        let active = null;
 
-        previews.forEach(({ card, v }) => {
-          const media = card.querySelector('.tool-project__media') || card;
+        function evaluateMostVisible() {
+          let best = null;
+          let bestRatio = 0;
 
-          const togglePreview = (e, fromTouch) => {
-            e.preventDefault();
-            e.stopPropagation();
+          previews.forEach((item) => {
+            const ratio = ratioByCard.get(item.card) || 0;
+            if (ratio > bestRatio) {
+              best = item;
+              bestRatio = ratio;
+            }
+          });
 
-            if (fromTouch) lastTouchTs = Date.now();
-            if (!fromTouch && Date.now() - lastTouchTs < 700) return;
+          const next = bestRatio >= 0.6 ? best : null;
 
-            if (v.paused) playPreview(card, v);
-            else stopPreview(card, v, { unload: true });
-          };
+          if (!next) {
+            if (active) {
+              stopPreview(active.card, active.v, { unload: false });
+              active = null;
+            }
+            return;
+          }
 
-          media.addEventListener('touchstart', (e) => togglePreview(e, true), { passive: false });
-          media.addEventListener('click', (e) => togglePreview(e, false));
-        });
+          if (!active || active.card !== next.card) {
+            if (active) stopPreview(active.card, active.v, { unload: false });
+            previews.forEach((item) => {
+              if (item.card !== next.card) stopPreview(item.card, item.v, { unload: false });
+            });
+            active = next;
+          }
+
+          playPreview(next.card, next.v);
+        }
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              ratioByCard.set(entry.target, entry.intersectionRatio);
+            });
+            evaluateMostVisible();
+          },
+          { threshold: [0, 0.25, 0.5, 0.75, 1] }
+        );
+
+        previews.forEach(({ card }) => io.observe(card));
       }
 
       window.addEventListener('tools:rendered', initPreviewInteractions, { once: true });
