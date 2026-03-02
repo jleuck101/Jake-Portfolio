@@ -1,28 +1,28 @@
 {
   "projects": [
     {
-      "id": "lagoon_wip",
+      "id": "lagoon",
       "title": "The Lagoon",
       "href": "projects/lagoon.html",
       "thumbnail": "images/compositing/thumbs/Lagoon_thumb_1.5.1.png",
-      "alt": "The Lagoon (WIP)",
-      "overlay": "The Lagoon (Work in Progress)",
+      "alt": "The Lagoon",
+      "overlay": "The Lagoon",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": ["CG Integration", "Tooling / Automation"]
+      "skills": ["Smart Vectors / STMap","Tooling / Automation","Effect Look Dev","Paint / Cleanup","Matchmove","Roto","CG Integration","2D Tracking","Projection"]
     },
     {
-      "id": "motopia_wip",
+      "id": "motopia",
       "title": "Motopia",
       "href": "projects/motopia.html",
       "thumbnail": "images/compositing/thumbs/Motopia_WIP_Frame02_1.6.2.png",
-      "alt": "Motopia (WIP)",
-      "overlay": "Motopia (Work in Progress)",
+      "alt": "Motopia",
+      "overlay": "Motopia",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": []
+      "skills": ["CG Integration","Set Extension / DMP","Matchmove","Roto","Paint / Cleanup","Projection","2D Tracking"]
     },
     {
       "id": "sunset",
@@ -30,9 +30,10 @@
       "thumbnail": "images/compositing/thumbs/sunset.jpg",
       "alt": "60s Sunset",
       "overlay": "60s Sunset",
-      "badge": null,
+      "badge": "Updating",
+      "status": "Updating",
       "category": "compositing",
-      "skills": ["Paint / Cleanup", "2D Tracking", "Set Extension / DMP", "Relighting"]
+      "skills": ["Paint / Cleanup", "2D Tracking", "Set Extension / DMP","Look Change","Matchmove","Projection","Relighting"]
     },
     {
       "id": "khans",
@@ -40,9 +41,10 @@
       "thumbnail": "images/compositing/thumbs/Khans_v24_thumb.jpg",
       "alt": "The Khans are Back",
       "overlay": "The Khans are Back",
-      "badge": null,
+      "badge": "Updating",
+      "status": "Updating",
       "category": "compositing",
-      "skills": ["Warp / Distort", "CG Integration"]
+      "skills": ["Set Extension / DMP","Matchmove","Projection","Look Change","Tooling / Automation","Keying","Paint / Cleanup"]
     },
     {
       "id": "losers",
@@ -54,7 +56,7 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": []
+      "skills": ["Paint / Cleanup","Roto","2D Tracking","Effect Look Dev"]
     },
     {
       "id": "bellyofthebeast",
@@ -78,7 +80,7 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": []
+      "skills": ["Roto","Paint / Cleanup","2D Tracking","Matchmove","Projection"]
     },
     {
       "id": "sleep_paralysis",
@@ -88,7 +90,7 @@
       "overlay": "Sleep Paralysis",
       "badge": null,
       "category": "compositing",
-      "skills": []
+      "skills": ["Effect Look Dev","Roto","Keying","Look Change","Paint / Cleanup"]
     },
     {
       "id": "boyonroof",
@@ -98,7 +100,7 @@
       "overlay": "Boy on Rooftop - Integration Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": []
+      "skills": ["Projection","Matchmove","Keying","Relighting","Set Extension / DMP","CG Integration","Roto"]
     },
     {
       "id": "kidsrunning",
@@ -108,7 +110,7 @@
       "overlay": "Kids Running - Projection Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": ["2D Tracking", "Set Extension / DMP"]
+      "skills": ["Set Extension / DMP","Matchmove","Projection","Roto","Paint / Cleanup","Relighting"]
     },
     {
       "id": "stadium",
@@ -118,7 +120,7 @@
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": ["Keying"]
+      "skills": ["Keying","Set Extension / DMP","Paint / Cleanup","Roto","2D Tracking"]
     },
     {
       "id": "abstract_shapes",
@@ -186,14 +188,14 @@
   ],
   "galleries": {
     "gallery-index-featured": [
-      "lagoon_wip",
-      "motopia_wip",
+      "lagoon",
+      "motopia",
       "sunset",
       "khans"
     ],
     "gallery-compositing-projects": [
-      "lagoon_wip",
-      "motopia_wip",
+      "lagoon",
+      "motopia",
       "losers",
       "bellyofthebeast",
       "etee",

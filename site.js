@@ -16,22 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   async function injectCompositingSkillsTags() {
+    const isLocalDebug =
+      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const debugLog = (...args) => {
+      if (isLocalDebug) console.log('[tags-debug]', ...args);
+    };
+
     if (!document.body.classList.contains('project-page')) return;
 
     const title = document.querySelector('.project-hero h1, .content h1, h1');
+    debugLog('title found:', Boolean(title));
     if (!title) return;
 
     const pathname = new URL(window.location.href).pathname;
     const pathParts = pathname.split('/').filter(Boolean);
     const lastSegment = pathParts[pathParts.length - 1] || '';
+    debugLog('pathname + last segment:', pathname, lastSegment);
     if (!lastSegment) return;
 
     const normalizedId = lastSegment.replace(/\.html$/i, '');
+    debugLog('normalizedId:', normalizedId);
     if (!normalizedId || normalizedId === 'index') return;
 
     try {
       const dataUrl = new URL('../data/projects.json', window.location.href);
+      debugLog('fetching data from:', dataUrl.toString());
       const res = await fetch(dataUrl.toString(), { cache: 'no-store' });
+      debugLog('fetch ok/status:', res.ok, res.status);
       if (!res.ok) return;
 
       const data = await res.json();
@@ -41,16 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const hrefId = p.href.split('/').pop()?.replace(/\.html$/i, '') || '';
         return hrefId === normalizedId;
       });
+      debugLog('project found:', Boolean(project), project?.id, project?.category);
       if (!project || project.category !== 'compositing') return;
 
       if (typeof project.title === 'string' && project.title.trim()) {
         title.textContent = project.title.trim();
       }
 
+      const defaultMeta = 'Compositing • Nuke';
+      const metaOverrides = {
+        motopia: 'Compositing + CG • Nuke • Maya',
+        bellyofthebeast: 'VFX Supe + Compositing • Nuke'
+      };
+      const metaText = metaOverrides[project.id] || defaultMeta;
+      let meta = title.parentElement?.querySelector('.meta');
+      if (!meta) {
+        meta = document.createElement('div');
+        meta.className = 'meta';
+        title.insertAdjacentElement('afterend', meta);
+      }
+      meta.textContent = metaText;
+
       const status = typeof project.status === 'string' ? project.status.trim() : '';
       const skills = Array.isArray(project.skills)
         ? project.skills.map((s) => String(s).trim()).filter(Boolean)
         : [];
+      debugLog('status + skills len:', status || '(none)', skills.length);
       if (!status && !skills.length) return;
 
       const unknown = skills.filter((s) => !COMPOSITING_ALLOWED_SKILLS.includes(s));
@@ -65,9 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (status) {
         const statusPill = document.createElement('span');
         statusPill.className = 'pill pill-status';
-        const normalizedStatus = status.toLowerCase();
-        if (normalizedStatus === 'wip' || normalizedStatus === 'in progress') {
-          statusPill.classList.add('status-wip');
+        const statusClass = status
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+        const normalizedStatus = status.toLowerCase().trim();
+        if (statusClass) {
+          statusPill.classList.add(`status-${statusClass}`);
+        }
+        if (
+          normalizedStatus === 'wip' ||
+          normalizedStatus === 'in progress' ||
+          normalizedStatus === 'updating'
+        ) {
+          statusPill.classList.add('status-highlight');
         }
         statusPill.textContent = status;
         row.appendChild(statusPill);
@@ -81,7 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       title.insertAdjacentElement('afterend', row);
+      debugLog('injected row; child pills:', row.children.length, 'in parent:', title.parentElement?.className);
+
+      // Natural wrap by width, then clamp the visible block to two full lines.
+      requestAnimationFrame(() => {
+        const pillNodes = Array.from(row.querySelectorAll('.pill'));
+        row.classList.remove('is-clamped');
+        row.style.removeProperty('--tagMaxH');
+        if (pillNodes.length < 3) return;
+
+        const rowRect = row.getBoundingClientRect();
+        const lineTops = [];
+
+        pillNodes.forEach((pill) => {
+          const top = Math.round(pill.getBoundingClientRect().top - rowRect.top);
+          if (!lineTops.some((t) => Math.abs(t - top) <= 1)) {
+            lineTops.push(top);
+          }
+        });
+
+        lineTops.sort((a, b) => a - b);
+        if (lineTops.length <= 2) return;
+
+        const secondLineTop = lineTops[1];
+        let secondLineBottom = 0;
+
+        pillNodes.forEach((pill) => {
+          const rect = pill.getBoundingClientRect();
+          const top = Math.round(rect.top - rowRect.top);
+          const bottom = rect.bottom - rowRect.top;
+          if (top <= secondLineTop + 1) {
+            secondLineBottom = Math.max(secondLineBottom, bottom);
+          }
+        });
+
+        if (!secondLineBottom) return;
+
+        row.style.setProperty('--tagMaxH', `${Math.ceil(secondLineBottom)}px`);
+        row.classList.add('is-clamped');
+        debugLog('clamped to two lines; maxH:', Math.ceil(secondLineBottom));
+      });
     } catch (err) {
+      debugLog('inject error:', err);
       console.warn(err);
     }
   }
