@@ -86,7 +86,7 @@
       "href": "projects/compositing/losers.html",
       "thumbnail": "images/compositing/thumbs/Losers_Thumb_9A.png",
       "alt": "LOSERS",
-      "overlay": "LOSERS (Work in Progress)",
+      "overlay": "LOSERS",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
@@ -103,7 +103,7 @@
       "href": "projects/compositing/bellyofthebeast.html",
       "thumbnail": "images/compositing/thumbs/Belly_of_the_Beast_thumb_v01.jpg",
       "alt": "Belly of the Beast",
-      "overlay": "Belly of the Beast (Work in Progress)",
+      "overlay": "Belly of the Beast",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
@@ -115,7 +115,7 @@
       "href": "projects/compositing/ETEE.html",
       "thumbnail": "images/compositing/thumbs/ETEE_thumb_v01.png",
       "alt": "ETEE",
-      "overlay": "Everything to Everyone Else (Work in Progress)",
+      "overlay": "Everything to Everyone Else",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
@@ -278,7 +278,6 @@
       "lagoon",
       "motopia",
       "losers",
-      "bellyofthebeast",
       "etee",
       {
         "id": "sunset",
@@ -291,7 +290,8 @@
       "sleep_paralysis",
       "boyonroof",
       "kidsrunning",
-      "stadium"
+      "stadium",
+      "bellyofthebeast"
     ],
     "gallery-motion-3d-mograph": [
       "abstract_shapes",
