@@ -1,0 +1,56 @@
+:root {
+  --channel-filter: none;
+  --channel-overlay: rgba(0, 0, 0, 0);
+}
+
+/*
+Channel easter-egg is temporarily disabled while debugging.
+Alpha mode was an idea, but is intentionally removed for now.
+
+To re-enable RGB channels later, uncomment and tune this block:
+
+html.channel-on {
+  filter: var(--channel-filter);
+}
+
+html.channel-on::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999999;
+  background: var(--channel-overlay);
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+html.channel-r {
+  --channel-filter: url(#chanR);
+}
+
+html.channel-g {
+  --channel-filter: url(#chanG);
+}
+
+html.channel-b {
+  --channel-filter: url(#chanB);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.channel-on {
+    transition: filter 120ms ease-out;
+  }
+  html.channel-on::before {
+    transition: opacity 120ms ease-out;
+  }
+}
+*/
+
+/* Hard-disable safeguard even if classes are present. */
+html.channel-on {
+  filter: none !important;
+}
+
+html.channel-on::before {
+  content: none !important;
+}
