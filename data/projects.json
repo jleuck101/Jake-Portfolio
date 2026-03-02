@@ -3,65 +3,104 @@
     {
       "id": "lagoon",
       "title": "The Lagoon",
-      "href": "projects/lagoon.html",
+      "href": "projects/compositing/lagoon.html",
       "thumbnail": "images/compositing/thumbs/Lagoon_thumb_1.5.1.png",
       "alt": "The Lagoon",
       "overlay": "The Lagoon",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": ["Smart Vectors / STMap","Tooling / Automation","Effect Look Dev","Paint / Cleanup","Matchmove","Roto","CG Integration","2D Tracking","Projection"]
+      "skills": [
+        "Smart Vectors / STMap",
+        "Tooling / Automation",
+        "Effect Look Dev",
+        "Paint / Cleanup",
+        "Matchmove",
+        "Roto",
+        "CG Integration",
+        "2D Tracking",
+        "Projection"
+      ]
     },
     {
       "id": "motopia",
       "title": "Motopia",
-      "href": "projects/motopia.html",
+      "href": "projects/compositing/motopia.html",
       "thumbnail": "images/compositing/thumbs/Motopia_WIP_Frame02_1.6.2.png",
       "alt": "Motopia",
       "overlay": "Motopia",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": ["CG Integration","Set Extension / DMP","Matchmove","Roto","Paint / Cleanup","Projection","2D Tracking"]
+      "skills": [
+        "CG Integration",
+        "Set Extension / DMP",
+        "Matchmove",
+        "Roto",
+        "Paint / Cleanup",
+        "Projection",
+        "2D Tracking"
+      ]
     },
     {
       "id": "sunset",
-      "href": "projects/sunset.html",
+      "href": "projects/compositing/sunset.html",
       "thumbnail": "images/compositing/thumbs/sunset.jpg",
       "alt": "60s Sunset",
       "overlay": "60s Sunset",
       "badge": "Updating",
       "status": "Updating",
       "category": "compositing",
-      "skills": ["Paint / Cleanup", "2D Tracking", "Set Extension / DMP","Look Change","Matchmove","Projection","Relighting"]
+      "skills": [
+        "Paint / Cleanup",
+        "2D Tracking",
+        "Set Extension / DMP",
+        "Look Change",
+        "Matchmove",
+        "Projection",
+        "Relighting"
+      ]
     },
     {
       "id": "khans",
-      "href": "projects/khans.html",
+      "href": "projects/compositing/khans.html",
       "thumbnail": "images/compositing/thumbs/Khans_v24_thumb.jpg",
       "alt": "The Khans are Back",
       "overlay": "The Khans are Back",
       "badge": "Updating",
       "status": "Updating",
       "category": "compositing",
-      "skills": ["Set Extension / DMP","Matchmove","Projection","Look Change","Tooling / Automation","Keying","Paint / Cleanup"]
+      "skills": [
+        "Set Extension / DMP",
+        "Matchmove",
+        "Projection",
+        "Look Change",
+        "Tooling / Automation",
+        "Keying",
+        "Paint / Cleanup"
+      ]
     },
     {
       "id": "losers",
       "title": "LOSERS",
-      "href": "projects/losers.html",
+      "href": "projects/compositing/losers.html",
       "thumbnail": "images/compositing/thumbs/Losers_Thumb_9A.png",
       "alt": "LOSERS",
       "overlay": "LOSERS (Work in Progress)",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": ["Paint / Cleanup","Roto","2D Tracking","Effect Look Dev"]
+      "skills": [
+        "Paint / Cleanup",
+        "Roto",
+        "2D Tracking",
+        "Effect Look Dev"
+      ]
     },
     {
       "id": "bellyofthebeast",
       "title": "Belly of the Beast",
-      "href": "projects/bellyofthebeast.html",
+      "href": "projects/compositing/bellyofthebeast.html",
       "thumbnail": "images/compositing/thumbs/Belly_of_the_Beast_thumb_v01.jpg",
       "alt": "Belly of the Beast",
       "overlay": "Belly of the Beast (Work in Progress)",
@@ -73,116 +112,158 @@
     {
       "id": "etee",
       "title": "Everything to Everyone Else",
-      "href": "projects/ETEE.html",
+      "href": "projects/compositing/ETEE.html",
       "thumbnail": "images/compositing/thumbs/ETEE_thumb_v01.png",
       "alt": "ETEE",
       "overlay": "Everything to Everyone Else (Work in Progress)",
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
-      "skills": ["Roto","Paint / Cleanup","2D Tracking","Matchmove","Projection"]
+      "skills": [
+        "Roto",
+        "Paint / Cleanup",
+        "2D Tracking",
+        "Matchmove",
+        "Projection"
+      ]
     },
     {
       "id": "sleep_paralysis",
-      "href": "projects/sleep_paralysis.html",
+      "href": "projects/compositing/sleep_paralysis.html",
       "thumbnail": "images/compositing/thumbs/sleep_paralysis.jpg",
       "alt": "Sleep Paralysis",
       "overlay": "Sleep Paralysis",
       "badge": null,
       "category": "compositing",
-      "skills": ["Effect Look Dev","Roto","Keying","Look Change","Paint / Cleanup"]
+      "skills": [
+        "Effect Look Dev",
+        "Roto",
+        "Keying",
+        "Look Change",
+        "Paint / Cleanup"
+      ]
     },
     {
       "id": "boyonroof",
-      "href": "projects/boyonroof.html",
+      "href": "projects/compositing/boyonroof.html",
       "thumbnail": "images/compositing/thumbs/boyonroof.jpg",
       "alt": "Boy on Rooftop -Integration Exercise",
       "overlay": "Boy on Rooftop - Integration Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": ["Projection","Matchmove","Keying","Relighting","Set Extension / DMP","CG Integration","Roto"]
+      "skills": [
+        "Projection",
+        "Matchmove",
+        "Keying",
+        "Relighting",
+        "Set Extension / DMP",
+        "CG Integration",
+        "Roto"
+      ]
     },
     {
       "id": "kidsrunning",
-      "href": "projects/kidsrunning.html",
+      "href": "projects/compositing/kidsrunning.html",
       "thumbnail": "images/compositing/thumbs/kids_running_thumb_no_gummy.png",
       "alt": "Kids Running - Projection Exercise",
       "overlay": "Kids Running - Projection Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": ["Set Extension / DMP","Matchmove","Projection","Roto","Paint / Cleanup","Relighting"]
+      "skills": [
+        "Set Extension / DMP",
+        "Matchmove",
+        "Projection",
+        "Roto",
+        "Paint / Cleanup",
+        "Relighting"
+      ]
     },
     {
       "id": "stadium",
-      "href": "projects/stadium.html",
+      "href": "projects/compositing/stadium.html",
       "thumbnail": "images/compositing/thumbs/stadium.jpg",
       "alt": "Stadium - Chromakey Exercise",
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
       "category": "compositing",
-      "skills": ["Keying","Set Extension / DMP","Paint / Cleanup","Roto","2D Tracking"]
+      "skills": [
+        "Keying",
+        "Set Extension / DMP",
+        "Paint / Cleanup",
+        "Roto",
+        "2D Tracking"
+      ]
     },
     {
       "id": "abstract_shapes",
-      "href": "projects/abstract-shapes.html",
+      "href": "projects/motion/abstract-shapes.html",
       "thumbnail": "images/motion/thumbs/abstract-shapes-thumb.jpeg",
-      "alt": "Abstract Shapes (3D Motion Graphics)",
-      "overlay": "Abstract Shapes (3D Motion Graphics)",
+      "alt": "Abstract Shapes",
+      "overlay": "Abstract Shapes",
       "badge": null,
+      "type_label": "3D Motion Graphics",
       "category": "motion"
     },
     {
       "id": "honey",
-      "href": "projects/honey.html",
+      "href": "projects/motion/honey.html",
       "thumbnail": "images/motion/thumbs/Honey_Thumb.jpg",
-      "alt": "Honey (3D Motion Graphics)",
-      "overlay": "Honey (3D Motion Graphics)",
+      "alt": "Honey",
+      "overlay": "Honey",
       "badge": null,
+      "type_label": "3D Motion Graphics",
       "category": "motion"
     },
     {
       "id": "sunshine",
-      "href": "projects/sunshine.html",
+      "href": "projects/motion/sunshine.html",
       "thumbnail": "images/motion/thumbs/sunshine_thumb.jpg",
-      "alt": "Sunshine (Unreal Engine)",
-      "overlay": "Sunshine (Unreal Engine)",
+      "alt": "Sunshine",
+      "overlay": "Sunshine",
       "badge": null,
+      "type_label": "Real-Time Cinematic",
+      "software": [
+        "Unreal Engine 4"
+      ],
       "category": "motion"
     },
     {
       "id": "skipping",
-      "href": "projects/skipping.html",
+      "href": "projects/motion/skipping.html",
       "thumbnail": "images/motion/thumbs/skipping.jpg",
-      "alt": "Skipping (Motion Graphics)",
-      "overlay": "Skipping (Motion Graphics)",
+      "alt": "Skipping",
+      "overlay": "Skipping",
       "badge": null,
+      "type_label": "Motion Graphics",
       "category": "motion"
     },
     {
       "id": "howtosmash",
-      "href": "projects/howtosmash.html",
+      "href": "projects/motion/howtosmash.html",
       "thumbnail": "images/motion/thumbs/howtosmash.jpg",
-      "alt": "How To: Make Smashburgers (Motion Graphics)",
-      "overlay": "How To: Make Smashburgers (Motion Graphics)",
+      "alt": "How To: Make Smashburgers",
+      "overlay": "How To: Make Smashburgers",
       "badge": null,
+      "type_label": "Motion Graphics",
       "category": "motion"
     },
     {
       "id": "one_bite_animation",
-      "href": "projects/one_bite_animation.html",
+      "href": "projects/motion/one_bite_animation.html",
       "thumbnail": "images/motion/thumbs/one bite thumb_1.1.1.jpg",
-      "alt": "One Bite Pizza Review (Character Animation)",
-      "overlay": "One Bite Pizza Review (Character Animation)",
+      "alt": "One Bite Pizza Review",
+      "overlay": "One Bite Pizza Review",
       "badge": null,
       "category": "motion"
     },
     {
       "id": "alarm_clock",
-      "href": "projects/alarm_clock.html",
+      "href": "projects/motion/alarm_clock.html",
       "thumbnail": "images/motion/thumbs/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png",
       "alt": "Alarm Clock 3D Model",
-      "overlay": "Alarm Clock (3D Model)",
+      "overlay": "Alarm Clock",
       "badge": null,
+      "type_label": "3D Model + Lookdev",
       "category": "motion"
     }
   ],

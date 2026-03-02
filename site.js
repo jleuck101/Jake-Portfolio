@@ -48,8 +48,62 @@ document.addEventListener('DOMContentLoaded', () => {
     debugLog('normalizedId:', normalizedId);
     if (!normalizedId || normalizedId === 'index') return;
 
+    const SOFTWARE_PATTERNS = [
+      /Unreal Engine\s*\d+/i,
+      /Unreal Engine/i,
+      /Cinema 4D/i,
+      /After Effects/i,
+      /Substance Painter/i,
+      /Maya/i
+    ];
+    const TYPE_LABEL_VARIANTS = new Set([
+      'motion',
+      'motion graphics',
+      '3d motion graphics',
+      'real-time cinematic'
+    ]);
+
+    const collectSoftwareTokens = (...sources) => {
+      const seen = new Set();
+      const tokens = [];
+
+      const pushToken = (token) => {
+        const clean = String(token || '').trim();
+        if (!clean) return;
+        const key = clean.toLowerCase();
+        if (TYPE_LABEL_VARIANTS.has(key) || seen.has(key)) return;
+        seen.add(key);
+        tokens.push(clean);
+      };
+
+      sources.forEach((src) => {
+        const text = String(src || '').trim();
+        if (!text) return;
+
+        text
+          .split('•')
+          .map((part) => part.trim())
+          .forEach((part) => {
+            if (!part) return;
+            let matched = false;
+            SOFTWARE_PATTERNS.some((pattern) => {
+              const match = part.match(pattern);
+              if (match) {
+                pushToken(match[0]);
+                matched = true;
+                return true;
+              }
+              return false;
+            });
+            if (!matched) pushToken(part);
+          });
+      });
+
+      return tokens;
+    };
+
     try {
-      const dataUrl = new URL('../data/projects.json', window.location.href);
+      const dataUrl = new URL('/data/projects.json', window.location.origin);
       debugLog('fetching data from:', dataUrl.toString());
       const res = await fetch(dataUrl.toString(), { cache: 'no-store' });
       debugLog('fetch ok/status:', res.ok, res.status);
@@ -71,20 +125,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const defaultMetaByCategory = {
         compositing: 'Compositing • Nuke',
-        motion: 'Motion'
+        motion: 'Motion Graphics'
       };
       const metaOverrides = {
         motopia: 'Compositing + CG • Nuke • Maya',
         bellyofthebeast: 'VFX Supe + Compositing • Nuke'
       };
-      const metaText = metaOverrides[project.id] || defaultMetaByCategory[project.category] || '';
       let meta = title.parentElement?.querySelector('.meta');
+      const existingMetaText = meta?.textContent?.trim() || '';
+      const introMetaText =
+        document.querySelector('.section.section-intro .meta, .section.section-intro .muted')
+          ?.textContent?.trim() || '';
+      const typeLabel =
+        typeof project.type_label === 'string' && project.type_label.trim()
+          ? project.type_label.trim()
+          : '';
+
+      let metaText = '';
+      if (project.category === 'compositing') {
+        metaText = metaOverrides[project.id] || defaultMetaByCategory[project.category] || '';
+      } else {
+        const resolvedTypeLabel = typeLabel || defaultMetaByCategory[project.category] || '';
+        const softwareTokensFromData = Array.isArray(project.software)
+          ? project.software.map((s) => String(s).trim()).filter(Boolean)
+          : [];
+        const softwareTokens = softwareTokensFromData.length
+          ? softwareTokensFromData
+          : collectSoftwareTokens(existingMetaText, introMetaText);
+        metaText = resolvedTypeLabel;
+        if (softwareTokens.length) {
+          metaText = `${resolvedTypeLabel} • ${softwareTokens.join(' • ')}`;
+        }
+      }
+
       if (!meta && metaText) {
         meta = document.createElement('div');
         meta.className = 'meta';
         title.insertAdjacentElement('afterend', meta);
       }
-      if (meta && (project.category === 'compositing' || !meta.textContent?.trim())) {
+      if (meta && metaText) {
         meta.textContent = metaText;
       }
 
