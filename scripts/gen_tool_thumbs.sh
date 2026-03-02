@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Generates first-frame JPG thumbnails for videos/previews/*.mp4 into images/tools_thumbs/
-# Custom override: if images/tools_thumbs_custom/<name>.jpg exists, it is copied instead.
+# Generates first-frame JPG thumbnails for videos/previews/*.mp4 into images/tools/thumbs/
+# Custom override: if images/tools/thumbs_custom/<name>.jpg exists, it is copied instead.
 # Skips work when thumbnail exists and is newer than the mp4 (unless forced).
 
 FORCE=0
@@ -11,8 +11,8 @@ if [[ "${1:-}" == "--force" ]]; then
 fi
 
 PREVIEW_DIR="videos/previews"
-OUT_DIR="images/tools_thumbs"
-CUSTOM_DIR="images/tools_thumbs_custom"
+OUT_DIR="images/tools/thumbs"
+CUSTOM_DIR="images/tools/thumbs_custom"
 
 mkdir -p "$OUT_DIR" "$CUSTOM_DIR"
 

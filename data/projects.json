@@ -3,7 +3,7 @@
     {
       "id": "lagoon_wip",
       "href": "projects/lagoon_wip.html",
-      "thumbnail": "images/Lagoon_thumb_1.5.1.png",
+      "thumbnail": "images/compositing/thumbs/Lagoon_thumb_1.5.1.png",
       "alt": "The Lagoon (WIP)",
       "overlay": "The Lagoon (Work in Progress)",
       "badge": "WIP",
@@ -12,7 +12,7 @@
     {
       "id": "motopia_wip",
       "href": "projects/motopia_wip.html",
-      "thumbnail": "images/Motopia_WIP_Frame02_1.6.2.png",
+      "thumbnail": "images/compositing/thumbs/Motopia_WIP_Frame02_1.6.2.png",
       "alt": "Motopia (WIP)",
       "overlay": "Motopia (Work in Progress)",
       "badge": "WIP",
@@ -21,7 +21,7 @@
     {
       "id": "sunset",
       "href": "projects/sunset.html",
-      "thumbnail": "images/sunset.jpg",
+      "thumbnail": "images/compositing/thumbs/sunset.jpg",
       "alt": "60s Sunset",
       "overlay": "60s Sunset",
       "badge": null,
@@ -30,7 +30,7 @@
     {
       "id": "khans",
       "href": "projects/khans.html",
-      "thumbnail": "images/Khans_v24_thumb.jpg",
+      "thumbnail": "images/compositing/thumbs/Khans_v24_thumb.jpg",
       "alt": "The Khans are Back",
       "overlay": "The Khans are Back",
       "badge": null,
@@ -39,7 +39,7 @@
     {
       "id": "losers",
       "href": "projects/losers.html",
-      "thumbnail": "images/Losers_Thumb_9A.png",
+      "thumbnail": "images/compositing/thumbs/Losers_Thumb_9A.png",
       "alt": "LOSERS",
       "overlay": "LOSERS (Work in Progress)",
       "badge": "WIP",
@@ -48,7 +48,7 @@
     {
       "id": "bellyofthebeast",
       "href": "projects/bellyofthebeast.html",
-      "thumbnail": "images/Belly_of_the_Beast_thumb_v01.jpg",
+      "thumbnail": "images/compositing/thumbs/Belly_of_the_Beast_thumb_v01.jpg",
       "alt": "Belly of the Beast",
       "overlay": "Belly of the Beast (Work in Progress)",
       "badge": "WIP",
@@ -57,7 +57,7 @@
     {
       "id": "etee",
       "href": "projects/ETEE.html",
-      "thumbnail": "images/ETEE_thumb_v01.png",
+      "thumbnail": "images/compositing/thumbs/ETEE_thumb_v01.png",
       "alt": "ETEE",
       "overlay": "Everything to Everyone Else (Work in Progress)",
       "badge": "WIP",
@@ -66,7 +66,7 @@
     {
       "id": "sleep_paralysis",
       "href": "projects/sleep_paralysis.html",
-      "thumbnail": "images/sleep_paralysis.jpg",
+      "thumbnail": "images/compositing/thumbs/sleep_paralysis.jpg",
       "alt": "Sleep Paralysis",
       "overlay": "Sleep Paralysis",
       "badge": null,
@@ -75,7 +75,7 @@
     {
       "id": "boyonroof",
       "href": "projects/boyonroof.html",
-      "thumbnail": "images/boyonroof.jpg",
+      "thumbnail": "images/compositing/thumbs/boyonroof.jpg",
       "alt": "Boy on Rooftop -Integration Exercise",
       "overlay": "Boy on Rooftop - Integration Exercise",
       "badge": null,
@@ -84,7 +84,7 @@
     {
       "id": "kidsrunning",
       "href": "projects/kidsrunning.html",
-      "thumbnail": "images/kids_running_thumb_no_gummy.png",
+      "thumbnail": "images/compositing/thumbs/kids_running_thumb_no_gummy.png",
       "alt": "Kids Running - Projection Exercise",
       "overlay": "Kids Running - Projection Exercise",
       "badge": null,
@@ -93,7 +93,7 @@
     {
       "id": "stadium",
       "href": "projects/stadium.html",
-      "thumbnail": "images/stadium.jpg",
+      "thumbnail": "images/compositing/thumbs/stadium.jpg",
       "alt": "Stadium - Chromakey Exercise",
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
@@ -120,7 +120,7 @@
     {
       "id": "sunshine",
       "href": "projects/sunshine.html",
-      "thumbnail": "images/sunshine_thumb.jpg",
+      "thumbnail": "images/motion/thumbs/sunshine_thumb.jpg",
       "alt": "Sunshine (Unreal Engine)",
       "overlay": "Sunshine (Unreal Engine)",
       "badge": null,
@@ -129,7 +129,7 @@
     {
       "id": "skipping",
       "href": "projects/skipping.html",
-      "thumbnail": "images/skipping.jpg",
+      "thumbnail": "images/motion/thumbs/skipping.jpg",
       "alt": "Skipping (Motion Graphics)",
       "overlay": "Skipping (Motion Graphics)",
       "badge": null,
@@ -138,7 +138,7 @@
     {
       "id": "howtosmash",
       "href": "projects/howtosmash.html",
-      "thumbnail": "images/howtosmash.jpg",
+      "thumbnail": "images/motion/thumbs/howtosmash.jpg",
       "alt": "How To: Make Smashburgers (Motion Graphics)",
       "overlay": "How To: Make Smashburgers (Motion Graphics)",
       "badge": null,
@@ -147,7 +147,7 @@
     {
       "id": "one_bite_animation",
       "href": "projects/one_bite_animation.html",
-      "thumbnail": "images/one bite thumb_1.1.1.jpg",
+      "thumbnail": "images/motion/thumbs/one bite thumb_1.1.1.jpg",
       "alt": "One Bite Pizza Review (Character Animation)",
       "overlay": "One Bite Pizza Review (Character Animation)",
       "badge": null,
@@ -156,7 +156,7 @@
     {
       "id": "alarm_clock",
       "href": "projects/alarm_clock.html",
-      "thumbnail": "images/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png",
+      "thumbnail": "images/motion/thumbs/Jake_Leuck_Alarm_Clock_Look_Dev_Render_01.png",
       "alt": "Alarm Clock 3D Model",
       "overlay": "Alarm Clock (3D Model)",
       "badge": null,
