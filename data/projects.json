@@ -2,21 +2,27 @@
   "projects": [
     {
       "id": "lagoon_wip",
-      "href": "projects/lagoon_wip.html",
+      "title": "The Lagoon",
+      "href": "projects/lagoon.html",
       "thumbnail": "images/compositing/thumbs/Lagoon_thumb_1.5.1.png",
       "alt": "The Lagoon (WIP)",
       "overlay": "The Lagoon (Work in Progress)",
       "badge": "WIP",
-      "category": "compositing"
+      "status": "In Progress",
+      "category": "compositing",
+      "skills": ["CG Integration", "Tooling / Automation"]
     },
     {
       "id": "motopia_wip",
-      "href": "projects/motopia_wip.html",
+      "title": "Motopia",
+      "href": "projects/motopia.html",
       "thumbnail": "images/compositing/thumbs/Motopia_WIP_Frame02_1.6.2.png",
       "alt": "Motopia (WIP)",
       "overlay": "Motopia (Work in Progress)",
       "badge": "WIP",
-      "category": "compositing"
+      "status": "In Progress",
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "sunset",
@@ -25,7 +31,8 @@
       "alt": "60s Sunset",
       "overlay": "60s Sunset",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": ["Paint / Cleanup", "2D Tracking", "Set Extension / DMP", "Relighting"]
     },
     {
       "id": "khans",
@@ -34,34 +41,44 @@
       "alt": "The Khans are Back",
       "overlay": "The Khans are Back",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": ["Warp / Distort", "CG Integration"]
     },
     {
       "id": "losers",
+      "title": "LOSERS",
       "href": "projects/losers.html",
       "thumbnail": "images/compositing/thumbs/Losers_Thumb_9A.png",
       "alt": "LOSERS",
       "overlay": "LOSERS (Work in Progress)",
       "badge": "WIP",
-      "category": "compositing"
+      "status": "In Progress",
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "bellyofthebeast",
+      "title": "Belly of the Beast",
       "href": "projects/bellyofthebeast.html",
       "thumbnail": "images/compositing/thumbs/Belly_of_the_Beast_thumb_v01.jpg",
       "alt": "Belly of the Beast",
       "overlay": "Belly of the Beast (Work in Progress)",
       "badge": "WIP",
-      "category": "compositing"
+      "status": "In Progress",
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "etee",
+      "title": "Everything to Everyone Else",
       "href": "projects/ETEE.html",
       "thumbnail": "images/compositing/thumbs/ETEE_thumb_v01.png",
       "alt": "ETEE",
       "overlay": "Everything to Everyone Else (Work in Progress)",
       "badge": "WIP",
-      "category": "compositing"
+      "status": "In Progress",
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "sleep_paralysis",
@@ -70,7 +87,8 @@
       "alt": "Sleep Paralysis",
       "overlay": "Sleep Paralysis",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "boyonroof",
@@ -79,7 +97,8 @@
       "alt": "Boy on Rooftop -Integration Exercise",
       "overlay": "Boy on Rooftop - Integration Exercise",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": []
     },
     {
       "id": "kidsrunning",
@@ -88,7 +107,8 @@
       "alt": "Kids Running - Projection Exercise",
       "overlay": "Kids Running - Projection Exercise",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": ["2D Tracking", "Set Extension / DMP"]
     },
     {
       "id": "stadium",
@@ -97,7 +117,8 @@
       "alt": "Stadium - Chromakey Exercise",
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
-      "category": "compositing"
+      "category": "compositing",
+      "skills": ["Keying"]
     },
     {
       "id": "abstract_shapes",

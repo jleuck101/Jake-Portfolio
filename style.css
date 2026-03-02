@@ -250,6 +250,65 @@ nav a{
   margin-bottom: 14px;
 }
 
+/* Compositing project title tag row (status + skills) */
+body.project-page .tag-row{
+  --pill-line-height: 1.2;
+  --pill-v-pad: 4px;
+  --pill-font-size: 0.72rem;
+  --pill-h: calc(var(--pill-font-size) * var(--pill-line-height) + (var(--pill-v-pad) * 2));
+  --pill-gap: 8px;
+  --pill-lines: 2;
+  --pill-max-h: calc((var(--pill-h) * var(--pill-lines)) + var(--pill-gap));
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--pill-gap);
+  width: 100%;
+  margin: -2px 0 14px 0;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  max-height: var(--pill-max-h);
+}
+
+body.project-page .pill{
+  display: inline-flex;
+  align-items: center;
+  padding: var(--pill-v-pad) 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.9);
+  font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: var(--pill-font-size);
+  line-height: var(--pill-line-height);
+  letter-spacing: 0.02em;
+  transition:
+    border-color 160ms var(--ease-out),
+    background 160ms var(--ease-out),
+    color 160ms var(--ease-out);
+}
+
+body.project-page .pill-skill:hover,
+body.project-page .pill-skill:focus-visible{
+  border-color: rgba(0,229,255,0.55);
+  background: rgba(0,229,255,0.09);
+  color: rgba(232,251,255,0.98);
+}
+
+body.project-page .pill-status{
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+body.project-page .pill-status.status-wip{
+  border-color: rgba(0,229,255,0.58);
+  background: rgba(0,229,255,0.14);
+  color: rgba(235,252,255,0.98);
+}
+
 .aligned-heading{
   max-width: 65ch;
   margin: 0 auto 24px;

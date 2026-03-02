@@ -1,4 +1,93 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Canonical compositing skill tags (Top 10) for data/projects.json consistency:
+  // ["Roto","Paint / Cleanup","Keying","2D Tracking","CG Integration","Set Extension / DMP",
+  //  "Warp / Distort","Relighting","Smart Vectors / STMap","Tooling / Automation"]
+  const COMPOSITING_ALLOWED_SKILLS = [
+    'Roto',
+    'Paint / Cleanup',
+    'Keying',
+    '2D Tracking',
+    'CG Integration',
+    'Set Extension / DMP',
+    'Warp / Distort',
+    'Relighting',
+    'Smart Vectors / STMap',
+    'Tooling / Automation'
+  ];
+
+  async function injectCompositingSkillsTags() {
+    if (!document.body.classList.contains('project-page')) return;
+
+    const title = document.querySelector('.project-hero h1, .content h1, h1');
+    if (!title) return;
+
+    const pathname = new URL(window.location.href).pathname;
+    const pathParts = pathname.split('/').filter(Boolean);
+    const lastSegment = pathParts[pathParts.length - 1] || '';
+    if (!lastSegment) return;
+
+    const normalizedId = lastSegment.replace(/\.html$/i, '');
+    if (!normalizedId || normalizedId === 'index') return;
+
+    try {
+      const dataUrl = new URL('../data/projects.json', window.location.href);
+      const res = await fetch(dataUrl.toString(), { cache: 'no-store' });
+      if (!res.ok) return;
+
+      const data = await res.json();
+      const projects = Array.isArray(data.projects) ? data.projects : [];
+      const project = projects.find((p) => {
+        if (typeof p.href !== 'string') return false;
+        const hrefId = p.href.split('/').pop()?.replace(/\.html$/i, '') || '';
+        return hrefId === normalizedId;
+      });
+      if (!project || project.category !== 'compositing') return;
+
+      if (typeof project.title === 'string' && project.title.trim()) {
+        title.textContent = project.title.trim();
+      }
+
+      const status = typeof project.status === 'string' ? project.status.trim() : '';
+      const skills = Array.isArray(project.skills)
+        ? project.skills.map((s) => String(s).trim()).filter(Boolean)
+        : [];
+      if (!status && !skills.length) return;
+
+      const unknown = skills.filter((s) => !COMPOSITING_ALLOWED_SKILLS.includes(s));
+      if (unknown.length) {
+        console.warn(`Unknown compositing skills for ${project.id}:`, unknown);
+      }
+
+      const row = document.createElement('div');
+      row.className = 'tag-row';
+      row.setAttribute('aria-label', 'Project status and compositing skills');
+
+      if (status) {
+        const statusPill = document.createElement('span');
+        statusPill.className = 'pill pill-status';
+        const normalizedStatus = status.toLowerCase();
+        if (normalizedStatus === 'wip' || normalizedStatus === 'in progress') {
+          statusPill.classList.add('status-wip');
+        }
+        statusPill.textContent = status;
+        row.appendChild(statusPill);
+      }
+
+      skills.forEach((skill) => {
+        const pill = document.createElement('span');
+        pill.className = 'pill pill-skill';
+        pill.textContent = skill;
+        row.appendChild(pill);
+      });
+
+      title.insertAdjacentElement('afterend', row);
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
+  injectCompositingSkillsTags();
+
   // =========================================================
   // Scroll Reveal (site-wide, no HTML edits)
   // Automatically tags common elements for reveal if they
