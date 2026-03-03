@@ -61,6 +61,20 @@ function renderTool(tool) {
   `;
 }
 
+function applyToolCardMediaState(scope) {
+  const cards = Array.from(scope.querySelectorAll('.tool-project'));
+  cards.forEach((card) => {
+    const video = card.querySelector('video.tool-project__video');
+    const src = (video?.getAttribute('src') || '').trim();
+    const dataSrc = (video?.dataset?.src || '').trim();
+    const hasVideo = Boolean(video && (src || dataSrc));
+
+    card.classList.toggle('has-video', hasVideo);
+    card.classList.toggle('no-video', !hasVideo);
+    card.dataset.hasVideo = hasVideo ? 'true' : 'false';
+  });
+}
+
 async function initToolsGallery() {
   const gallery = document.getElementById('tools-gallery');
   if (!gallery) return;
@@ -69,6 +83,7 @@ async function initToolsGallery() {
     const data = await loadToolsData();
     const tools = Array.isArray(data.tools) ? data.tools : [];
     gallery.innerHTML = tools.map((tool) => renderTool(tool)).join('');
+    applyToolCardMediaState(gallery);
     window.dispatchEvent(new CustomEvent('tools:rendered'));
   } catch (err) {
     console.warn(err);

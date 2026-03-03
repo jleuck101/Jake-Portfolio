@@ -1186,6 +1186,18 @@ body.project-page .meta{
   max-width: 90ch;
 }
 
+.tool-project.no-video .tool-project__media{
+  display: none;
+}
+
+.tool-project.no-video .tool-project__placeholder{
+  display: none;
+}
+
+.tool-project.no-video .tool-project__body{
+  margin: 0 auto;
+}
+
 .tool-project__header{
   display: flex;
   flex-direction: column;
@@ -1240,13 +1252,13 @@ body.project-page .meta{
 
 /* Desktop: split layout + size cap so previews don’t dominate */
 @media (min-width: 980px){
-  .tool-project{
+  .tool-project.has-video{
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     align-items: stretch;
   }
 
-  .tool-project__media{
+  .tool-project.has-video .tool-project__media{
     aspect-ratio: auto;
     min-height: 300px;
     max-height: 380px;
@@ -1255,8 +1267,21 @@ body.project-page .meta{
     border-right: 1px solid rgba(255,255,255,0.08);
   }
 
-  .tool-project__body{
+  .tool-project.has-video .tool-project__body{
     padding: 20px 20px 22px;
+  }
+
+  .tool-project.no-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tool-project.no-video .tool-project__body{
+    width: 100%;
+    max-width: 78ch;
+    margin: 0 auto;
+    padding: 24px 24px 26px;
   }
 }
 
