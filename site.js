@@ -364,6 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Apply reveal across the site
   // (If this ever feels like "too much", we can narrow these selectors.)
   autoReveal('.section', { stagger: false });
+  autoReveal('.reel-section h2, .reel-section .reel-note, .reel-section .reel-frame', { stagger: true });
   autoReveal('.project-thumb', { stagger: true });
   autoReveal('.tool-card', { stagger: true });
   autoReveal('footer', { stagger: false });

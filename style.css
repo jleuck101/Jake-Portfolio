@@ -420,6 +420,12 @@ p{
   padding: 20px 20px;
 }
 
+.reel-section h2{
+  color: var(--accent);
+  font-size: 34px;
+  margin-bottom: 26px;
+}
+
 .reel-section .reel-frame{
   width: min(100%, var(--content-w));
   margin: 0 auto;
@@ -454,7 +460,7 @@ p{
   border-radius: 0;
   margin: 0;
   opacity: 0;
-  transition: opacity var(--t-med) var(--ease-smooth);
+  transition: opacity 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .media-frame > iframe.is-ready,
