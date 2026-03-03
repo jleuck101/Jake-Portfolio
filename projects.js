@@ -164,7 +164,8 @@ function initCompositingSkillFilter(data, byId) {
     filterRoot.appendChild(button);
   });
 
-  const cards = Array.from(gallery.querySelectorAll('.project-thumb'));
+  let cards = Array.from(gallery.querySelectorAll('.project-thumb'));
+  const cardOriginalIndex = new Map(cards.map((card, index) => [card, index]));
   const total = cards.length;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const MOVE_MS = 420;
@@ -208,6 +209,74 @@ function initCompositingSkillFilter(data, byId) {
     });
   };
 
+  const toRank = (value) => {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+  };
+
+  const getCardProject = (card) => {
+    const projectId = card.getAttribute('data-project-id') || '';
+    return projectId ? byId[projectId] : null;
+  };
+
+  const getFeaturedRank = (project) => toRank(project?.featured_rank);
+
+  const getSkillRank = (project, selectedSkillList) => {
+    if (!project || !selectedSkillList.length || !project.skill_rank || typeof project.skill_rank !== 'object') {
+      return Number.POSITIVE_INFINITY;
+    }
+
+    return selectedSkillList.reduce((best, skill) => {
+      const rank = toRank(project.skill_rank[skill]);
+      return rank < best ? rank : best;
+    }, Number.POSITIVE_INFINITY);
+  };
+
+  const getFallbackTitle = (project, card) => {
+    const raw =
+      project?.title ||
+      project?.overlay ||
+      card.querySelector('.overlay')?.textContent ||
+      project?.alt ||
+      '';
+    return String(raw).trim().toLowerCase();
+  };
+
+  const sortCardsForSelection = (cardList, selectedSkillList, usingAll) => {
+    const selected = Array.isArray(selectedSkillList) ? selectedSkillList : [];
+    const sorted = [...cardList];
+
+    sorted.sort((a, b) => {
+      const projectA = getCardProject(a);
+      const projectB = getCardProject(b);
+
+      if (usingAll) {
+        const featuredDiff = getFeaturedRank(projectA) - getFeaturedRank(projectB);
+        if (featuredDiff !== 0) return featuredDiff;
+      } else {
+        const skillDiff = getSkillRank(projectA, selected) - getSkillRank(projectB, selected);
+        if (skillDiff !== 0) return skillDiff;
+
+        const featuredDiff = getFeaturedRank(projectA) - getFeaturedRank(projectB);
+        if (featuredDiff !== 0) return featuredDiff;
+      }
+
+      const titleA = getFallbackTitle(projectA, a);
+      const titleB = getFallbackTitle(projectB, b);
+      const titleDiff = titleA.localeCompare(titleB);
+      if (titleDiff !== 0) return titleDiff;
+
+      const idA = String(projectA?.id || a.getAttribute('data-project-id') || '').toLowerCase();
+      const idB = String(projectB?.id || b.getAttribute('data-project-id') || '').toLowerCase();
+      const idDiff = idA.localeCompare(idB);
+      if (idDiff !== 0) return idDiff;
+
+      return (cardOriginalIndex.get(a) ?? 0) - (cardOriginalIndex.get(b) ?? 0);
+    });
+
+    return sorted;
+  };
+
   const applyFilter = () => {
     ensureCardBadges(cards, byId);
     cards.forEach((card) => {
@@ -224,6 +293,8 @@ function initCompositingSkillFilter(data, byId) {
     }
 
     const usingAll = selectedSkills.size === 0;
+    const selectedSkillList = Array.from(selectedSkills);
+    cards = sortCardsForSelection(cards, selectedSkillList, usingAll);
     let shown = 0;
 
     const visibilityPlan = cards.map((card) => {

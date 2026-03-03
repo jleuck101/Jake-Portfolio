@@ -10,6 +10,13 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
+      "featured_rank": 1,
+      "skill_rank": {
+        "Roto": 1,
+        "Paint / Cleanup": 2,
+        "Effect Look Dev": 1,
+        "CG Integration": 2
+      },
       "skills": [
         "Smart Vectors / STMap",
         "Tooling / Automation",
@@ -32,6 +39,12 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
+      "featured_rank": 2,
+      "skill_rank": {
+        "Roto": 5,
+        "CG Integration": 1,
+        "Set Extension / DMP": 2
+      },
       "skills": [
         "CG Integration",
         "Set Extension / DMP",
@@ -51,7 +64,14 @@
       "badge": "Updating",
       "status": "Updating",
       "category": "compositing",
+      "featured_rank": 3,
+      "skill_rank": {
+        "Roto": 4,
+        "Paint / Cleanup": 1,
+        "Set Extension / DMP": 1
+      },
       "skills": [
+        "Roto",
         "Paint / Cleanup",
         "2D Tracking",
         "Set Extension / DMP",
@@ -70,6 +90,11 @@
       "badge": "Updating",
       "status": "Updating",
       "category": "compositing",
+      "featured_rank": 4,
+      "skill_rank": {
+        "Keying": 4,
+        "Set Extension / DMP": 3
+      },
       "skills": [
         "Set Extension / DMP",
         "Matchmove",
@@ -90,6 +115,12 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
+      "featured_rank": 5,
+      "skill_rank": {
+        "Roto": 2,
+        "Paint / Cleanup": 4,
+        "Effect Look Dev": 3
+      },
       "skills": [
         "Paint / Cleanup",
         "Roto",
@@ -107,6 +138,7 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
+      "skill_rank": {},
       "skills": []
     },
     {
@@ -119,6 +151,11 @@
       "badge": "WIP",
       "status": "In Progress",
       "category": "compositing",
+      "featured_rank": 6,
+      "skill_rank": {
+        "Roto": 3,
+        "Paint / Cleanup": 3
+      },
       "skills": [
         "Roto",
         "Paint / Cleanup",
@@ -135,6 +172,10 @@
       "overlay": "Sleep Paralysis",
       "badge": null,
       "category": "compositing",
+      "skill_rank": {
+        "Effect Look Dev": 2,
+        "Keying": 3
+      },
       "skills": [
         "Effect Look Dev",
         "Roto",
@@ -151,6 +192,11 @@
       "overlay": "Boy on Rooftop - Integration Exercise",
       "badge": null,
       "category": "compositing",
+      "skill_rank": {
+        "Keying": 2,
+        "CG Integration": 3,
+        "Set Extension / DMP": 4
+      },
       "skills": [
         "Projection",
         "Matchmove",
@@ -169,6 +215,10 @@
       "overlay": "Kids Running - Projection Exercise",
       "badge": null,
       "category": "compositing",
+      "skill_rank": {
+        "Roto": 6,
+        "Set Extension / DMP": 5
+      },
       "skills": [
         "Set Extension / DMP",
         "Matchmove",
@@ -186,6 +236,12 @@
       "overlay": "Stadium - Chromakey Exercise",
       "badge": null,
       "category": "compositing",
+      "skill_rank": {
+        "Roto": 7,
+        "Paint / Cleanup": 5,
+        "Keying": 1,
+        "Set Extension / DMP": 6
+      },
       "skills": [
         "Keying",
         "Set Extension / DMP",
