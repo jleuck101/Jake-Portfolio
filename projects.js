@@ -1,9 +1,14 @@
 async function loadProjectsData() {
-  const res = await fetch('/data/projects.json', { cache: 'no-store' });
-  if (!res.ok) {
-    throw new Error(`Failed to load projects data: ${res.status}`);
+  if (!window.__projectsDataPromise) {
+    window.__projectsDataPromise = fetch('/data/projects.json', { cache: 'no-store' }).then((res) => {
+      if (!res.ok) {
+        throw new Error(`Failed to load projects data: ${res.status}`);
+      }
+      return res.json();
+    });
   }
-  return res.json();
+
+  return window.__projectsDataPromise;
 }
 
 const COMPOSITING_CANONICAL_SKILLS = [

@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+  function loadProjectsDataCached() {
+    if (window.__projectsDataPromise) return window.__projectsDataPromise;
+
+    window.__projectsDataPromise = fetch('/data/projects.json', { cache: 'no-store' }).then((res) => {
+      if (!res.ok) {
+        throw new Error(`Failed to load projects data: ${res.status}`);
+      }
+      return res.json();
+    });
+
+    return window.__projectsDataPromise;
+  }
+
   // Canonical compositing skill tags (Top 10) for data/projects.json consistency:
   // ["Roto","Paint / Cleanup","Keying","2D Tracking","CG Integration","Set Extension / DMP",
   //  "Warp / Distort","Relighting","Smart Vectors / STMap","Tooling / Automation"]
@@ -56,6 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       if (node.tagName.toLowerCase() === 'iframe') {
+        if (!node.closest('#reel')) {
+          const rect = node.getBoundingClientRect();
+          const isBelowFold = rect.top > window.innerHeight * 0.9;
+          node.loading = isBelowFold ? 'lazy' : 'eager';
+        }
+
         node.addEventListener('load', reveal, { once: true });
         window.setTimeout(reveal, 1400);
         return;
@@ -163,13 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const dataUrl = new URL('/data/projects.json', window.location.origin);
-      debugLog('fetching data from:', dataUrl.toString());
-      const res = await fetch(dataUrl.toString(), { cache: 'no-store' });
-      debugLog('fetch ok/status:', res.ok, res.status);
-      if (!res.ok) return;
-
-      const data = await res.json();
+      debugLog('fetching data from:', '/data/projects.json');
+      const data = await loadProjectsDataCached();
+      debugLog('fetch ok/status:', true, 200);
       const projects = Array.isArray(data.projects) ? data.projects : [];
       const project = projects.find((p) => {
         if (typeof p.href !== 'string') return false;
