@@ -977,6 +977,15 @@ body.compositing-page #compositing-projects.section{
   margin-right: 0;
 }
 
+.about-page .section-resume{
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+
+.about-page .section-resume .contact-actions{
+  margin: 0;
+}
+
 @media (max-width: 900px){
   .about-page #about-content .about-flex{
     grid-template-columns: 1fr;
