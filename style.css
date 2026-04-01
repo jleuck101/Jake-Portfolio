@@ -430,11 +430,11 @@ p{
   width: min(100%, var(--content-w));
   margin: 0 auto;
   box-shadow: var(--shadow);
-  transition: transform var(--t-med) var(--ease-smooth);
+  transition: none;
 }
 .reel-section .reel-frame:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(0,229,255,0.12), 0 0 28px rgba(0,0,0,0.55);
+  transform: none;
+  box-shadow: var(--shadow);
 }
 
 /* ---------- Shared media frames ---------- */
