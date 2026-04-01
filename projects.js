@@ -25,7 +25,12 @@ const COMPOSITING_CANONICAL_SKILLS = [
 ];
 
 function normalizeBadge(value) {
-  return value === 'WIP' || value === 'Updating' ? value : null;
+  return value === 'WIP' || value === 'Updating' || value === 'NEW' ? value : null;
+}
+
+function normalizeBadgeClass(value) {
+  const badge = normalizeBadge(value);
+  return badge ? badge.toLowerCase().replace(/[^a-z0-9]+/g, '-') : '';
 }
 
 function ensureCardBadges(cards, byId) {
@@ -33,14 +38,18 @@ function ensureCardBadges(cards, byId) {
     const projectId = card.getAttribute('data-project-id') || '';
     const project = projectId ? byId[projectId] : null;
     const badgeText = normalizeBadge(project?.badge);
+    const badgeClass = normalizeBadgeClass(project?.badge);
     const existingBadge = card.querySelector('.wip-badge');
 
     if (badgeText) {
       if (existingBadge) {
         if (existingBadge.textContent !== badgeText) existingBadge.textContent = badgeText;
+        existingBadge.className = 'wip-badge';
+        if (badgeClass) existingBadge.classList.add(`badge-${badgeClass}`);
       } else {
         const badgeEl = document.createElement('div');
         badgeEl.className = 'wip-badge';
+        if (badgeClass) badgeEl.classList.add(`badge-${badgeClass}`);
         badgeEl.textContent = badgeText;
         card.insertBefore(badgeEl, card.firstChild);
       }
@@ -56,6 +65,7 @@ function ensureCardBadges(cards, byId) {
 
 function renderCard(project, badgeOverride, hasBadgeOverride) {
   const badge = hasBadgeOverride ? normalizeBadge(badgeOverride) : normalizeBadge(project.badge);
+  const badgeClass = hasBadgeOverride ? normalizeBadgeClass(badgeOverride) : normalizeBadgeClass(project.badge);
   const classes = badge ? 'project-thumb wip-thumb' : 'project-thumb';
   const safeSkills = Array.isArray(project.skills)
     ? project.skills.map((s) => String(s).trim()).filter(Boolean)
@@ -64,7 +74,7 @@ function renderCard(project, badgeOverride, hasBadgeOverride) {
 
   return `
     <a href="${project.href}" class="${classes}" data-project-id="${project.id || ''}" data-skills="${encodedSkills}">
-      ${badge ? `<div class="wip-badge">${badge}</div>` : ''}
+      ${badge ? `<div class="wip-badge${badgeClass ? ` badge-${badgeClass}` : ''}">${badge}</div>` : ''}
       <img src="${project.thumbnail}" alt="${project.alt}">
       <div class="overlay">${project.overlay}</div>
     </a>
