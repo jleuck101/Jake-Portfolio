@@ -1,0 +1,85 @@
+Shot Name: Weekly Exercise 1 / Soccer Stadium Greenscreen
+Project: Compositing II Weekly Exercise
+Role: Compositor
+
+Current Framing:
+This shot reads as a greenscreen character integration exercise built around a soccer player placed into a stadium environment, with multiple layered tasks: a green key for the player, a luma-based key for the sky replacement, and extensive paint work to remove the original stadium name and replace it with custom signage. The strongest angle is compositing fundamentals plus practical cleanup — keying, despill, paint, signage replacement, and environment integration.
+
+Reel Line:
+Greenscreen character integration with keying, paint cleanup, and sky replacement
+
+Alt Reel Lines:
+Soccer player greenscreen integration with keying, paint work, and sky replacement
+Character integration into stadium plate with chroma keying, luma keying, and signage replacement
+Greenscreen extraction and stadium integration with paint cleanup and sky replacement
+Keying, despill, paint, and environment integration for a stadium greenscreen shot
+
+Portfolio Summary:
+Integrated a greenscreen soccer player into a stadium environment while solving several different compositing problems in the same shot. Pulled a chroma key for the foreground player, used a separate luma-based key for the sky replacement, and performed extensive paint work to remove the original stadium name and replace it with custom signage. Refined the foreground matte, controlled spill, cleaned edges, and balanced the final environment so the player, stadium, signage, and sky all felt more cohesive.
+
+What I Did:
+- Keyed the greenscreen player plate
+- Controlled green spill and refined the foreground extraction
+- Cleaned and shaped the alpha with additional matte work
+- Integrated the player into the stadium environment
+- Pulled a luma-based key to isolate and replace the sky
+- Painted out the original stadium name
+- Replaced the stadium signage with custom text / graphics
+- Performed significant paint cleanup to support the sign replacement and plate repair
+- Refined edges and transitions between player, stadium, signage, and sky layers
+- Used supporting roto / matte adjustments where needed to improve the final result
+- Performed final image balancing to unify the composite
+
+Techniques / Workflows:
+- Keying
+- Chroma key
+- Luma key
+- Sky Replacement
+- Paint / Cleanup
+- Signage replacement
+- Despill
+- Roto
+- Edge refinement
+- Character integration
+- Environment balancing
+- Alpha / premult cleanup
+
+Main Challenges:
+- Managing multiple different extraction and repair tasks in the same shot
+- Keeping the greenscreen key clean while avoiding harsh edges or contamination
+- Using a luma key for the sky replacement without creating weak transitions or broken areas
+- Removing and replacing stadium signage cleanly enough that it felt built into the plate
+- Making the player sit naturally inside the environment rather than feeling pasted in
+
+Suggested Recruiter / Interview Framing:
+This shot is strongest as an example of compositing fundamentals plus layered cleanup work. It shows comfort with chroma keying, luma keying, paint cleanup, signage replacement, and the practical balancing needed to make several different fixes work together in one final shot.
+
+Suggested Breakdown Approach:
+For the reel, use a simple before/after wipe or final-to-original comparison.
+For the portfolio page, emphasize:
+1. greenscreen extraction
+2. despill and edge cleanup
+3. painted stadium-sign replacement
+4. luma-based sky replacement
+5. final environment integration
+
+Website Tags:
+- Keying
+- Roto
+- Paint / Cleanup
+- Sky Replacement
+
+Optional Tags:
+- CG Integration
+- Effect Look Dev
+
+Tag Notes:
+Paint / Cleanup should definitely be included on this version because the stadium-name replacement is a meaningful part of the shot.
+Use CG Integration only if the stadium/background is actually being presented as CG on your site.
+Use Effect Look Dev only if the final sky treatment became a major stylized look choice.
+
+Suggested Portfolio Page Direction:
+Frame the write-up around solving three different types of work in one shot: the green key for the player, the luma key for the sky, and the painted replacement of the stadium signage. That gives the page a stronger problem-solving angle than treating it as only a basic greenscreen exercise.
+
+Status:
+READY FOR REEL / PORTFOLIO WRITE-UP

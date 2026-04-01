@@ -1,0 +1,67 @@
+Shot Name: Echo 010 Wide Pavilion Paint
+Project: The Lagoon
+Role: Compositor
+
+Reel Line:
+Large-scale paint cleanup and environment reconstruction
+
+Alt Reel Lines:
+Paint cleanup, patch reconstruction, and environment rebuild
+Large-scale environment cleanup and architectural reconstruction
+Wide-shot paint cleanup with background reconstruction
+Environment cleanup with paint, holdouts, patching, and grain reintegration
+
+Portfolio Summary:
+Executed a large-scale 4K paint cleanup on a wide static lakeside pavilion shot, removing multiple background distractions and rebuilding architectural and natural elements across the frame. Created clean patches from scratch, reconstructed tree detail from multiple source areas, rebuilt sections visible through the arches, and cleaned up cars and other unwanted elements in the background. Integrated the work with manual roto and holdouts, frame holds, time offsets, denoise, and final regrain.
+
+What I Did:
+- Removed cars and other background distractions visible through the pavilion arches
+- Created clean patches from scratch
+- Rebuilt tree areas using pieces sourced from different parts of the plate
+- Painted and patched portions of the arches using information from elsewhere in the shot
+- Used manual roto and holdouts for trees, lamps, and overlapping architectural areas
+- Keyed moving foreground grass to help cover or isolate areas during cleanup
+- Used frame holds and time offsets to find workable background tree motion
+- Handled denoise and regrain integration for the final comp
+- Managed slight plate drift in an otherwise static shot
+
+Technical Notes:
+- 4K wide shot
+- Static shot with slight pixel drift
+- Paint-heavy cleanup across a large portion of the background
+- Manual patch creation and environment reconstruction
+- Significant use of frame holds, time offsets, and holdouts
+- Final integration included denoise and regrain
+
+Main Challenges:
+- Reconstructing believable tree motion in the background while sourcing patches from different moments
+- Rebuilding areas around lamps and overlapping edges where extension and cleanup were more delicate
+- Matching and preserving the blue fringe/tinge around lamp areas during cleanup
+- Using keying selectively on moving foreground grass in a way that still supported the paint work
+
+Tools / Techniques:
+- Paint
+- Patch reconstruction
+- Environment cleanup
+- Manual roto
+- Holdouts
+- Frame holds
+- Time offsets
+- Denoise
+- Regrain
+- Keying
+- Edge repair / extension
+
+Suggested Reel Breakdown Approach:
+Use a simple before/after wipe. Start on the final, then reveal the original plate. This shot reads best as one broad cleanup rather than a heavily layered breakdown.
+
+Suggested Bottom Text:
+Large-scale paint cleanup and environment reconstruction
+
+Other Good Bottom Text Options:
+Paint cleanup, patch reconstruction, and environment rebuild
+Wide-shot environment cleanup and reconstruction
+Paint out, cleanup, and background rebuild
+
+Status:
+READY FOR REEL

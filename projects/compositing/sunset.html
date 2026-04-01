@@ -36,9 +36,10 @@
 
   <div class="content">
     <h1>60s Sunset</h1>
+    <div class="meta">Compositing - Nuke</div>
 
     <iframe
-      src="https://www.youtube-nocookie.com/embed/Ys1aGFsbdO0?rel=0&modestbranding=1"
+      src="https://www.youtube-nocookie.com/embed/a6puTsX03z8?rel=0&modestbranding=1"
       title="60s Sunset Project"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
@@ -63,6 +64,14 @@
     <p>
       I layered grass and dirt layers and used distortion and erosion to reveal the dirt at the edges, and drew rotoshapes of paths eroded by car wheels to reveal the dirt below, which was piped back in and offset to create a subtle graded shadow.
     </p>
+
+    <h2 class="aligned-heading">Key Work</h2>
+    <ul class="tool-bullets">
+      <li>Tracked and painted out wires, poles, and a cell tower across the full shot.</li>
+      <li>Extended and graded the environment to push the image toward a stylized fall look.</li>
+      <li>Added layered ground detail, sky replacement, depth-driven haze, and atmospheric finishing.</li>
+      <li>Used custom roto and CopyCat-assisted isolation work to preserve the character over the rebuilt background.</li>
+    </ul>
 
     <p>
       I performed a sky replacement using a very drastic image, and to allow this to blend in better I did the necessary color corrections, as well as utilizing Foundry's available machine learning tools. I generated a depth map of the entire scene using MiDaS from the open source library Cattery, and used that to power a depth-appropriate level of haze throughout the scene. To allow my character to enter over the replaced sky, I trained a local model on 10 examples of individual roto shapes I created of the man using CopyCat. Finally, I experimented with volume rays to add an additional sense of drama to the scene.

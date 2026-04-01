@@ -1,0 +1,33 @@
+Weekly Exercise 1 / Soccer Stadium Greenscreen – Reel Text Options
+
+Best Main Line:
+Greenscreen character integration with keying, paint cleanup, and sky replacement
+
+Other Strong Options:
+Soccer player greenscreen integration with keying, paint work, and sky replacement
+Character integration into stadium plate with chroma keying, luma keying, and signage replacement
+Greenscreen extraction and stadium integration with paint cleanup and sky replacement
+Keying, despill, paint, and environment integration for a stadium greenscreen shot
+
+Shorter / Simpler:
+Keying, paint, and sky replacement
+Greenscreen player integration
+Chroma key, paint cleanup, and sky replacement
+Soccer greenscreen composite
+
+Best Website Tags:
+Keying
+Roto
+Paint / Cleanup
+Sky Replacement
+
+Optional:
+CG Integration
+Effect Look Dev
+
+Top Recruiter Read:
+This shot works best as proof of:
+- clean greenscreen extraction
+- handling two different keying methods in one shot
+- meaningful paint cleanup / signage replacement
+- practical environment integration

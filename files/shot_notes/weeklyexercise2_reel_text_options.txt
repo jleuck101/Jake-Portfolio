@@ -1,0 +1,34 @@
+Weekly Exercise 2 / Broken Comp – Reel Text Options
+
+Best Main Line:
+Greenscreen character integration with keying, tracking, and projection-based shadow work
+
+Other Strong Options:
+Character integration into a CG environment with keying, tracking, and projection
+Greenscreen extraction and CG integration with shadow projection and light wrap
+Keying, tracking, and projection-based character integration
+CG environment integration with keying, despill, tracking, and projected contact work
+
+Shorter / Simpler:
+Keying and CG integration
+Tracked character integration
+Greenscreen integration and projection
+Character integration into CG environment
+
+Best Website Tags:
+Keying
+Roto
+2D Tracking
+CG Integration
+Projection
+
+Optional:
+Effect Look Dev
+Relighting
+
+Top Recruiter Read:
+This shot works best as proof of technical troubleshooting:
+- fixing a broken comp
+- improving a greenscreen extraction
+- integrating a foreground character into a CG scene
+- using projection-based grounding and finishing touches to make the result sit better

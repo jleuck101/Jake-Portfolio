@@ -1,0 +1,36 @@
+Weekly Exercise 3 / Drone Shot – Reel Text Options
+
+Best Main Line:
+Drone-shot sky replacement and environment extension with matchmove and projection
+
+Other Strong Options:
+Moving-shot environment extension with camera solve, projection, and sky replacement
+Sky replacement and building extension on a moving drone plate
+Matchmove, projection, and environment cleanup on a moving aerial shot
+Tracked environment reconstruction with sky replacement, powerline holdouts, and atmospheric finishing
+
+Shorter / Simpler:
+Sky replacement and environment extension
+Matchmove and projection on moving plate
+Moving-shot set extension
+Tracked sky replacement and extension
+
+Best Website Tags:
+Matchmove
+Projection
+Set Extension / DMP
+Sky Replacement
+2D Tracking
+Roto
+
+Optional:
+Paint / Cleanup
+Effect Look Dev
+
+Top Recruiter Read:
+This shot works best as proof of:
+- camera-solve / spatial thinking
+- projection-based environment work
+- foreground holdout management
+- moving-shot integration
+- atmospheric / lensing finish

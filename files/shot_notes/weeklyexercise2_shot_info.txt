@@ -1,0 +1,87 @@
+Shot Name: Weekly Exercise 2 / Broken Comp
+Project: Compositing II Weekly Exercise
+Role: Compositor
+
+Current Framing:
+This shot reads best as a greenscreen character integration exercise built around fixing and refining a deliberately broken comp. The strongest public-facing angle is problem solving: repairing the comp, improving the extraction and integration, and bringing the foreground character into a believable CG environment.
+
+Reel Line:
+Greenscreen character integration with keying, tracking, and projection-based shadow work
+
+Alt Reel Lines:
+Character integration into a CG environment with keying, tracking, and projection
+Greenscreen extraction and CG integration with shadow projection and light wrap
+Keying, tracking, and projection-based character integration
+CG environment integration with keying, despill, tracking, and projected contact work
+
+Portfolio Summary:
+Refined a deliberately broken compositing exercise into a finished character integration shot. Extracted a greenscreen character, repaired alpha and premultiplication issues, regraded the foreground to sit into the environment, and integrated the subject into a CG scene using 2D tracking, projection-based contact/shadow work, light wrap, depth-driven image shaping, and volumetric atmosphere. The script shows multiple targeted fixes, including key adjustments, edge handling, hotspot cleanup, and final focus/atmosphere balancing.
+
+What I Did:
+- Keyed and despilled the greenscreen character plate
+- Repaired alpha / premultiplication issues in the extraction
+- Refined edge quality with erosion, blur, and additional matte cleanup
+- Regraded the character to better match the background environment
+- 2D tracked the character into the shot
+- Used projection-based contact / shadow work to seat the character into the ground plane
+- Integrated the character into a CG environment and sky composite
+- Used depth-driven shaping and focus tools to help balance the environment
+- Added light wrap for stronger foreground/background integration
+- Used volumetric light treatment to help unify the scene
+- Performed localized cleanup such as hotspot reduction and small roto fixes
+- Finished with final image balancing and vignette treatment
+
+Techniques / Workflows:
+- Keying
+- Despill
+- Roto
+- 2D Tracking
+- CG Integration
+- Projection
+- Light wrap
+- Depth-driven comp adjustments
+- Volumetric light treatment
+- Premult / unpremult correction
+- Edge refinement
+- Focus / atmosphere balancing
+- Vignette finishing
+
+Main Challenges:
+- Fixing a comp that was intentionally set up with errors rather than building from a clean starting point
+- Getting the greenscreen extraction to feel cleaner and more integrated into the environment
+- Repairing premult / grade interactions so the foreground did not lift or contaminate the alpha
+- Creating believable contact and grounding for the character through projected shadow-style work
+- Balancing the foreground subject against a stylized CG / sky environment without breaking the realism too much
+
+Suggested Recruiter / Interview Framing:
+This shot is strongest as an example of technical troubleshooting and integration. It shows an understanding of how small compositing issues stack together: key quality, despill, premultiplication, tracking, contact, focus, atmosphere, and final balancing. It is a good proof-of-problem-solving shot rather than just a beauty render.
+
+Suggested Breakdown Approach:
+For the reel, use a simple before/after wipe or a brief final-to-original comparison.
+For the portfolio page, emphasize:
+1. key / despill improvements
+2. tracking and placement
+3. projection-based grounding / contact work
+4. light wrap / atmosphere / final integration
+
+Website Tags:
+- Keying
+- Roto
+- 2D Tracking
+- CG Integration
+- Projection
+
+Optional Tags:
+- Effect Look Dev
+- Relighting
+
+Tag Notes:
+Use Effect Look Dev only if you want to emphasize the volumetric light / atmosphere shaping as part of the shot’s identity.
+Use Relighting only if you feel the final image treatment went beyond matching and into deliberate lighting redesign.
+Do not use Matchmove unless you personally solved the camera; the script uses projection and a camera-driven setup, but that does not automatically mean matchmove should be tagged as your contribution.
+
+Suggested Portfolio Page Direction:
+Frame this shot around troubleshooting and finishing a broken comp exercise. That makes the write-up useful for recruiters because it highlights technical judgment, not just the final frame.
+
+Status:
+READY FOR REEL / PORTFOLIO WRITE-UP (first-pass wording)

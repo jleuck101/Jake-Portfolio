@@ -1,0 +1,85 @@
+Shot Name: Weekly Exercise 3 / Drone Shot
+Project: Compositing II Weekly Exercise
+Role: Compositor
+
+Current Framing:
+This shot reads as a moving drone-style environment composite built around sky replacement, building/background reconstruction, and camera-solve-driven projection work. The strongest angle is technical integration: matching a moving plate with projected environment fixes, preserving foreground elements like powerlines, and finishing the shot with atmosphere and lensing work.
+
+Reel Line:
+Drone-shot sky replacement and environment extension with matchmove and projection
+
+Alt Reel Lines:
+Moving-shot environment extension with camera solve, projection, and sky replacement
+Sky replacement and building extension on a moving drone plate
+Matchmove, projection, and environment cleanup on a moving aerial shot
+Tracked environment reconstruction with sky replacement, powerline holdouts, and atmospheric finishing
+
+Portfolio Summary:
+Rebuilt and extended a moving aerial-style shot using a combination of camera tracking, projected environment elements, mirrored/extended building work, sky replacement, and multiple foreground holdouts. Solved the plate in 3D to support projected fixes and extensions, preserved and layered foreground powerlines back over the new sky, and balanced the final image with volumetric light, flare, focus, vignette, and regrain/lensing treatment. The shot is strongest as an example of combining matchmove, projection, and compositing cleanup to stabilize a more complex moving environment shot.
+
+What I Did:
+- Camera tracked / matchmoved the moving plate
+- Rebuilt and extended background / building areas using projected elements
+- Used mirrored/tracked building reconstruction to expand or repair architecture
+- Replaced the sky with HDRI / environment imagery
+- Preserved and layered foreground powerlines back over the new sky
+- Used foreground holdout mattes to keep plate elements sitting correctly over the replacement background
+- Repositioned and color-matched inserted background elements to the original plate
+- Used projection workflows on geometry driven by the solved camera
+- Used roto-based masks to isolate and retain specific foreground / edge elements
+- Added volumetric light / flare treatment to help unify the image
+- Finished the shot with color balancing, lensing adjustments, defocus, vignette, and regrain
+
+Techniques / Workflows:
+- Matchmove
+- Projection
+- Set Extension / DMP
+- Sky Replacement
+- 2D Tracking
+- Roto
+- Paint / Cleanup
+- Foreground holdouts
+- Volumetric light / flare
+- Lensing / finishing
+- Regrain
+
+Main Challenges:
+- Keeping projected background work stable in a moving shot
+- Extending or repairing building areas without breaking perspective during the camera move
+- Replacing the sky while preserving powerlines and other foreground elements
+- Balancing a stylized atmospheric finish without making the comp feel disconnected from the original plate
+- Managing multiple layers of tracking, projection, and holdouts so the final shot remained clean and readable
+
+Suggested Recruiter / Interview Framing:
+This shot works best as a technical integration example. It shows how a moving plate can be rebuilt through camera solve, projected environment elements, holdout management, and finishing work rather than relying on a simple 2D replacement. It is good proof of spatial problem solving and practical compositing judgment.
+
+Suggested Breakdown Approach:
+For the reel, use a before/after wipe from the original moving plate to the final.
+For the portfolio page, emphasize:
+1. moving plate / camera-solve setup
+2. building/background extension
+3. sky replacement with powerline holdouts
+4. volumetric/lensing finish
+
+Website Tags:
+- Matchmove
+- Projection
+- Set Extension / DMP
+- Sky Replacement
+- 2D Tracking
+- Roto
+
+Optional Tags:
+- Paint / Cleanup
+- Effect Look Dev
+
+Tag Notes:
+Use Paint / Cleanup if you want to emphasize the building repair / foreground cleanup side of the shot.
+Use Effect Look Dev if you want the volumetric rays / flare / finishing treatment to be part of the shot identity.
+If your site does not currently have a Sky Replacement tag, Set Extension / DMP + Projection + Matchmove still communicate the core of the shot clearly.
+
+Suggested Portfolio Page Direction:
+Frame the write-up around a moving-shot environment replacement problem: solving the camera, projecting replacement elements, holding foreground details back over the new environment, and finishing the result so it feels cohesive.
+
+Status:
+READY FOR REEL / PORTFOLIO WRITE-UP (first-pass wording)

@@ -69,14 +69,15 @@
       "skill_rank": {
         "Roto": 4,
         "Paint / Cleanup": 1,
-        "Set Extension / DMP": 1
+        "Set Extension / DMP": 1,
+        "Sky Replacement": 2
       },
       "skills": [
         "Roto",
         "Paint / Cleanup",
         "2D Tracking",
         "Set Extension / DMP",
-        "Look Change",
+        "Sky Replacement",
         "Matchmove",
         "Projection",
         "Relighting"
@@ -196,14 +197,13 @@
       "skill_rank": {
         "Keying": 2,
         "CG Integration": 3,
-        "Set Extension / DMP": 4
+        "2D Tracking": 4
       },
       "skills": [
         "Projection",
-        "Matchmove",
         "Keying",
         "Relighting",
-        "Set Extension / DMP",
+        "2D Tracking",
         "CG Integration",
         "Roto"
       ]
@@ -218,15 +218,18 @@
       "category": "compositing",
       "skill_rank": {
         "Roto": 6,
-        "Set Extension / DMP": 5
+        "Set Extension / DMP": 5,
+        "2D Tracking": 6,
+        "Sky Replacement": 4
       },
       "skills": [
         "Set Extension / DMP",
         "Matchmove",
         "Projection",
+        "Sky Replacement",
+        "2D Tracking",
         "Roto",
-        "Paint / Cleanup",
-        "Relighting"
+        "Paint / Cleanup"
       ]
     },
     {
@@ -241,14 +244,14 @@
         "Roto": 7,
         "Paint / Cleanup": 5,
         "Keying": 1,
-        "Set Extension / DMP": 6
+        "Sky Replacement": 3
       },
       "skills": [
         "Keying",
-        "Set Extension / DMP",
         "Paint / Cleanup",
         "Roto",
-        "2D Tracking"
+        "2D Tracking",
+        "Sky Replacement"
       ]
     },
     {
