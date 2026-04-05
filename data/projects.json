@@ -59,9 +59,9 @@
     {
       "id": "sunset",
       "href": "projects/compositing/sunset.html",
-      "thumbnail": "images/compositing/thumbs/sunset.jpg",
-      "alt": "60s Sunset",
-      "overlay": "60s Sunset",
+      "thumbnail": "images/compositing/thumbs/60s_vista.png",
+      "alt": "60s Vista",
+      "overlay": "60s Vista",
       "badge": "Updating",
       "status": "Updating",
       "category": "compositing",
