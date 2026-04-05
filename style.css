@@ -995,19 +995,25 @@ body.compositing-page #compositing-projects.section{
 /* ---------- ABOUT PAGE layout ---------- */
 .about-page #about-content .about-flex{
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 34px;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 40px;
   align-items: start;
   max-width: var(--content-w);
   margin: 0 auto;
 }
 
-.about-page .profile-wrap{ width: 100%; }
+.about-page .profile-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .about-page .profile-image{
   width: 100%;
-  max-width: 320px;
-  border-radius: var(--radius-sm);
+  max-width: 360px;
+  height: auto;
+  display: block;
+  border-radius: 18px;
   box-shadow: var(--shadow);
 }
 
@@ -1031,6 +1037,7 @@ body.compositing-page #compositing-projects.section{
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: left;
+    gap: 26px;
   }
   .about-page .profile-image{ max-width: 360px; }
   .about-page .about-text{
