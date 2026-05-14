@@ -15,4 +15,4 @@ When using this folder:
 - Mark uncertain details with `TODO: confirm details from Jake`.
 - Keep career-search positioning separate from public portfolio copy unless Jake asks to merge them.
 
-Deployment note: this repo appears to be a static site with a `CNAME` file and no package/build config found during setup inspection on 2026-05-14. A folder beginning with `_` is a conservative choice for GitHub Pages/Jekyll-style publishing, where underscore-prefixed folders are typically not published unless explicitly included. Still, these files should remain safe and professional in case the repo itself is public.
+Deployment note: this repo appears to be a static site with a `CNAME` file and no package/build config found during setup inspection on 2026-05-14. A folder beginning with `_` is a conservative choice for GitHub Pages/Jekyll-style publishing, where underscore-prefixed folders are typically not published unless explicitly included. Still, this folder may be visible in the public GitHub repo even if it is not served by the live website, so these files should remain safe and professional.
