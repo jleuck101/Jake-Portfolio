@@ -66,7 +66,13 @@ function ensureCardBadges(cards, byId) {
 function renderCard(project, badgeOverride, hasBadgeOverride) {
   const badge = hasBadgeOverride ? normalizeBadge(badgeOverride) : normalizeBadge(project.badge);
   const badgeClass = hasBadgeOverride ? normalizeBadgeClass(badgeOverride) : normalizeBadgeClass(project.badge);
-  const classes = badge ? 'project-thumb wip-thumb' : 'project-thumb';
+  const cardDescription =
+    typeof project.card_description === 'string' ? project.card_description.trim() : '';
+  const classes = [
+    'project-thumb',
+    badge ? 'wip-thumb' : '',
+    cardDescription ? 'has-description' : ''
+  ].filter(Boolean).join(' ');
   const safeSkills = Array.isArray(project.skills)
     ? project.skills.map((s) => String(s).trim()).filter(Boolean)
     : [];
@@ -76,7 +82,10 @@ function renderCard(project, badgeOverride, hasBadgeOverride) {
     <a href="${project.href}" class="${classes}" data-project-id="${project.id || ''}" data-skills="${encodedSkills}">
       ${badge ? `<div class="wip-badge${badgeClass ? ` badge-${badgeClass}` : ''}">${badge}</div>` : ''}
       <img src="${project.thumbnail}" alt="${project.alt}">
-      <div class="overlay">${project.overlay}</div>
+      <div class="overlay">
+        <span class="overlay-title">${project.overlay}</span>
+        ${cardDescription ? `<span class="overlay-description">${cardDescription}</span>` : ''}
+      </div>
     </a>
   `;
 }

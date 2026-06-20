@@ -348,21 +348,23 @@
     },
     {
       "id": "set_projection_mapping",
-      "title": "Set Projection Mapping — Short Film",
+      "title": "Shed — On-Set Projection Mapping",
       "href": "projects/immersive/set-projection-mapping.html",
       "thumbnail": "images/immersive/stills/shed-projection-mapping.jpg",
-      "alt": "Forest imagery projected across shed structures on a nighttime film set",
-      "overlay": "Set Projection Mapping — Short Film",
-      "badge": "WIP",
-      "status": "Documentation in Progress",
-      "type_label": "Practical Set Projection",
+      "alt": "Forest imagery mapped across vertical muslin-covered scenic panels for Shed",
+      "overlay": "Shed — On-Set Projection Mapping",
+      "card_description": "Projection Artist for a narrative short film memory sequence, using MadMapper and a 5000-lumen projector workflow to map forest imagery across vertical muslin panel structures for in-camera capture.",
+      "badge": null,
+      "status": null,
+      "type_label": "Narrative Film Projection",
       "category": "immersive",
       "skills": [
-        "Projection Mapping",
-        "On-Set VFX",
+        "MadMapper",
         "Practical Projection",
-        "Director / DP Collaboration",
-        "Technical Planning"
+        "In-Camera VFX",
+        "Multi-Surface Mapping",
+        "On-Set Operation",
+        "VFX-Aware Planning"
       ]
     }
   ],
