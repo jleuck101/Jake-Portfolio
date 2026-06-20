@@ -200,7 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const defaultMetaByCategory = {
         compositing: 'Compositing • Nuke',
-        motion: 'Motion Graphics'
+        motion: 'Motion Graphics',
+        immersive: 'Immersive • Projection + Interactive'
       };
       const metaOverrides = {
         motopia: 'Compositing + CG • Nuke • Maya',
@@ -243,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const status = typeof project.status === 'string' ? project.status.trim() : '';
-      const skills = project.category === 'compositing' && Array.isArray(project.skills)
+      const skills = Array.isArray(project.skills)
         ? project.skills.map((s) => String(s).trim()).filter(Boolean)
         : [];
       debugLog('status + skills len:', status || '(none)', skills.length);

@@ -31,7 +31,21 @@ async function loadHeader() {
         // Make it absolute to the site root (which respects GitHub Pages subpaths)
         a.setAttribute("href", new URL(href, siteRoot).toString());
       });
-  
+
+      const pathname = window.location.pathname;
+      let currentPage = pathname.split("/").pop() || "index.html";
+      if (pathname.includes("/projects/compositing/")) currentPage = "compositing.html";
+      if (pathname.includes("/projects/motion/")) currentPage = "motion.html";
+      if (pathname.includes("/projects/immersive/")) currentPage = "immersive.html";
+
+      host.querySelectorAll("nav a[href]").forEach(a => {
+        const linkedPage = new URL(a.href).pathname.split("/").pop() || "index.html";
+        if (linkedPage === currentPage) {
+          a.classList.add("is-active");
+          a.setAttribute("aria-current", "page");
+        }
+      });
+
     } catch (err) {
       // Fail silently (no ugly 404 HTML injected)
       host.innerHTML = "";
@@ -40,4 +54,3 @@ async function loadHeader() {
   }
   
   loadHeader();
-  

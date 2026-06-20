@@ -207,6 +207,11 @@ header a:hover{
   box-shadow: 0 0 0 1px rgba(0,229,255,0.08), var(--shadow-accent);
 }
 
+header nav a.is-active{
+  background: rgba(0,229,255,0.10);
+  border-color: rgba(0,229,255,0.34);
+}
+
 /* Slightly tighter for the site title so it scales nicely */
 header .site-title{
   padding: 4px 8px;
@@ -506,6 +511,33 @@ body.project-page .page video{
   display: block;
 }
 
+.media-placeholder{
+  width: min(100%, var(--content-w));
+  min-height: 320px;
+  margin: 0 auto 28px;
+  padding: 36px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: rgba(255,255,255,0.82);
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  letter-spacing: 0.03em;
+  background:
+    linear-gradient(135deg, rgba(0,229,255,0.10), transparent 48%),
+    rgba(0,0,0,0.22);
+  border: 1px solid rgba(0,229,255,0.22);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 700px){
+  .media-placeholder{
+    min-height: 220px;
+    padding: 24px;
+  }
+}
+
 /* ---------- Back link ---------- */
 a.back-link{
   display: inline-block;
@@ -528,6 +560,10 @@ body.project-page a.back-link{
   flex-wrap: wrap;
   justify-content: center;
   gap: 34px 46px;
+}
+
+.section > h3 + .project-gallery{
+  margin-top: 20px;
 }
 
 .project-thumb{
@@ -620,11 +656,12 @@ body.project-page .project-gallery img{
   top: 12px;
   left: 12px;
   overflow: hidden;
-  padding: 6px 10px;
+  padding: 5px 9px;
   border-radius: 999px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
   background: rgba(0,229,255,0.92);
   color: #1e1e1e;
   z-index: 5;
@@ -1449,4 +1486,26 @@ body.project-page .meta{
   object-fit: cover;
   border-radius: 10px;
   background: #111;
+}
+
+.project-media--gallery figure{
+  margin: 0;
+}
+
+.project-media--gallery figcaption{
+  padding: 8px 4px 2px;
+  color: rgba(255,255,255,0.70);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.project-media--process .project-media__image{
+  object-fit: contain;
+}
+
+@media (max-width: 700px){
+  .project-media--gallery{
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project Projection is a TouchDesigner-driven interactive installation connecting a projected tabletop with a responsive wall world.">
+  <title>Project Projection — Interactive Projection Installation | Jake Leuck</title>
+
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../style-channels.css">
+  <link rel="icon" href="../../images/common/JL_favicon.png" type="image/png">
+  <style>#site-header { min-height: 80px; }</style>
+</head>
+
+<body class="project-page">
+  <div id="site-header"></div>
+  <script src="../../partials/include.js"></script>
+
+  <main class="content">
+    <section class="project-hero">
+      <h1>Project Projection — Interactive Projection Installation</h1>
+      <p class="muted">
+        A Jarvis Challenge installation that turned student artwork into a participant-driven table-to-wall experience. TouchDesigner connected the projected making surface to a responsive 3D wall world, room lighting, and a sequence of reveal, collection, and assembly interactions.
+      </p>
+    </section>
+
+    <section class="project-media">
+      <img
+        src="../../images/immersive/project-projection/project-projection-hero.jpg"
+        alt="Hand interacting with colorful artwork projected onto a tabletop"
+        class="project-media__image">
+    </section>
+
+    <section class="project-writeup">
+      <h2 class="aligned-heading">Role / Contribution</h2>
+      <p>
+        I built the wall world, particle systems, state-driven 3D camera, head-parallax behavior, and wave-meter finale, along with refined interaction modules for the first experience. I also built the input-routing system, tested several camera and hand-tracking approaches, integrated the team’s interactions into the unified build, and developed a scripting workflow for making structured changes to the TouchDesigner network with automatic backups.
+      </p>
+
+      <h2 class="aligned-heading">Project Context</h2>
+      <p>
+        Developed by Paige Desimone, Frida Frausto, Jailyn Turner, and me for the 2026 Jarvis Challenge, the installation was showcased on May 29, 2026. Visitors used a projected tabletop as the making surface while a front-wall projection acted as the artwork’s responsive inner world. The experience moved through revealing, focusing, collecting, assembling, and finally uncovering a completed student artwork.
+      </p>
+
+    </section>
+
+    <section class="project-writeup">
+      <h2 class="aligned-heading">Selected Visuals</h2>
+      <div class="project-media project-media--gallery">
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/projector-beam-fog.jpg"
+            alt="Colored projector beam visible through fog during Project Projection"
+            class="project-media__image">
+          <figcaption>Projector beam and room atmosphere</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/wall-world-artifact.jpg"
+            alt="Illustrated artifact inside the real-time projected wall world"
+            class="project-media__image">
+          <figcaption>Artwork inside the real-time wall world</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="aligned-heading">Showcase / Documentation</h2>
+      <div class="project-media project-media--gallery">
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/showcase-installation.jpg"
+            alt="Participant using the projected table while Jake operates the installation in the background"
+            class="project-media__image">
+          <figcaption>Live installation at the Jarvis Challenge showcase</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/showcase-presentation.jpg"
+            alt="Jake presenting the depth-camera and projector-rig system"
+            class="project-media__image">
+          <figcaption>Presenting the tracking and projector-rig development</figcaption>
+        </figure>
+      </div>
+      <p>
+        Higher-resolution showcase documentation will be added as it becomes available.
+      </p>
+    </section>
+
+    <section class="project-writeup">
+      <h2 class="aligned-heading">System / Process</h2>
+      <p>
+        TouchDesigner coordinated two projectors, interaction state, real-time visuals, audio triggers, and four networked floor lights. The build separated input, state, experience logic, wall-world rendering, lighting, and final output so individual systems could be tested and revised without disrupting the full installation. The wall world combined instanced pencil strokes, particles, shader effects, a parallax camera, and visual payoffs tied directly to actions on the table.
+      </p>
+
+      <h2 class="aligned-heading">Tracking + Input Tests</h2>
+      <p>
+        Before the final showcase setup, I tested multiple input approaches—including MediaPipe camera tracking, Leap Motion hand tracking, and Orbbec depth-camera workflows—to evaluate how physical gestures could drive the projected world. These tests informed the final interaction architecture, while the showcase installation used an operator-assisted fallback to stay reliable under final projection conditions.
+      </p>
+      <div class="project-media project-media--gallery project-media--process">
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/mediapipe-tracking-process.jpg"
+            alt="MediaPipe camera tracking test for Project Projection interaction workflow"
+            class="project-media__image">
+          <figcaption>MediaPipe camera and face-tracking test</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/leap-motion-hand-tracking.png"
+            alt="Leap Motion hand tracking test for Project Projection interaction workflow"
+            class="project-media__image">
+          <figcaption>Leap Motion hand-tracking exploration</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/depth-camera-infrared-process.png"
+            alt="Infrared depth camera test used while developing the Project Projection tracking workflow"
+            class="project-media__image">
+          <figcaption>Orbbec infrared stream test</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../images/immersive/project-projection/depth-camera-point-cloud-process.png"
+            alt="Depth stream and point cloud test from the Project Projection tracking workflow"
+            class="project-media__image">
+          <figcaption>Depth stream and point-cloud evaluation</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="aligned-heading">Tools / Technical Workflow</h2>
+      <ul class="tool-bullets">
+        <li>TouchDesigner and Python for interaction state, input routing, and system integration</li>
+        <li>GLSL effects, feedback-based reveal mechanics, and real-time particle systems</li>
+        <li>Dual-projector table and wall mapping with a responsive 3D wall scene</li>
+        <li>MediaPipe, Leap Motion, and Orbbec Gemini 336 tracking prototypes</li>
+        <li>Networked Govee lighting linked to the projected color system</li>
+      </ul>
+
+      <h2 class="aligned-heading">Status</h2>
+      <p>
+        The final TouchDesigner build and written documentation are archived. Additional showcase video and higher-resolution documentation will be added as they become available.
+      </p>
+    </section>
+
+    <a class="back-link" href="../../immersive.html">&larr; Back to Immersive</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="../../site.js"></script>
+  <script src="../../scripts/channel_easter_egg.js" defer></script>
+</body>
+</html>

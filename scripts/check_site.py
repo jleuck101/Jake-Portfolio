@@ -15,6 +15,7 @@ PAGES = [
     REPO / "compositing.html",
     REPO / "motion.html",
     REPO / "tools.html",
+    REPO / "immersive.html",
 ]
 
 class IdCollector(HTMLParser):

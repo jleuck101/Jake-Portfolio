@@ -325,6 +325,45 @@
       "badge": null,
       "type_label": "3D Model + Lookdev",
       "category": "motion"
+    },
+    {
+      "id": "project_projection",
+      "title": "Project Projection — Interactive Projection Installation",
+      "href": "projects/immersive/project-projection.html",
+      "thumbnail": "images/immersive/project-projection/project-projection-hero.jpg",
+      "alt": "Hand interacting with colorful artwork projected onto a tabletop",
+      "overlay": "Project Projection — Interactive Projection Installation",
+      "badge": "Updating",
+      "status": "Showcased May 2026",
+      "type_label": "Interactive Projection Installation",
+      "category": "immersive",
+      "skills": [
+        "TouchDesigner",
+        "Projection Mapping",
+        "Real-Time 3D",
+        "MediaPipe",
+        "Sensor Workflow",
+        "GLSL"
+      ]
+    },
+    {
+      "id": "set_projection_mapping",
+      "title": "Set Projection Mapping — Short Film",
+      "href": "projects/immersive/set-projection-mapping.html",
+      "thumbnail": "images/immersive/stills/shed-projection-mapping.jpg",
+      "alt": "Forest imagery projected across shed structures on a nighttime film set",
+      "overlay": "Set Projection Mapping — Short Film",
+      "badge": "WIP",
+      "status": "Documentation in Progress",
+      "type_label": "Practical Set Projection",
+      "category": "immersive",
+      "skills": [
+        "Projection Mapping",
+        "On-Set VFX",
+        "Practical Projection",
+        "Director / DP Collaboration",
+        "Technical Planning"
+      ]
     }
   ],
   "galleries": {
@@ -366,6 +405,10 @@
     ],
     "gallery-motion-3d": [
       "alarm_clock"
+    ],
+    "gallery-immersive-projects": [
+      "project_projection",
+      "set_projection_mapping"
     ]
   }
 }
