@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initSite() {
+  if (window.__jakePortfolioSiteInitialized) return;
+  window.__jakePortfolioSiteInitialized = true;
   function loadProjectsDataCached() {
     if (window.__projectsDataPromise) return window.__projectsDataPromise;
 
@@ -91,8 +93,113 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function initLightbox() {
+    const galleryRoots = document.querySelectorAll('.project-media, .showcase-grid, .project-media--gallery');
+    if (!galleryRoots.length) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" type="button" aria-label="Previous image">&lsaquo;</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-image" src="" alt="">
+        <figcaption class="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-next" type="button" aria-label="Next image">&rsaquo;</button>
+    `;
+    document.body.appendChild(overlay);
+
+    const imgEl = overlay.querySelector('.lightbox-image');
+    const captionEl = overlay.querySelector('.lightbox-caption');
+    const prevButton = overlay.querySelector('.lightbox-prev');
+    const nextButton = overlay.querySelector('.lightbox-next');
+    const closeButton = overlay.querySelector('.lightbox-close');
+
+    let currentGroup = [];
+    let currentIndex = 0;
+    let lastFocused = null;
+
+    const render = () => {
+      const item = currentGroup[currentIndex];
+      if (!item) return;
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+      captionEl.textContent = item.caption || '';
+      captionEl.style.display = item.caption ? '' : 'none';
+      const multi = currentGroup.length > 1;
+      prevButton.style.display = multi ? '' : 'none';
+      nextButton.style.display = multi ? '' : 'none';
+    };
+
+    const step = (delta) => {
+      if (!currentGroup.length) return;
+      currentIndex = (currentIndex + delta + currentGroup.length) % currentGroup.length;
+      render();
+    };
+
+    const close = () => {
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('lightbox-locked');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    };
+
+    const openAt = (group, index) => {
+      currentGroup = group;
+      currentIndex = index;
+      render();
+      overlay.classList.add('is-open');
+      document.body.classList.add('lightbox-locked');
+      lastFocused = document.activeElement;
+      closeButton.focus();
+    };
+
+    closeButton.addEventListener('click', close);
+    prevButton.addEventListener('click', () => step(-1));
+    nextButton.addEventListener('click', () => step(1));
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (!overlay.classList.contains('is-open')) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft') step(-1);
+      if (event.key === 'ArrowRight') step(1);
+    });
+
+    galleryRoots.forEach((root) => {
+      const images = Array.from(root.querySelectorAll('img'));
+      if (!images.length) return;
+
+      const group = images.map((image) => {
+        const figcaption = image.closest('figure')?.querySelector('figcaption');
+        return {
+          src: image.currentSrc || image.src,
+          alt: image.alt || '',
+          caption: figcaption ? figcaption.textContent.trim() : (image.alt || ''),
+        };
+      });
+
+      images.forEach((image, index) => {
+        image.classList.add('lightbox-trigger');
+        image.setAttribute('tabindex', '0');
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', 'Expand image');
+        const activate = () => openAt(group, index);
+        image.addEventListener('click', activate);
+        image.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activate();
+          }
+        });
+      });
+    });
+  }
+
   initPageEntrance();
   initMediaReadyFades();
+  initLightbox();
 
   async function injectProjectHeaderTags() {
     const isLocalDebug =
@@ -509,4 +616,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 600);
     }
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSite, { once: true });
+} else {
+  initSite();
+}
