@@ -1052,6 +1052,15 @@ body.compositing-page #compositing-projects.section{
   font-weight: 300;
 }
 
+.project-credit-line{
+  max-width: 65ch;
+  margin: -8px auto 28px;
+  color: rgba(255,255,255,0.82);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 /* ---------- ABOUT PAGE layout ---------- */
 .about-page #about-content .about-flex{
   display: grid;
