@@ -1218,9 +1218,187 @@ body.compositing-page #compositing-projects.section{
   word-break: break-word;
 }
 
+.additional-services{
+  max-width: 70ch;
+  margin: 10px auto 18px;
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+}
+
 @media (max-width: 520px){
   .contact-actions{ flex-direction: column; align-items: center; }
   .contact-btn{ width: 100%; max-width: 420px; }
+}
+
+/* =========================================================
+   Real-estate property tour page
+   ========================================================= */
+
+.real-estate-page .page{
+  overflow-x: hidden;
+}
+
+.real-estate-page .section{
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.real-estate-page .section + .section{
+  padding-top: 28px;
+}
+
+.property-hero{
+  padding-top: 76px;
+}
+
+.property-hero h1{
+  max-width: 860px;
+  margin: 0 auto 22px;
+  color: var(--accent);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.property-hero p,
+.property-contact p{
+  max-width: 76ch;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.12rem;
+}
+
+.property-hero-actions{
+  margin-top: 26px;
+}
+
+.property-section-heading{
+  max-width: var(--content-w);
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+.property-section-heading h2,
+.property-contact h2{
+  margin-bottom: 12px;
+}
+
+.property-kicker{
+  margin: 0 0 8px;
+  color: rgba(255,255,255,0.70);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.property-tour-frame{
+  width: min(100%, 1100px);
+  height: clamp(520px, 72vh, 760px);
+  margin: 0 auto 16px;
+  background: #0b0f14;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.property-tour-frame iframe{
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  aspect-ratio: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.property-tour-fallback{
+  max-width: var(--content-w);
+  margin: 0 auto;
+  text-align: left;
+  font-family: 'Barlow', sans-serif;
+}
+
+.property-detail-list,
+.property-use-list{
+  width: min(100%, var(--content-w));
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.property-detail-list{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.property-use-list{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.property-detail-list li,
+.property-use-list li{
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.035);
+  color: rgba(255,255,255,0.86);
+  font-family: 'Barlow', sans-serif;
+}
+
+.property-contact{
+  padding-bottom: 76px;
+}
+
+@media (max-width: 900px){
+  .property-tour-frame{
+    height: clamp(560px, 78vh, 720px);
+  }
+
+  .property-use-list{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .property-hero{
+    padding-top: 48px;
+  }
+
+  .property-hero h1{
+    font-size: clamp(2rem, 10vw, 2.9rem);
+  }
+
+  .property-hero p,
+  .property-contact p{
+    font-size: 1.02rem;
+  }
+
+  .property-section-heading,
+  .property-tour-fallback{
+    text-align: center;
+  }
+
+  .property-tour-frame{
+    height: min(78vh, 640px);
+    min-height: 520px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+  }
+
+  .property-detail-list,
+  .property-use-list{
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Footer ---------- */

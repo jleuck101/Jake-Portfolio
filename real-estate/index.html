@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore an interactive residential property-tour sample captured with a Ricoh Theta Z1 and presented through Zillow 3D Home." />
+  <link rel="canonical" href="https://jakeleuck.com/real-estate/" />
+  <title>Interactive 360° Property Tours in Chicago | Jake Leuck</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style-channels.css" />
+  <link rel="icon" href="../images/common/JL_favicon.png" type="image/png" />
+
+  <style>#site-header { min-height: 80px; }</style>
+</head>
+
+<body class="real-estate-page">
+
+  <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="chanR" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 1 0" />
+      </filter>
+      <filter id="chanG" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0 1 0 0 0  0 1 0 0 0  0 1 0 0 0  0 0 0 1 0" />
+      </filter>
+      <filter id="chanB" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0 0 1 0 0  0 0 1 0 0  0 0 1 0 0  0 0 0 1 0" />
+      </filter>
+      <filter id="chanA" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 1 0" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="site-header"></div>
+  <script src="../partials/include.js"></script>
+
+  <main class="page">
+    <section class="section section-intro property-hero">
+      <h1>Interactive 360° Property Tours in Chicago</h1>
+      <p class="muted">
+        Explore a multi-room Zillow 3D Home walkthrough captured with a Ricoh Theta Z1. Interactive tours provide a shareable way to preview a property or physical space directly from a browser or mobile device.
+      </p>
+      <div class="contact-actions property-hero-actions">
+        <a class="contact-btn" href="#sample-tour">Explore the Sample Tour</a>
+        <a class="contact-btn" href="mailto:jakeleuck101@gmail.com?subject=360%20Property%20Tour%20Inquiry">Ask About a Property Tour</a>
+      </div>
+    </section>
+
+    <section class="section property-sample" id="sample-tour" aria-labelledby="sample-tour-heading">
+      <div class="property-section-heading">
+        <p class="property-kicker">Luxury Rental Property Sample</p>
+        <h2 id="sample-tour-heading">Interactive Sample</h2>
+      </div>
+
+      <div class="property-tour-frame">
+        <iframe
+          src="https://www.zillow.com/view-3d-home/1050f4d1-aadc-483a-8927-3fa195f3b3aa?setAttribution=mls&wl=true&utm_source=dashboard"
+          title="Interactive Zillow 3D Home residential tour"
+          loading="lazy"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="property-tour-fallback muted">
+        If the embedded tour does not load, <a href="https://www.zillow.com/view-3d-home/1050f4d1-aadc-483a-8927-3fa195f3b3aa?setAttribution=mls&wl=true&utm_source=dashboard" target="_blank" rel="noopener noreferrer">Open Interactive Tour</a>.
+      </p>
+    </section>
+
+    <section class="section property-details" aria-labelledby="sample-details-heading">
+      <div class="property-section-heading">
+        <h2 id="sample-details-heading">Sample Details</h2>
+      </div>
+
+      <ul class="property-detail-list">
+        <li>Multi-room luxury rental-style walkthrough</li>
+        <li>Four-level interactive tour, including rooftop access</li>
+        <li>Captured with a Ricoh Theta Z1</li>
+        <li>Processed and presented through Zillow 3D Home</li>
+        <li>Browser and mobile viewing</li>
+        <li>Shareable interactive tour link</li>
+        <li>Embeddable web presentation</li>
+      </ul>
+    </section>
+
+    <section class="section property-uses" aria-labelledby="useful-for-heading">
+      <div class="property-section-heading">
+        <h2 id="useful-for-heading">Useful For</h2>
+      </div>
+
+      <ul class="property-use-list">
+        <li>Residential listings</li>
+        <li>Apartment and rental previews</li>
+        <li>Property management</li>
+        <li>Studios and galleries</li>
+        <li>Small businesses</li>
+        <li>Event or creative spaces</li>
+      </ul>
+    </section>
+
+    <section class="section property-contact" aria-labelledby="property-contact-heading">
+      <h2 id="property-contact-heading">Have a space you would like captured?</h2>
+      <p class="muted">
+        I’m currently available for Chicago-area 360° property-tour projects. Include a few details about the property, location, approximate size, number of floors, and intended use.
+      </p>
+      <div class="contact-actions">
+        <a class="contact-btn" href="mailto:jakeleuck101@gmail.com?subject=360%20Property%20Tour%20Inquiry">Email Jake</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jake Leuck</p>
+  </footer>
+
+  <script src="../site.js"></script>
+  <script src="../scripts/channel_easter_egg.js" defer></script>
+</body>
+</html>
