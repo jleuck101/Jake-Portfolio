@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /_context/
+Disallow: /.codex/
+Disallow: /.agents/
+Disallow: /.claude/
+Disallow: /AGENTS.md
+Disallow: /review_copy_suggestions.md
+Disallow: /projects/template.html
+Disallow: /data/README.md
