@@ -347,6 +347,19 @@
       ]
     },
     {
+      "id": "espn_sports_nirvana",
+      "title": "ESPN Sports Nirvana — Visual Feeder",
+      "href": "projects/immersive/espn-sports-nirvana.html",
+      "thumbnail": "images/immersive/espn-sports-nirvana/01-espn-sports-nirvana-hero.jpeg",
+      "alt": "Finished ESPN Sports Nirvana storefront with scenic window graphics and a central LED display",
+      "overlay": "ESPN Sports Nirvana — Visual Feeder",
+      "card_description": "Multi-day storefront activation in Chicago combining LED, projection, pedestrian tracking, and triggered audio. I supported the build across on-site coordination, AV installation, LED-wall support, projector rigging, audio setup, and final system checks.",
+      "badge": null,
+      "status": null,
+      "type_label": "Experiential • AV Installation • On-Site Technical Support",
+      "category": "immersive"
+    },
+    {
       "id": "set_projection_mapping",
       "title": "Shed — On-Set Projection Mapping",
       "href": "projects/immersive/set-projection-mapping.html",
@@ -374,6 +387,10 @@
         "id": "project_projection",
         "card_title": "Project Projection — Interactive Projection Installation",
         "card_description": "TouchDesigner • Projection • Interactive Systems"
+      },
+      {
+        "id": "espn_sports_nirvana",
+        "card_description": "Experiential • AV Installation • On-Site Technical Support"
       },
       {
         "id": "set_projection_mapping",
@@ -422,6 +439,7 @@
     ],
     "gallery-immersive-projects": [
       "project_projection",
+      "espn_sports_nirvana",
       "set_projection_mapping"
     ]
   }

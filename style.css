@@ -747,6 +747,12 @@ body.immersive-page .project-thumb.has-description .overlay{
   outline-offset: 4px;
 }
 
+@media (min-width: 1100px){
+  .home-page .home-featured-gallery .project-thumb{
+    width: calc((100% - 92px) / 3);
+  }
+}
+
 /* ---------- Project pages: image galleries ---------- */
 body.project-page .project-gallery{
   display: grid;
@@ -1813,6 +1819,20 @@ body.project-page .meta{
   line-height: 1.35;
 }
 
+/* ESPN build details pair the tall room view with two hardware details. */
+.espn-page .project-credit-line{
+  margin: 0 0 24px;
+}
+
+.espn-page .project-media--gallery .project-media__image{
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.espn-page .espn-build-gallery figure:first-child{
+  grid-row: span 2;
+}
+
 .showcase-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1861,6 +1881,9 @@ body.project-page .meta{
 @media (max-width: 700px){
   .project-media--gallery{
     grid-template-columns: 1fr;
+  }
+  .espn-page .espn-build-gallery figure:first-child{
+    grid-row: auto;
   }
   .showcase-grid{
     grid-template-columns: 1fr;
