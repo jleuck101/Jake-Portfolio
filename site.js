@@ -308,7 +308,7 @@ function initSite() {
       const defaultMetaByCategory = {
         compositing: 'Compositing • Nuke',
         motion: 'Motion Graphics',
-        immersive: 'Immersive • Projection + Interactive'
+        immersive: 'Creative Technology • Projection + Interactive'
       };
       const metaOverrides = {
         motopia: 'Compositing + CG • Nuke • Maya',

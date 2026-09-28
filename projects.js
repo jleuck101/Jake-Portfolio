@@ -63,11 +63,14 @@ function ensureCardBadges(cards, byId) {
   });
 }
 
-function renderCard(project, badgeOverride, hasBadgeOverride) {
+function renderCard(project, badgeOverride, hasBadgeOverride, cardOverrides = {}) {
   const badge = hasBadgeOverride ? normalizeBadge(badgeOverride) : normalizeBadge(project.badge);
   const badgeClass = hasBadgeOverride ? normalizeBadgeClass(badgeOverride) : normalizeBadgeClass(project.badge);
+  const cardTitle =
+    typeof cardOverrides.card_title === 'string' ? cardOverrides.card_title : project.overlay;
+  const description = cardOverrides.card_description ?? project.card_description;
   const cardDescription =
-    typeof project.card_description === 'string' ? project.card_description.trim() : '';
+    typeof description === 'string' ? description.trim() : '';
   const classes = [
     'project-thumb',
     badge ? 'wip-thumb' : '',
@@ -83,7 +86,7 @@ function renderCard(project, badgeOverride, hasBadgeOverride) {
       ${badge ? `<div class="wip-badge${badgeClass ? ` badge-${badgeClass}` : ''}">${badge}</div>` : ''}
       <img src="${project.thumbnail}" alt="${project.alt}">
       <div class="overlay">
-        <span class="overlay-title">${project.overlay}</span>
+        <span class="overlay-title">${cardTitle}</span>
         ${cardDescription ? `<span class="overlay-description">${cardDescription}</span>` : ''}
       </div>
     </a>
@@ -99,7 +102,9 @@ function normalizeGalleryEntry(entry) {
     return {
       id: entry.id,
       hasBadgeOverride: Object.prototype.hasOwnProperty.call(entry, 'badge'),
-      badge: entry.badge
+      badge: entry.badge,
+      card_title: entry.card_title,
+      card_description: entry.card_description
     };
   }
 
@@ -113,7 +118,7 @@ function renderGallery(container, galleryEntries, byId) {
     .map((entry) => {
       const project = byId[entry.id];
       if (!project) return '';
-      return renderCard(project, entry.badge, entry.hasBadgeOverride);
+      return renderCard(project, entry.badge, entry.hasBadgeOverride, entry);
     })
     .join('');
 }

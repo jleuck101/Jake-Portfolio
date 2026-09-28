@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jake Leuck | Reel</title>
+  <meta name="description" content="Chicago-based creative technologist working across interactive media, projection and AV, real-time visuals, and VFX.">
+  <title>Jake Leuck | Creative Technologist</title>
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-channels.css">
@@ -34,42 +35,54 @@
   <div id="site-header"></div>
   <script src="partials/include.js"></script>
 
-  <!-- Small note at the top -->
-  <!-- Reel Section -->
-  <section id="reel" class="reel-section">
-    <h2>Compositing Reel</h2>
-    <div class="reel-frame">
-      <iframe
-        width="100%"
-        height="480"
-        src="https://player.vimeo.com/video/1180325623"
-        title="Compositing Reel"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
+  <main class="page">
+    <section class="section home-hero" aria-labelledby="home-title">
+      <h1 id="home-title">Jake Leuck<span class="home-role">Creative Technologist</span></h1>
+      <p class="home-disciplines">Interactive Media • Projection • AV • VFX</p>
+      <p class="muted home-intro">
+        Chicago-based creative technologist working across interactive media, projection and AV, real-time visuals, and VFX. I like building, integrating, and troubleshooting visual systems that move between screens and physical spaces.
+      </p>
+    </section>
 
-  <!-- Featured Compositing Projects -->
-  <section class="section" id="featured-projects">
-    <h2>Featured Compositing</h2>
+    <section class="section home-creative" id="featured-projects" aria-labelledby="creative-heading">
+      <h2 id="creative-heading">Featured Creative Technology</h2>
+      <div id="gallery-index-creative" class="project-gallery home-featured-gallery"></div>
+      <p class="muted home-section-link">
+        Explore <a href="immersive.html">Creative Technology</a>.
+      </p>
+    </section>
 
-    <div id="gallery-index-featured" class="project-gallery"></div>
+    <section class="section home-vfx" id="vfx" aria-labelledby="vfx-heading">
+      <h2 id="vfx-heading">VFX + Compositing</h2>
+      <div id="reel" class="reel-section">
+        <h3>Compositing Reel</h3>
+        <div class="reel-frame">
+          <iframe
+            width="100%"
+            height="480"
+            src="https://player.vimeo.com/video/1180325623"
+            title="Compositing Reel"
+            loading="lazy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
 
-    <!-- Keep this line -->
-    <p class="muted" style="text-align:center; margin-top: 16px;">
-      Browse all compositing projects on the <a href="compositing.html">Compositing</a> page.
-    </p>
-  </section>
+      <h3>Selected VFX Projects</h3>
+      <div id="gallery-index-featured" class="project-gallery"></div>
+      <p class="muted home-section-link">
+        Browse all compositing projects on the <a href="compositing.html">Compositing</a> page.
+      </p>
+    </section>
 
-  <!-- Keep this strip -->
-  <section class="section" id="more-work">
-    <p class="muted" style="text-align:center; max-width: 75ch; margin: 0 auto;">
-      Looking for <a href="tools.html">Tools / Pipeline</a>, <a href="motion.html">Motion + 3D</a>,
-      or <a href="immersive.html">projection mapping and interactive installation work</a>?
-    </p>
-  </section>
+    <section class="section" id="more-work">
+      <p class="muted home-section-link">
+        Looking for <a href="tools.html">Tools / Pipeline</a> or <a href="motion.html">Motion + 3D</a>?
+      </p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2026 Jake Leuck</p>
